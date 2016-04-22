@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(version: 20160422015223) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "currents", force: :cascade do |t|
-    t.string   "label"
-    t.string   "currentable_type"
-    t.integer  "currentable_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "health_tips", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
