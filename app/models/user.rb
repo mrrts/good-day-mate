@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   has_many :check_ins
   has_many :bottle_messages
   has_many :streams
-  has_many :inclusions, through: :streams 
-  has_many :currents, through: :inclusions 
+  has_many :inclusions, through: :streams  
   has_many :journal_entries
   has_many :tracker_values
 
