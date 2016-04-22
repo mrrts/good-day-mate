@@ -27,7 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'materialize-sass'
 gem 'faker', '~> 1.6.3'
-
+gem 'rspec-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
