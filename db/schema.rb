@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(version: 20160422015223) do
 
   create_table "inclusions", force: :cascade do |t|
     t.integer  "stream_id"
-    t.integer  "current_id"
     t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "includable_id"
+    t.string   "includable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "journal_entries", force: :cascade do |t|
