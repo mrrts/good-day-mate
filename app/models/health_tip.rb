@@ -1,3 +1,3 @@
 class HealthTip < ActiveRecord::Base
-  include Currentable
+  include Includable
 end
