@@ -1,4 +1,4 @@
 class Timer < ActiveRecord::Base
-  include Currentable
-  include Creatable 
+  include Includable
+  include Creatable
 end

@@ -1,3 +1,3 @@
 class Quote < ActiveRecord::Base
-  include Currentable 
+  include Includable
 end
