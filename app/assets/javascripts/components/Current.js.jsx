@@ -11,7 +11,7 @@ var Current = React.createClass({
   },
   render: function() {
     return (
-      <div className='card'>
+      <div className='dismissable card flow-text'>
         {this.getCurrentComponent()}
       </div>
     )
