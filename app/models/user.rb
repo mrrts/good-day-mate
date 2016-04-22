@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :streams
   has_many :inclusions, through: :streams
   has_many :journal_entries
-  has_many :trackers
+  has_many :trackers, foreign_key: :creator_id
   has_many :tracker_values
 
   has_many :custom_placeholders, class_name: "Placeholder", foreign_key: :creator_id
