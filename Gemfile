@@ -31,6 +31,8 @@ gem 'pry-rails'
 gem 'materialize-sass'
 gem 'faker', '~> 1.6.3'
 gem 'rspec-rails'
+gem 'react-rails', '~> 1.6.0'
+gem 'dotenv'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -49,4 +51,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
