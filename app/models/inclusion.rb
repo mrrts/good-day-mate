@@ -1,4 +1,5 @@
 class Inclusion < ActiveRecord::Base
-  belongs_to :stream 
-  belongs_to :current
+  belongs_to :includable, polymorphic: true
+  belongs_to :stream
+
 end

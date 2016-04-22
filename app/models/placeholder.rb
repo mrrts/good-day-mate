@@ -1,5 +1,5 @@
 class Placeholder < ActiveRecord::Base
-  include Currentable
+  include Includable
   include Creatable
-  
+
 end

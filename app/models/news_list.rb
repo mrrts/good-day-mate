@@ -1,3 +1,3 @@
 class NewsList < ActiveRecord::Base
-  include Currentable
+  include Includable
 end
