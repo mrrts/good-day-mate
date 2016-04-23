@@ -12,7 +12,7 @@ var Stream = React.createClass({
   },
   render: function(){
     return (
-      <div className='collection container'>
+      <div className='container'>
         {this.state.currentList}
       </div>
     )
