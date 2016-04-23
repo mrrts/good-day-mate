@@ -9,10 +9,16 @@ var Current = React.createClass({
         return <Journal />
     }
   },
+  handleTouchMove: function (e) {
+    console.log('onTouchMove begun');
+    //e.preventDefault();
+  },
   render: function() {
     return (
-      <div className='card'>
-        {this.getCurrentComponent()}
+      <div onTouchMove={this.handleTouchMove}>
+        <div className='card flow-text'>
+          {this.getCurrentComponent()}
+        </div>
       </div>
     )
   }
