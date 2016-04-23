@@ -6,9 +6,9 @@ var Stream = React.createClass({
   },
   componentDidMount: function() {
     $.get('/streams/1', function(resp) {
-      this.setState
-
-        currentList: makeCurrentCards(resp)
+      console.log(resp);
+      this.setState({
+        currentList: this.makeCurrentCards(resp)
       });
     }.bind(this));
   },
@@ -18,6 +18,8 @@ var Stream = React.createClass({
     });
   },
   render: function(){
+    console.log("Hi");
+    console.log(this.state.currentList);
     return (
       <div className='container'>
         {this.state.currentList}
