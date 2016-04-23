@@ -1,16 +1,17 @@
 var App = React.createClass({
 	getInitialState: function() {
 		return {
-			screen: "build",
+			screen: "morning",
 			availableCurrents: ""
 		}
 	},
 	componentDidMount: function () {
 		$.get('/', function(response) {
+      console.log(response)
 			this.setState({
 				availableCurrents: response.availableCurrents
 			})
-		});
+		}.bind(this));
 	},
 	getScreenContent: function () {
 		switch(this.state.screen) {

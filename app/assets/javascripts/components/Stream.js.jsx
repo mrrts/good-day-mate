@@ -13,7 +13,11 @@ var Stream = React.createClass({
   render: function(){
     return (
       <div className='container'>
-        {this.state.currentList}
+        <div id="slider" className="swipe"> 
+          <div className="swipe-wrap">
+            {this.state.currentList}
+          </div>
+        </div>
       </div>
     )
   }
