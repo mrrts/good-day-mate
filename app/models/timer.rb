@@ -3,6 +3,6 @@ class Timer < ActiveRecord::Base
   include Creatable
 
   def get_hash
-    return {current_type: "Tracker", label: self.label, duration: self.duration}
+    return {current_type: "Timer", label: self.label, duration: self.duration}
   end
 end

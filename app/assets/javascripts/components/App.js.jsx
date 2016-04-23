@@ -6,6 +6,7 @@ var App = React.createClass({
 		}
 	},
 	componentDidMount: function () {
+
 		$.get('/', function(response) {
 			this.setState({
 				availableCurrents: response.availableCurrents
@@ -25,7 +26,7 @@ var App = React.createClass({
 				return <LoginScreen onUpdate={this.updateScreen}/>
 			case "registration":
 				return <RegistrationScreen onUpdate={this.updateScreen} />
-			case "morning":
+			case "start":
 				return <MorningScreen currents={this.props.currents} />
 			case "evening":
 				return <EveningScreen />

@@ -41,11 +41,11 @@ TrackerValue.create(tracker_id: 1, value: 36.2)
 Inclusion.create(stream_id: 1, order: 2,
   includable_id: 1, includable_type: "Tracker")
 
-Timer.create(creator_id: 0, label: "exercise", duration: 300)
+Timer.create(creator_id: 0, label: "exercise", duration: 10)
 Inclusion.create(stream_id: 1, order: 3,
   includable_id: 1, includable_type: "Timer")
 
-Placeholder.create(creator_id: 0, icon: ":)", label: "basic smiley")
+Placeholder.create(creator_id: 0, icon: "😁", label: "basic smiley")
 Inclusion.create(stream_id: 1, order: 1,
   includable_id: 1, includable_type: "Placeholder")
 

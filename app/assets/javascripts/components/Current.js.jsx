@@ -1,12 +1,16 @@
 var Current = React.createClass({
   getCurrentComponent: function(){
-    switch(this.props.currentType) {
+    switch(this.props.current_type) {
       case 'News':
-        return <News topic={this.props.topic}/>
+        return <News {...this.props} />
       case 'Placeholder':
-        return <Placeholder label={this.props.label} />
+        return <Placeholder {...this.props} />
       case 'Journal':
-        return <Journal />
+        return <Journal {...this.props} />
+      case 'Timer':
+        return <Timer {...this.props} />
+      case 'Tracker':
+        return <Tracker {...this.props} />
     }
   },
   handleTouchMove: function (e) {
