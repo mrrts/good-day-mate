@@ -1,7 +1,7 @@
 class Stream < ActiveRecord::Base
   belongs_to :user
   has_many :inclusions
-  has_many :includables, through: :inclusions, source_type: "NewsList"
+  has_many :news_lists, through: :inclusions, source_type: "NewsList"
 
   def get_currents_json
     return_array = []
