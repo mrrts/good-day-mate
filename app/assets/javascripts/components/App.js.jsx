@@ -1,26 +1,30 @@
 var App = React.createClass({
 	getInitialState: function() {
 		return {
-			screen: "morning",
+			screen: "home",
 			availableCurrents: ""
 		}
 	},
 	componentDidMount: function () {
 		$.get('/', function(response) {
-      console.log(response)
 			this.setState({
 				availableCurrents: response.availableCurrents
 			})
 		}.bind(this));
 	},
+	updateScreen: function(newState){
+		this.setState({
+			screen: newState,
+		})
+	},
 	getScreenContent: function () {
 		switch(this.state.screen) {
 			case "home":
-				return <HomeScreen />
+				return <HomeScreen onUpdate={this.updateScreen} />
 			case "login":
-				return <LoginScreen />
+				return <LoginScreen onUpdate={this.updateScreen}/>
 			case "registration":
-				return <RegistrationScreen />
+				return <RegistrationScreen onUpdate={this.updateScreen} />
 			case "morning":
 				return <MorningScreen currents={this.props.currents} />
 			case "evening":
@@ -32,10 +36,9 @@ var App = React.createClass({
 		}
 	},
 	render: function () {
-		console.log(this.props.currents)
 		return (
 				<div>
-					<Navbar />
+					<Navbar onUpdate={this.updateScreen} />
 					{this.getScreenContent()}
 				</div>
 		)
