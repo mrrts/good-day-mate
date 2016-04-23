@@ -2,7 +2,6 @@ class Stream < ActiveRecord::Base
   belongs_to :user
   has_many :inclusions
   # we need a has_many for each includable type, then add it to the currents method
-  has_many :news_lists, through: :inclusions, source: :includable ,source_type: "NewsList"
 
   def get_currents_json
     return_array = []
@@ -13,11 +12,18 @@ class Stream < ActiveRecord::Base
   end
 
   def currents
-
     currents = []
-    currents += self.news_lists
 
-    currents.sort
+    self.sort_inclusions.each do |inclusion|
+      currents << inclusion.includable
+    end
+
     return currents
+  end
+
+  def sort_inclusions
+    inclusions = self.inclusions
+    inclusions = inclusions.order(:order)
+    inclusions
   end
 end
