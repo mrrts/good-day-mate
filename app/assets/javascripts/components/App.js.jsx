@@ -6,6 +6,7 @@ var App = React.createClass({
 		}
 	},
 	componentDidMount: function () {
+
 		$.get('/', function(response) {
       console.log(response)
 			this.setState({
