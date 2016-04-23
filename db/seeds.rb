@@ -38,15 +38,15 @@ Stream.create(label: "Heather Stream", user_id: 4)
 
 Tracker.create(creator_id: 1, label: "Tires", unit: "PSI")
 TrackerValue.create(tracker_id: 1, value: 36.2)
-Inclusion.create(stream_id: 1, order: 1,
+Inclusion.create(stream_id: 1, order: 2,
   includable_id: 1, includable_type: "tracker")
 
 Timer.create(creator_id: 0, label: "exercise", duration: 300)
-Inclusion.create(stream_id: 4, order: 1,
+Inclusion.create(stream_id: 1, order: 3,
   includable_id: 1, includable_type: "timer")
 
-Placeholder.create(creator_id: 2, icon: ":)", label: "basic smiley")
-Inclusion.create(stream_id: 2, order: 1,
+Placeholder.create(creator_id: 0, icon: ":)", label: "basic smiley")
+Inclusion.create(stream_id: 1, order: 1,
   includable_id: 1, includable_type: "placeholder")
 
 gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
