@@ -5,8 +5,7 @@ var BuildScreen = React.createClass({
   render: function () {
     return (
       <div>
-
-
+        <SelectedCurrents currentList={this.state.currentList} />
         <CurrentSelector
           onChange={this.handleSelectChange}
           availableCurrents={this.props.availableCurrents}
