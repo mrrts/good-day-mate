@@ -31,8 +31,10 @@ gem 'pry-rails'
 gem 'materialize-sass'
 gem 'faker', '~> 1.6.3'
 gem 'rspec-rails'
+gem 'dotenv-rails'
 gem 'react-rails', '~> 1.6.0'
-gem 'dotenv'
+gem 'guardian-content'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
