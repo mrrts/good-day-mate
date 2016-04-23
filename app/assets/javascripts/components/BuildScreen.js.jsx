@@ -1,4 +1,12 @@
 var BuildScreen = React.createClass({
+  getInitialState: function() {
+    return {}
+  },
+  componentDidMount: function() {
+    $.get("/includables/index", function(response){
+
+    })
+  },
   handleSelectChange: function (e) {
     console.log(e);
   },

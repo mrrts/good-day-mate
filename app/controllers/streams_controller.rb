@@ -1,4 +1,4 @@
-class StreamsController < ActionController::Base
+class StreamsController < ApplicationController
 
 def show #Need to add authorization check
   @stream = Stream.find(params[:id])

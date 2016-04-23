@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
 
+  def available_currents
+
+  end
+
 end
