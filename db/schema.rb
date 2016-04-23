@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422015223) do
+ActiveRecord::Schema.define(version: 20160422234137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(version: 20160422015223) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "currents", force: :cascade do |t|
-    t.string   "label"
-    t.string   "currentable_type"
-    t.integer  "currentable_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "health_tips", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,10 +42,11 @@ ActiveRecord::Schema.define(version: 20160422015223) do
 
   create_table "inclusions", force: :cascade do |t|
     t.integer  "stream_id"
-    t.integer  "current_id"
     t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "includable_id"
+    t.string   "includable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "journal_entries", force: :cascade do |t|
@@ -64,8 +57,18 @@ ActiveRecord::Schema.define(version: 20160422015223) do
   end
 
   create_table "news_lists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "url"
+    t.string   "search_term"
+  end
+
+  create_table "news_updates", force: :cascade do |t|
+    t.integer "news_list_id"
+    t.string  "type"
+    t.string  "sectionName"
+    t.string  "url"
+    t.string  "title"
   end
 
   create_table "photos", force: :cascade do |t|

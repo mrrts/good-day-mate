@@ -31,6 +31,10 @@ gem 'pry-rails'
 gem 'materialize-sass'
 gem 'faker', '~> 1.6.3'
 gem 'rspec-rails'
+gem 'dotenv-rails'
+gem 'react-rails', '~> 1.6.0'
+gem 'guardian-content'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -39,7 +43,7 @@ gem 'rspec-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 end
 
 group :development do
@@ -49,4 +53,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
