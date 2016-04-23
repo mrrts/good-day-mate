@@ -33,7 +33,7 @@ gem 'faker', '~> 1.6.3'
 gem 'rspec-rails'
 gem 'dotenv-rails'
 gem 'react-rails', '~> 1.6.0'
-
+gem 'guardian-content'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
