@@ -35,6 +35,7 @@ $(document).ready(function () {
       label: "Walk the dog"
     }
   ]
+  console.log(currents)
   ReactDOM.render(<App currents={currents} />, document.querySelector('#app-container'));
   $(".button-collapse").sideNav();
 });

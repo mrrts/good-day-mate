@@ -4,7 +4,7 @@ var Current = React.createClass({
       case 'News':
         return <News topic={this.props.topic}/>
       case 'Placeholder':
-        return <Placeholder />
+        return <Placeholder label={this.props.label} />
       case 'Journal':
         return <Journal />
     }

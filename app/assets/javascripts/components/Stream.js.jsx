@@ -1,10 +1,13 @@
 var Stream = React.createClass({
-  getInitialCurrentList: this.props.currents.map(function (current, i){
-    return <Current {...current} key={i}/>
-  }),
+  getInitialCurrentList: function(){
+    return this.props.currents.map(function (current, i){
+      return <Current {...current} key={i}/>
+    })
+  },
   getInitialState: function(){
+    console.log(this.getInitialCurrentList())
     return {
-      currentList: this.getInitialCurrentList
+      currentList: this.getInitialCurrentList()
     }
   },
   render: function(){
