@@ -1,4 +1,10 @@
 var Navbar = React.createClass({
+	handleHomeClick: function() {
+		this.props.onUpdate('home')
+	},
+  handleLoginClick: function(){
+  	this.props.onUpdate('login')
+  },
 	render: function () {
 		return (
 			<div className="navbar-fixed">
@@ -7,16 +13,12 @@ var Navbar = React.createClass({
 			      <Logo />
 			      <a href="#" data-activates="mobile-demo" className="right button-collapse"><i className="material-icons">menu</i></a>
 			      <ul className="right hide-on-med-and-down">
-			        <li><a href="sass.html">Sass</a></li>
-			        <li><a href="badges.html">Components</a></li>
-			        <li><a href="collapsible.html">Javascript</a></li>
-			        <li><a href="mobile.html">Mobile</a></li>
+			        <li><a onClick={this.handleHomeClick} >Home</a></li>
+			        <li><a onClick={this.handleLoginClick} >Login</a></li>
 			      </ul>
 			      <ul className="side-nav" id="mobile-demo">
-			        <li><a href="sass.html">Sass</a></li>
-			        <li><a href="badges.html">Components</a></li>
-			        <li><a href="collapsible.html">Javascript</a></li>
-			        <li><a href="mobile.html">Mobile</a></li>
+			        <li><a onClick={this.handleHomeClick} >Home</a></li>
+			        <li><a onClick={this.handleLoginClick} >Login</a></li>
 			      </ul>
 			    </div>
 			  </nav>
