@@ -1,18 +1,24 @@
-#main-nav {
-	background: #2F77D9;
-
-}
-
-.sun-icon {
-	height: 40px;
-	width: 40px;
-	margin-top: 7px;
-}
-
 body {
 	background-color: #C2E2F2;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
 
+#main-nav {
+  background: #2F77D9;
+
+}
+
+.screenContent {
+  padding-top: 20px;
+}
+
+
+.sun-icon {
+  height: 40px;
+  width: 40px;
+  margin-top: 7px;
+}
 
 .swipe {
   overflow: hidden;
@@ -25,10 +31,19 @@ body {
 }
 .swipe-wrap > div {
   float:left;
-  width:100%;
+  width: 100%;
   position: relative;
 }
 
-#home-button {
-  background-color: #8BA9BF;
+.valign-wrapper {
+  height: 53vh;
+}
+
+#home-buttons {
+  text-align: center;
+}
+
+.home-button {
+  background-color: #8BA9BF !important;
+  margin-bottom: 20px;
 }

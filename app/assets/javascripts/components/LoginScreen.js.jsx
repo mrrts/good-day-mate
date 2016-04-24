@@ -49,7 +49,7 @@ var LoginScreen = React.createClass({
           <p>{this.state.errorMessage}</p>
         </div>
         <div className='container row'>
-          <p>Don't have an account? <a onClick={this.handleRegisterClick} >Register</a></p>
+          <p>Don't have an account? <a onClick={this.handleRegisterClick}>Register</a></p>
         </div>
       </div>
     )
