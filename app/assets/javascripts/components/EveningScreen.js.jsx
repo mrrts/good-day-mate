@@ -35,7 +35,7 @@ var EveningScreen = React.createClass({
           <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
         </div>
         <div className='card'>
-          <label htmlFor="check_in_horizon">I am feeling</label>
+          <label htmlFor="check_in_horizon">I am looking forward to</label>
           <input type="text" name="check_in[horizon]" id="check_in_horizon" />
           <input type="submit" name="commit" value="Build Tomorrow" />
         </div>

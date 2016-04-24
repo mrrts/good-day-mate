@@ -25,19 +25,31 @@ var RegistrationScreen = React.createClass({
   },
   render: function(){
     return (
-      <div onSubmit={this.handleFormSubmit}>
-        <form action="/users" acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
-          <label htmlFor="user_firstName">First Name</label>
-          <input type="text" name="user[first_name]" id="user_firstName" />
-          <label htmlFor="user_lastName">Last Name</label>
-          <input type="text" name="user[last_name]" id="user_lastName" />
-          <label htmlFor="user_email">Email</label>
-          <input type="email" name="user[email]" id="user_email" />
-          <label htmlFor="user_password">Password</label>
-          <input type="password" name="user[password]" id="user_password" />
-          <input type="submit" name="commit" value="Register" />
-        </form>
-
+      <div className='container' >
+        <div className='row'>
+          <div>
+            <form onSubmit={this.handleFormSubmit} className='col s12' acceptCharset="UTF-8">
+              <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
+              <div className='input-field col s12'>
+                <input type="text" name="user[first_name]" id="user_firstName" />
+                <label htmlFor="user_firstName">First Name</label>
+              </div>
+              <div className='input-field col s12'>
+                <input type="text" name="user[last_name]" id="user_lastName" />
+                <label htmlFor="user_lastName">Last Name</label>
+              </div>
+              <div className='input-field col s12'>
+                <input type="email" name="user[email]" id="user_email" />
+                <label htmlFor="user_email">Email</label>
+              </div>
+              <div className='input-field col s12'>
+                <input type="password" name="user[password]" id="user_password" />
+                <label htmlFor="user_password">Password</label>
+              </div>
+              <input type="submit" className="btn-large waves-effect waves-light" name="commit" value="Register" />
+            </form>
+            </div>
+          </div>
         <div className="errors">
           <ul>
             {this.state.errorMessagesList}
