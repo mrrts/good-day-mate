@@ -4,20 +4,36 @@ var CurrentSelector = React.createClass({
   },
   optionsList: function () {
     var list = this.props.currentList.map(function(current, i) {
-      console.log(current)
+      // console.log(current)
       return (
-        <option key={i}>
-            {current.label}
+        <option
+          data-includable-id={current.id}
+          data-includable-type={current.includable_type}
+          key={i}>
+            {current.includable_type}: {current.label}
         </option>
         )
     });
-    console.log(list);
+    // console.log(list);
     return list;
+  },
+  handleChange: function (e) {
+    var $selectBox = $(e.target)
+    var includable_id = $selectBox.find('option:selected').attr('data-includable-id');
+    var includable_type = $selectBox.find('option:selected').attr('data-includable-type');
+    var label = $selectBox.find('option:selected').val();
+    this.props.onChange({
+      includable_type: includable_type,
+      includable_id: includable_id,
+      label: label
+    });
+    $selectBox.val('null');
   },
   render: function () {
     return (
-      <select className="browser-default">
+      <select defaultValue="null" onChange={this.handleChange} className="browser-default">
         {this.optionsList()}
+        <option value="null" disabled>Choose Current:</option>
       </select>
     )
   }
