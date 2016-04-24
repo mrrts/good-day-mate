@@ -12,6 +12,7 @@ class CheckInsController < ApplicationController
   def show
     user = current_user
     @review = user.check_ins.last
+    render json: {review: @review}
   end
 
   private

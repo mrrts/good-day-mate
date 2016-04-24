@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/check_ins/new' => 'check_ins#new'
   post '/check_ins' => 'check_ins#create'
+  get '/check_ins/:id' => 'check_ins#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
