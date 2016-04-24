@@ -10,7 +10,7 @@ var HomeScreen = React.createClass({
   },
   render: function(){
     return (
-      <div>
+      <div className='container'>
         <a onClick={this.handleBuildClick} id='home-button' className="btn-large waves-effect waves-light">Build Your Day</a>
         <a onClick={this.handleStartClick} id='home-button' className="btn-large waves-effect waves-light">Start Your Day</a>
         <a onClick={this.handleEndClick} id='home-button' className="btn-large waves-effect waves-light">End Your Day</a>

@@ -26,21 +26,28 @@ var LoginScreen = React.createClass({
   },
   render: function(){
     return (
-      <div onSubmit={this.handleFormSubmit}>
-        <form action="/sessions" acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
-          <label htmlFor="user_email">Email</label>
-          <input type="email" name="user[email]" id="user_email" />
-          <label htmlFor="user_password">Password</label>
-          <input type="password" name="user[password]" id="user_password" />
-          <input type="submit" name="commit" value="Log In" />
-        </form>
-
+      <div className='container'>
+        <div className='row'>
+          <div>
+            <form onSubmit={this.handleFormSubmit} className='col s12' acceptCharset="UTF-8">
+              <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
+              <div className='input-field col s12'>
+                <input type="email" name="user[email]" id="user_email" />
+                <label htmlFor="user_email">Email</label>
+              </div>
+              <div className='input-field col s12'>
+                <input type="password" name="user[password]" id="user_password" />
+                <label htmlFor="user_password">Password</label>
+              </div>
+              <input type="submit" name="commit" className="btn-large waves-effect waves-light" value="Log In" />
+            </form>
+          </div>
+        </div>
         <div className="errors">
           <p>{this.state.errorMessage}</p>
         </div>
-
-        <div>
-          <a onClick={this.handleRegisterClick} >Register</a>
+        <div className='container row'>
+          <p>Don't have an account? <a onClick={this.handleRegisterClick} >Register</a></p>
         </div>
       </div>
     )
