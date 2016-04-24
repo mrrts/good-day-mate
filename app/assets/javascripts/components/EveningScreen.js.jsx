@@ -22,30 +22,40 @@ var EveningScreen = React.createClass({
   },
   render: function(){
     return (
-      <div className='container' onSubmit={this.handleFormSubmit}>
-        <form acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
-          <div id="slider" className="swipe">
+      <div className='container row' onSubmit={this.handleFormSubmit}>
+        <form className='center-align col s12' acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
+          <div id="slider" className="row swipe">
             <div className='swipe-wrap'>
               <div>
-                <div className='card'>
-                  <input type="text" name="check_in[feeling]" id="check_in_feeling" />
-                  <label htmlFor="check_in_feeling">I am feeling</label>
+                <div className='row'>
+                  <div className='input-field col s12'>
+                    <input type="text" name="check_in[feeling]" id="check_in_feeling" />
+                    <label htmlFor="check_in_feeling">I am feeling</label>
+                  </div>
                 </div>
               </div>
               <div>
-                <div className='card'>
-                  <input type="text" name="check_in[thankful1]" id="check_in_thankful1" />
-                  <input type="text" name="check_in[thankful2]" id="check_in_thankful2" />
-                  <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
-                  <label htmlFor="check_in_thankful1">I am thankful for</label>
+                <div className='row'>
+                  <div className='input-field col s12'>
+                    <input type="text" name="check_in[thankful1]" id="check_in_thankful1" />
+                    <input type="text" name="check_in[thankful2]" id="check_in_thankful2" />
+                    <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
+                    <label htmlFor="check_in_thankful1">I am thankful for</label>
+                  </div>
                 </div>
               </div>
               <div>
-                <div className='card'>
-                  <input type="text" name="check_in[horizon]" id="check_in_horizon" />
-                  <label htmlFor="check_in_horizon">I am looking forward to</label>
+                <div className='row'>
+                  <div className='input-field col s12'>
+                    <div>
+                      <input type="text" name="check_in[horizon]" id="check_in_horizon" />
+                      <label htmlFor="check_in_horizon">I am looking forward to</label>
+                    </div>
+                    <div>
+                      <input className="btn-large waves-effect waves-light" type="submit" name="commit" value="Build Tomorrow" />
+                    </div>
+                  </div>
                 </div>
-                  <input className="btn-large waves-effect waves-light" type="submit" name="commit" value="Build Tomorrow" />
               </div>
             </div>
           </div>
