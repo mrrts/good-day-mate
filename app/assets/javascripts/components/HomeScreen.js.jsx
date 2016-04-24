@@ -3,7 +3,7 @@ var HomeScreen = React.createClass({
     this.props.onUpdate('build')
   },
   handleStartClick: function(event){
-    this.props.onUpdate('start')
+    this.props.onUpdate('review')
   },
   handleEndClick: function(event){
     this.props.onUpdate('evening')
