@@ -12,11 +12,22 @@ var BuildScreen = React.createClass({
       });
     }.bind(this))
   },
+  handleSaveClick: function() {
+    var stuff = {stuff: this.state.selectedCurrents}
+    $.ajax({
+      method: 'POST',
+      url: '/includables',
+      data: stuff,
+      dataType: "json"
+    }).done(function(){
+
+    }.bind(this))
+    this.props.onUpdate('goodnight')
+  },
   handleSelectChange: function (newCurrent) {
     this.setState({
       selectedCurrents: this.state.selectedCurrents.concat([newCurrent])
     });
-    console.log(this.state.selectedCurrents);
   },
   render: function () {
     // console.log(this.state.availableCurrents)
@@ -27,6 +38,7 @@ var BuildScreen = React.createClass({
           onChange={this.handleSelectChange}
           currentList={this.state.availableCurrents}
         />
+        <a className="btn-large waves-effect waves-light" onClick={this.handleSaveClick} >Save</a>
       </div>
     )
   }

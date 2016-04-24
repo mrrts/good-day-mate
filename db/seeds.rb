@@ -1,6 +1,6 @@
 
 Journal.create(label: "Journal", creator_id: 0)
-NewsList.create(label: "Top Stories from The Guardian", creator_id: 0)
+
 
 
 User.create(
@@ -41,9 +41,12 @@ Timer.create(creator_id: 0, label: "exercise", duration: 10)
 Inclusion.create(stream_id: 1, order: 3,
   includable_id: 1, includable_type: "Timer")
 
-Placeholder.create(creator_id: 0, icon: "😁", label: "basic smiley")
+Placeholder.create(creator_id: 0, icon: 'free_breakfast', label: "Coffee")
 Inclusion.create(stream_id: 1, order: 1,
   includable_id: 1, includable_type: "Placeholder")
+
+NewsList.create(label: "Top Stories from The Guardian", creator_id: 0)
+Inclusion.create(stream_id: 1, order: 4, includable_id: 1, includable_type: "NewsList")
 
 
 

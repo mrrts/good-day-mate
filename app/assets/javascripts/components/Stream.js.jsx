@@ -5,7 +5,7 @@ var Stream = React.createClass({
     }
   },
   componentDidMount: function() {
-    $.get('/streams/1', function(resp) {
+    $.get('/streams/show', function(resp) {
       console.log(resp);
       this.setState({
         currentList: this.makeCurrentCards(resp)

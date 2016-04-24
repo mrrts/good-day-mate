@@ -3,7 +3,7 @@ var App = React.createClass({
 		return {
 			screen: "splash",
 			availableCurrents: "",
-			timeRemaining: 5
+			timeRemaining: 1
 		}
 	},
 	tick: function() {
@@ -43,8 +43,9 @@ var App = React.createClass({
 			case "evening":
 				return <EveningScreen onUpdate={this.updateScreen} />
 			case "build":
-				return <BuildScreen />
-
+				return <BuildScreen onUpdate={this.updateScreen} />
+			case "goodnight":
+				return <GoodNightScreen />
 			case "lookback":
 				return <LookbackScreen />
 		}
