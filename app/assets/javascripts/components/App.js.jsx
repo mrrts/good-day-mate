@@ -6,6 +6,7 @@ var App = React.createClass({
 			timeRemaining: 1,
 			loggedIn: false,
 			userId: undefined
+
 		}
 	},
 	tick: function() {
@@ -55,7 +56,9 @@ var App = React.createClass({
 			case "evening":
 				return <EveningScreen onUpdate={this.updateScreen} />
 			case "build":
-				return <BuildScreen />
+				return <BuildScreen onUpdate={this.updateScreen} />
+			case "goodnight":
+				return <GoodNightScreen />
 			case "lookback":
 				return <LookbackScreen />
 		}
