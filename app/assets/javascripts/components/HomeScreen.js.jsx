@@ -6,7 +6,7 @@ var HomeScreen = React.createClass({
     this.props.onUpdate('start')
   },
   handleEndClick: function(event){
-    this.props.onUpdate('end')
+    this.props.onUpdate('evening')
   },
   render: function(){
     return (
