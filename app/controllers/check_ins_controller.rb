@@ -12,7 +12,7 @@ class CheckInsController < ApplicationController
   def show
     user = current_user
     @review = user.check_ins.last
-  emd
+  end
 
   private
   def check_in_params
