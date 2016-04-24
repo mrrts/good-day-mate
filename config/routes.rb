@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get '/streams/:id' => 'streams#show'
   get '/includables/index' => 'includables#index'
   get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
+  get '/sessions/info' => 'sessions#info'
 
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
