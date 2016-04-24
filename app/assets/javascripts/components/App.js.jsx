@@ -3,7 +3,10 @@ var App = React.createClass({
 		return {
 			screen: "splash",
 			availableCurrents: "",
-			timeRemaining: 1
+			timeRemaining: 1,
+			loggedIn: false,
+			userId: undefined
+
 		}
 	},
 	tick: function() {
@@ -15,22 +18,32 @@ var App = React.createClass({
   },
 	componentDidMount: function () {
 		this.interval = setInterval(this.tick, 1000);
-		$.get('/', function(response) {
-			this.setState({
-				availableCurrents: response.availableCurrents
-			})
+		$.get('/sessions/info', function(resp) {
+			if (resp.session_id === false) {
+				this.setState({loggedIn: false})
+			} else {
+				this.setState({loggedIn: true, userId: resp.session_id})
+			}
 		}.bind(this));
 	},
-	updateScreen: function(newState){
+	updateScreen: function(newScreen, newStates = {}) {
 		this.setState({
-			screen: newState,
-		})
+			screen: newScreen,
+		});
+		var newStatesObj = {}
+		for (newState in newStates) {
+			newStatesObj[newState]= newStates[newState]
+		}
+		this.setState(newStatesObj)
 	},
 	getScreenContent: function () {
 		switch(this.state.screen) {
 			case "splash":
 				return <SplashScreen />
 			case "home":
+				if (this.state.loggedIn === false) {
+					return <LoginScreen onUpdate={this.updateScreen}/>
+				}
 				return <HomeScreen onUpdate={this.updateScreen} />
 			case "login":
 				return <LoginScreen onUpdate={this.updateScreen}/>
@@ -60,7 +73,7 @@ var App = React.createClass({
 	},
 	render: function () {
 		return (
-				<div>
+				<div key={this.state.uniqueId} >
 					{this.getNavBar()}
 					{this.getScreenContent()}
 				</div>

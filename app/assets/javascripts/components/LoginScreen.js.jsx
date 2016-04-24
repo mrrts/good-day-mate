@@ -21,6 +21,8 @@ var LoginScreen = React.createClass({
     }).done(function(resp){
       if (resp.errors) {
         this.setState({errorMessage: resp.errors[0]})
+      } else if (resp.result === "success") {
+        this.props.onUpdate('home', {loggedIn: true, userId: resp.user_id})
       }
     }.bind(this))
   },
