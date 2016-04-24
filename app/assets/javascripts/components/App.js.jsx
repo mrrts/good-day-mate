@@ -6,7 +6,6 @@ var App = React.createClass({
 		}
 	},
 	componentDidMount: function () {
-
 		$.get('/', function(response) {
 			this.setState({
 				availableCurrents: response.availableCurrents

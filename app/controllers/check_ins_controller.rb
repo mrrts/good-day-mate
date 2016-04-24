@@ -9,6 +9,11 @@ class CheckInsController < ApplicationController
     render :nothing => true
   end
 
+  def show
+    user = current_user
+    @review = user.check_ins.last
+  emd
+
   private
   def check_in_params
     params.require(:check_in).permit(:feeling, :thankful1, :thankful2, :thankful3, :horizon)
