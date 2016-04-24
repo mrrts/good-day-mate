@@ -1,15 +1,13 @@
 
 class IncludablesController < ApplicationController
+  include SessionHelper
 
-def index
-  render json: current_user.available_currents
-end
+  def index
+    ac = User.first.available_currents
+    render json: ac
+  end
 
 
-private
-
-def includable_classes
-  [NewsList, Placeholder, Journal]
-end
+  private
 
 end
