@@ -1,11 +1,12 @@
 body {
-	background-color: #C2E2F2;
+	background-color: #89ACC0;
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
 
 }
 
 #main-nav {
-  background: #2F77D9;
+  background: #476373;
 
 }
 
@@ -44,6 +45,29 @@ body {
 }
 
 .home-button {
-  background-color: #8BA9BF !important;
+  background-color: #736757 !important;
   margin-bottom: 20px;
+  display: inline-block;
 }
+
+#build-button {
+  display: block;
+  text-align: center;
+}
+
+#start-button {
+  display: block;
+  text-align: center;
+}
+
+#end-button {
+  display: block;
+  text-align: center;
+}
+
+.placeholder-icon {
+  padding: 10px 0px 0px 10px;
+  width: 15%;
+  height: 80%;
+}
+
