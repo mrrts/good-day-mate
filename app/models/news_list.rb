@@ -23,6 +23,7 @@ class NewsList < ActiveRecord::Base
   def get_hash
     current_hash = {current_type: "News"}
     current_hash[:headlines] = self.get_news
+    current_hash[:label] = self.label
     current_hash
   end
 

@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   get '/' => 'pages#index'
   get '/test' => 'pages#test'
-  get '/streams/:id' => 'streams#show'
+  get '/streams/show' => 'streams#show'
   get '/includables/index' => 'includables#index'
+  post '/includables' => 'includables#create'
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'

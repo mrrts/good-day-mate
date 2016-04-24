@@ -14,7 +14,7 @@ var Current = React.createClass({
     }
   },
   handleTouchMove: function (e) {
-    console.log('onTouchMove begun');
+
     //e.preventDefault();
   },
   render: function() {
