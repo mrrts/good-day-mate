@@ -26,6 +26,8 @@ var App = React.createClass({
 				return <LoginScreen onUpdate={this.updateScreen}/>
 			case "registration":
 				return <RegistrationScreen onUpdate={this.updateScreen} />
+			case "review":
+				return <ReviewScreen onUpdate={this.updateScreen} />
 			case "start":
 				return <MorningScreen currents={this.props.currents} />
 			case "evening":

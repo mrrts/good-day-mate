@@ -1,0 +1,3 @@
+var ReviewScreen = React.createClass({
+
+})
