@@ -1,6 +1,9 @@
 var LoginScreen = React.createClass({
   getInitialState: function(){
-    return {value: ''}
+    return {errorMessage: ""};
+  },
+  handleRegisterClick: function(){
+    this.props.onUpdate('registration')
   },
   componentDidMount: function(){
     $.get('/login', function(response){
@@ -10,9 +13,16 @@ var LoginScreen = React.createClass({
   },
   handleFormSubmit: function(event){
     event.preventDefault();
-    $.post('/sessions', function(){
-
-    })
+    var here = $(event.target);
+    $.ajax({
+      type: "POST",
+      url: '/sessions',
+      data: here.serialize()
+    }).done(function(resp){
+      if (resp.errors) {
+        this.setState({errorMessage: resp.errors[0]})
+      }
+    }.bind(this))
   },
   render: function(){
     return (
@@ -24,6 +34,14 @@ var LoginScreen = React.createClass({
           <input type="password" name="user[password]" id="user_password" />
           <input type="submit" name="commit" value="Log In" />
         </form>
+
+        <div className="errors">
+          <p>{this.state.errorMessage}</p>
+        </div>
+
+        <div>
+          <a onClick={this.handleRegisterClick} >Register</a>
+        </div>
       </div>
     )
   }

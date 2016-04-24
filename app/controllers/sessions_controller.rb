@@ -5,14 +5,13 @@ class SessionsController < ActionController::Base
   end
 
   def create
-    p "hello"
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
+    @user = User.find_by(email: params[:user][:email])
+    if @user && @user.authenticate(params[:user][:password])
+      log_in(@user)
       render :nothing => true
-      # login user & reload page, set state to home page
     else
       @errors = ["Invalid Credentials"]
-      # figure this out later
+      render json: {errors: @errors}
     end
   end
 

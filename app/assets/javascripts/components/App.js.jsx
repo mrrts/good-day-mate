@@ -29,9 +29,9 @@ var App = React.createClass({
 			case "start":
 				return <MorningScreen currents={this.props.currents} />
 			case "evening":
-				return <EveningScreen />
+				return <EveningScreen onUpdate={this.updateScreen} />
 			case "build":
-				return <BuildScreen availableCurrents={this.state.availableCurrents} />
+				return <BuildScreen onUpdate={this.updateScreen} availableCurrents={this.state.availableCurrents} />
 			case "lookback":
 				return <LookbackScreen />
 		}

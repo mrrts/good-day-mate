@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
 
+  get '/users/new' => 'users#new'
+  post '/users' => 'users#create'
 
   get 'streams/:id' => 'streams#show'
+
+  get '/check_ins/new' => 'check_ins#new'
+  post '/check_ins' => 'check_ins#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
