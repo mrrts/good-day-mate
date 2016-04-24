@@ -1,15 +1,23 @@
 var CurrentSelector = React.createClass({
-  getAvailableCurrents: function () {
-    // return this.props.availableCurrents.map(function(availableCurrent) {
-    //   return (
-    //     <option label={this.props.name}></option>
-    //   )
-    // })
+  getInitialState: function () {
+    return {}
+  },
+  optionsList: function () {
+    var list = this.props.currentList.map(function(current, i) {
+      console.log(current)
+      return (
+        <option key={i}>
+            {current.label}
+        </option>
+        )
+    });
+    console.log(list);
+    return list;
   },
   render: function () {
     return (
-      <select>
-        {this.getAvailableCurrents()}
+      <select className="browser-default">
+        {this.optionsList()}
       </select>
     )
   }

@@ -26,4 +26,6 @@ class NewsList < ActiveRecord::Base
     current_hash
   end
 
+
+
 end

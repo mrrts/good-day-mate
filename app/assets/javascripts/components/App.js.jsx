@@ -31,7 +31,7 @@ var App = React.createClass({
 			case "evening":
 				return <EveningScreen />
 			case "build":
-				return <BuildScreen availableCurrents={this.state.availableCurrents} />
+				return <BuildScreen />
 			case "lookback":
 				return <LookbackScreen />
 		}

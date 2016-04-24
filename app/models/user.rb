@@ -19,4 +19,24 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
 
+  def available_currents
+    currents_array = []
+    includable_classes.each do |klass|
+      currents_array << klass.where(creator_id: 0)
+    end
+    p currents_array
+    currents_array = currents_array.flatten.map! do |c|
+      type = c.class.to_s
+      {id: c.id, includable_type: type, label: c.label}
+    end
+    p currents_array
+    return currents_array
+  end
+
+  private
+
+  def includable_classes
+    [NewsList, Placeholder, Journal]
+  end
+
 end
