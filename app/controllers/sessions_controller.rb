@@ -1,5 +1,7 @@
 class SessionsController < ActionController::Base
 
+  include SessionHelper
+
   def new
      @user = User.new
   end
@@ -8,17 +10,25 @@ class SessionsController < ActionController::Base
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       log_in(@user)
-      render :nothing => true
+      render json: {result: "success", user_id: @user.id}
     else
       @errors = ["Invalid Credentials"]
       render json: {errors: @errors}
     end
   end
 
+
+  def info
+    session_id = logged_in? ? session[:user_id] : false
+    render json: {session_id: session_id}
+  end
+
+
   def destroy
     log_out
-    # reload page
+    redirect_to '/'
   end
+
 
   def log_in(user)
     session[:user_id] = user.id
