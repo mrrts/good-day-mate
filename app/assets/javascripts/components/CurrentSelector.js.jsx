@@ -10,7 +10,7 @@ var CurrentSelector = React.createClass({
           data-includable-id={current.id}
           data-includable-type={current.includable_type}
           key={i}>
-            {current.includable_type}: {current.label}
+            {current.label}
         </option>
         )
     });

@@ -42,6 +42,15 @@ Inclusion.create(stream_id: 1, order: 3,
   includable_id: 1, includable_type: "Timer")
 
 Placeholder.create(creator_id: 0, icon: 'free_breakfast', label: "Coffee")
+Placeholder.create(creator_id: 0, icon: 'fitness_center', label: "Gym")
+Placeholder.create(creator_id: 0, icon: 'child_care', label: "Daycare")
+Placeholder.create(creator_id: 0, icon: 'school', label: "Class")
+Placeholder.create(creator_id: 0, icon: 'phone_in_talk', label: "Call")
+Placeholder.create(creator_id: 0, icon: 'drive_eta', label: "Drive")
+Placeholder.create(creator_id: 0, icon: 'local_post_office', label: "Mail Letter")
+Placeholder.create(creator_id: 0, icon: 'local_laundry_service', label: "Laundry")
+
+
 Inclusion.create(stream_id: 1, order: 1,
   includable_id: 1, includable_type: "Placeholder")
 
