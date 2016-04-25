@@ -14,7 +14,7 @@ var HomeScreen = React.createClass({
         <div className="valign center-align">
 
           <a onClick={this.handleStartClick} className="home-button btn-large waves-effect waves-light">Good Morning</a>
-          <a onClick={this.handleEndClick} className="home-button btn-large waves-effect waves-light">Good Night</a>
+          <a onClick={this.handleEndClick} className="home-button btn-large waves-effect waves-light"><Anchor />Good Night</a>
         </div>
       </div>
     )
