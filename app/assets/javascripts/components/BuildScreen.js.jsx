@@ -42,9 +42,12 @@ var BuildScreen = React.createClass({
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
         <CurrentSelector
           onChange={this.handleSelectChange}
-          currentList={this.state.availableCurrents}
-        />
-        <a className="btn-large waves-effect waves-light" onClick={this.handleSaveClick} >Save</a>
+          currentList={this.state.availableCurrents} />
+        <div id="currents-save-button" className='container valign-wrapper'>
+          <div className="valign center-align">
+            <a className="save-button btn-large waves-effect waves-light" onClick={this.handleSaveClick} >Save</a>
+          </div>
+        </div>
       </div>
     )
   }
