@@ -50,6 +50,8 @@ Placeholder.create(creator_id: 0, icon: 'drive_eta', label: "Drive")
 Placeholder.create(creator_id: 0, icon: 'local_post_office', label: "Mail Letter")
 Placeholder.create(creator_id: 0, icon: 'local_laundry_service', label: "Laundry")
 
+Podcast.create(creator_id: 0, title: )
+
 
 Inclusion.create(stream_id: 1, order: 1,
   includable_id: 1, includable_type: "Placeholder")
