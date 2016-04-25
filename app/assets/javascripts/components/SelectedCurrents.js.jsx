@@ -4,7 +4,9 @@ var SelectedCurrents = React.createClass({
 
       return (
           <li className="card" data-key={i} key={i}>
-            {current.label} <a className="" onClick={this.closeButton}> <i className=" tiny material-icons">close</i></a>
+            <div className="card-content">
+              {current.label} <a className="right btn-floating" onClick={this.closeButton}> <i className=" tiny material-icons">close</i></a>
+            </div>
           </li>
       )
     }.bind(this));
