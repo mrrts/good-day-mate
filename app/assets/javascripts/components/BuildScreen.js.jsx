@@ -39,7 +39,7 @@ var BuildScreen = React.createClass({
   render: function () {
     // console.log(this.state.availableCurrents)
     return (
-      <div className="container flow-text">
+      <div id="build-screen" className="container flow-text">
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
         <div className="divider"></div>
 
