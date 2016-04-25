@@ -38,6 +38,9 @@ var App = React.createClass({
 			newStatesObj[newState]= newStates[newState]
 		}
 		this.setState(newStatesObj)
+		var screens = "splash home login registration review start evening build goodnight lookback";
+		console.log('hello');
+		$('body').removeClass(screens).addClass(newScreen);
 	},
 	getScreenContent: function () {
 		switch(this.state.screen) {
@@ -68,7 +71,7 @@ var App = React.createClass({
 	},
 	getNavBar: function() {
 		if (this.state.screen != "splash") {
-			return (<Navbar loggedIn={this.state.loggedIn} onUpdate={this.updateScreen} />);
+			return (<Navbar screen={this.state.screen} loggedIn={this.state.loggedIn} onUpdate={this.updateScreen} />);
 		}
 		else {
 			return ("");

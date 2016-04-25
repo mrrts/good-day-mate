@@ -38,8 +38,12 @@ var BuildScreen = React.createClass({
   render: function () {
     // console.log(this.state.availableCurrents)
     return (
-      <div className="container">
+      <div className="container flow-text">
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
+        <div className="divider"></div>
+        
+ 
+
         <CurrentSelector
           onChange={this.handleSelectChange}
           currentList={this.state.availableCurrents} />
