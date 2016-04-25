@@ -28,8 +28,8 @@ var EveningScreen = React.createClass({
         url: '/check_ins',
         data: data
       }).done(function(resp){
-
-      })
+        this.props.onUpdate('build');
+      }.bind(this))
     }
   },
   swipeCallback: function (index, elem) {

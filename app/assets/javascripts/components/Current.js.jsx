@@ -11,6 +11,8 @@ var Current = React.createClass({
         return <Timer {...this.props} />
       case 'Tracker':
         return <Tracker {...this.props} />
+      case 'Podcast':
+        return <Podcast {...this.props} />
     }
   },
   handleSwipedRight: function (e) {
