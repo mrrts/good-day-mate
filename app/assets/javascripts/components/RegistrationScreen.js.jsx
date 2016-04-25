@@ -46,11 +46,15 @@ var RegistrationScreen = React.createClass({
                 <input type="password" name="user[password]" id="user_password" />
                 <label htmlFor="user_password">Password</label>
               </div>
-              <input type="submit" className="btn-large waves-effect waves-light" name="commit" value="Register" />
+              <div id="registration-button" className='container valign-wrapper'>
+                <div className="valign center-align">
+                  <input type="submit" className="register btn-large waves-effect waves-light" name="commit" value="Register" />
+                </div>
+              </div>
             </form>
             </div>
           </div>
-        <div className="errors">
+        <div className="flow-text errors">
           <ul>
             {this.state.errorMessagesList}
           </ul>

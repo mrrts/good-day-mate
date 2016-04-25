@@ -41,14 +41,18 @@ var LoginScreen = React.createClass({
                 <input type="password" name="user[password]" id="user_password" />
                 <label htmlFor="user_password">Password</label>
               </div>
-              <input type="submit" name="commit" className="btn-large waves-effect waves-light" value="Log In" />
+              <div id="login-button" className='container valign-wrapper'>
+                <div className="valign center-align">
+                  <input type="submit" name="commit" className="login btn-large waves-effect waves-light" value="Log In" />
+                  </div>
+                </div>
             </form>
           </div>
         </div>
-        <div className="errors">
+        <div className="flow-text errors">
           <p>{this.state.errorMessage}</p>
         </div>
-        <div className='container row'>
+        <div className='flow-text container row'>
           <p>Don't have an account? <a onClick={this.handleRegisterClick}>Register</a></p>
         </div>
       </div>

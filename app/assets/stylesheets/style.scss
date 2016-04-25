@@ -1,19 +1,16 @@
 body {
-	background-color: #89ACC0;
+	background-color: #eee;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
-
 }
 
 #main-nav {
   background: #476373;
-
 }
 
 .screenContent {
   padding-top: 20px;
 }
-
 
 .sun-icon {
   height: 40px;
@@ -40,30 +37,51 @@ body {
   height: 53vh;
 }
 
-#home-buttons {
-  text-align: center;
+.valign {
+  margin: 0 auto;
 }
 
-.home-button {
-  background-color: #736757 !important;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-#build-button {
+#home-buttons .home-button {
+  background-color: #476373;
+  margin: 20px auto;
   display: block;
-  text-align: center;
 }
 
-#start-button {
+#currents-save-button .save-button {
+  background-color: #476373;
+  margin: 20px auto;
   display: block;
-  text-align: center;
+  margin-top: -140px;
 }
 
-#end-button {
+#start-day-button .start-day {
+  background-color: #476373;
+  margin: 20px auto;
   display: block;
-  text-align: center;
+  margin-top: -140px;
 }
+
+#login-button .login {
+  background-color: #476373;
+  margin: 20px auto;
+  display: block;
+  margin-top: -140px;
+}
+
+#registration-button .register {
+  background-color: #476373;
+  margin: 20px auto;
+  display: block;
+  margin-top: -140px;
+}
+
+#build-button .build {
+  background-color: #476373;
+  margin: 20px auto;
+  display: block;
+  margin-top: -140px;
+}
+
 
 .placeholder-icon {
   padding: 10px 0px 0px 10px;
@@ -75,3 +93,6 @@ body {
   color: white;
 }
 
+.errors {
+  text-align: center;
+}
