@@ -42,7 +42,7 @@ var BuildScreen = React.createClass({
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
         <div className="divider"></div>
         
-        <CurrentMenu />
+ 
 
         <CurrentSelector
           onChange={this.handleSelectChange}
