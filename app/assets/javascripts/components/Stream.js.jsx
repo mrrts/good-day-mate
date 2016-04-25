@@ -21,7 +21,7 @@ var Stream = React.createClass({
     console.log("Hi");
     console.log(this.state.currentList);
     return (
-      <div className='container'>
+      <div id="stream" className='container'>
         {this.state.currentList}
       </div>
     )

@@ -13,17 +13,22 @@ var Current = React.createClass({
         return <Tracker {...this.props} />
     }
   },
-  handleTouchMove: function (e) {
-
-    //e.preventDefault();
+  handleSwipeRight: function (e) {
+    var $here = $(e.initialTouch.target).closest('div.card');
+    // $here.toggle('drop', {direction: 'right'});
+    $here.animate({
+      opacity: 0.25,
+      right: '-=50',
+      height: 'toggle'
+    }, 400);
   },
   render: function() {
     return (
-      <div onTouchMove={this.handleTouchMove}>
+      <Swiper onSwipeRight={this.handleSwipeRight}>
         <div className='card flow-text'>
           {this.getCurrentComponent()}
         </div>
-      </div>
+      </Swiper>
     )
   }
 })

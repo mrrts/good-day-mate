@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery-ui.min.js
 //= require materialize-sprockets
 //= require turbolinks
 //= require react
