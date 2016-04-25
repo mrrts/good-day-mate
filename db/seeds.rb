@@ -37,7 +37,9 @@ TrackerValue.create(tracker_id: 1, value: 36.2)
 Inclusion.create(stream_id: 1, order: 2,
   includable_id: 1, includable_type: "Tracker")
 
-Timer.create(creator_id: 0, label: "exercise", duration: 10)
+Timer.create(creator_id: 0, label: "10 Second Timer", duration: 10)
+Timer.create(creator_id: 0, label: "5 Minute Timer", duration: 300)
+Timer.create(creator_id: 0, label: "10 Minute Timer", duration: 600)
 Inclusion.create(stream_id: 1, order: 3,
   includable_id: 1, includable_type: "Timer")
 
