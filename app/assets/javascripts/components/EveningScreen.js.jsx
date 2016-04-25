@@ -52,7 +52,11 @@ var EveningScreen = React.createClass({
                       <label htmlFor="check_in_horizon">I am looking forward to</label>
                     </div>
                     <div>
-                      <input className="btn-large waves-effect waves-light" type="submit" name="commit" value="Build Tomorrow" />
+                      <div id="build-button" className='container valign-wrapper'>
+                        <div className="valign center-align">
+                          <input className="build btn-large waves-effect waves-light" type="submit" name="commit" value="Build Tomorrow" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

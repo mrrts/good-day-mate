@@ -1,7 +1,6 @@
 class Stream < ActiveRecord::Base
   belongs_to :user
   has_many :inclusions
-  # we need a has_many for each includable type, then add it to the currents method
 
   def get_currents_json
     return_array = []
