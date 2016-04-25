@@ -3,7 +3,7 @@ var App = React.createClass({
 		return {
 			screen: "splash",
 			availableCurrents: "",
-			timeRemaining: 4,
+			timeRemaining: 3,
 			loggedIn: false,
 			userId: undefined
 
