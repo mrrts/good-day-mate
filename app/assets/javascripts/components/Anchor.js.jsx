@@ -1,7 +1,7 @@
 var Anchor = React.createClass({
   render: function(){
     return (
-      <svg className='anchor-icon' version="1.1" id="Capa_1" x="0px" y="0px"
+      <svg className='anchor-icon' version="1.1" id="Capa_1"
          width="35px" height="35px" viewBox="0 0 45.673 45.673">
       <g>
         <path d="M43.95,26.145l-5.993-5.996c-0.132-0.131-0.312-0.206-0.496-0.206c-0.188,0-0.365,0.074-0.496,0.206l-5.995,5.994
