@@ -3,7 +3,9 @@ var EveningScreen = React.createClass({
     return {}
   },
   componentDidMount: function(){
-    window.mySwipe = Swipe(document.getElementById('slider'));
+    window.mySwipe = Swipe(document.getElementById('slider'), {
+      continuous: false
+    });
     $.get('/check_ins/new', function(response){
      var auth_token = $(response).find('input[name="authenticity_token"]').val()
       this.setState({authenticity_token: auth_token})
@@ -22,34 +24,42 @@ var EveningScreen = React.createClass({
   },
   render: function(){
     return (
-      <div className='container row' onSubmit={this.handleFormSubmit}>
+      <div className='container flow-text row' onSubmit={this.handleFormSubmit}>
         <form className='center-align col s12' acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
           <div id="slider" className="row swipe">
             <div className='swipe-wrap'>
               <div>
                 <div className='row'>
-                  <div className='input-field col s12'>
-                    <input type="text" name="check_in[feeling]" id="check_in_feeling" />
-                    <label htmlFor="check_in_feeling">I am feeling</label>
+                  <div className='input-field col s10 offset-s1 card'>
+                    <div className="card-content">
+                      <h5>I am feeling:</h5>
+                      <input type="text" name="check_in[feeling]" id="check_in_feeling" />
+                    </div>
                   </div>
                 </div>
               </div>
               <div>
                 <div className='row'>
-                  <div className='input-field col s12'>
-                    <input type="text" name="check_in[thankful1]" id="check_in_thankful1" />
-                    <input type="text" name="check_in[thankful2]" id="check_in_thankful2" />
-                    <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
-                    <label htmlFor="check_in_thankful1">I am thankful for</label>
+                  <div className='input-field col s10 offset-s1 card'>
+                    <div className="card-content">
+                      <h5>3 Things I&#39;m Thankful For:</h5>
+                      <input type="text" name="check_in[thankful1]" id="check_in_thankful1" />
+                      <input type="text" name="check_in[thankful2]" id="check_in_thankful2" />
+                      <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
+                    </div>
                   </div>
                 </div>
               </div>
               <div>
                 <div className='row'>
-                  <div className='input-field col s12'>
-                    <div>
-                      <input type="text" name="check_in[horizon]" id="check_in_horizon" />
-                      <label htmlFor="check_in_horizon">I am looking forward to</label>
+                  <div className='input-field col s10 offset-s1'>
+                    <div className="card">
+                      <div className="card-content">
+                        <div>
+                          <h5>Tomorrow, I&#39;m Looking Forward To:</h5>
+                          <input type="text" name="check_in[horizon]" id="check_in_horizon" />
+                        </div>
+                      </div>
                     </div>
                     <div>
                       <div id="build-button" className='container valign-wrapper'>
