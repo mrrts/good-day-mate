@@ -1,3 +1,4 @@
+
 var Stream = React.createClass({
   getInitialState: function(){
     return {
@@ -15,7 +16,7 @@ var Stream = React.createClass({
   makeCurrentCards: function(objCollection) {
     return objCollection.map(function(current, i) {
       return <Current {...current} key={i} />
-    });
+    }.bind(this));
   },
   render: function(){
     console.log("Hi");

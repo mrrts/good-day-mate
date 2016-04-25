@@ -11,6 +11,9 @@ var App = React.createClass({
 	},
 	tick: function() {
     this.setState({timeRemaining: this.state.timeRemaining - 1});
+    if (this.state.timeRemaining <= 1) {
+    	$('.splash-screen').fadeOut(1000);
+    }
     if (this.state.timeRemaining <= 0) {
     	clearInterval(this.interval)
     	this.setState({screen: "home"})

@@ -20,7 +20,7 @@ var Current = React.createClass({
   render: function() {
     return (
       <Swipeable onSwipedRight={this.handleSwipedRight}>
-        <div className='card flow-text'>
+        <div className='current card flow-text'>
           {this.getCurrentComponent()}
         </div>
       </Swipeable>

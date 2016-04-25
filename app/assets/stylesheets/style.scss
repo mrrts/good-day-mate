@@ -8,6 +8,10 @@ body {
   background: #476373;
 }
 
+form {
+  font-size: 2em;
+}
+
 .screenContent {
   padding-top: 20px;
 }
@@ -95,6 +99,7 @@ body {
   margin: 20px auto;
   display: block;
   margin-top: -140px;
+  font-size: 1.2rem;
 }
 
 
@@ -118,6 +123,22 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     box-shadow: 0 1px 0 0 #476373 !important;
 }
 
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    font-size: 1.5rem;
+}
+
 input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
     color: #476373 !important;
 }
+
+
+.placeholder i {
+  vertical-align: -0.3em;
+  color: #7E8BBF;
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+
+
