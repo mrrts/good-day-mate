@@ -42,10 +42,19 @@ var EveningScreen = React.createClass({
                 <div className='row'>
                   <div className='input-field col s10 offset-s1 card'>
                     <div className="card-content">
-                      <h5>3 Things I&#39;m Thankful For:</h5>
-                      <input type="text" name="check_in[thankful1]" id="check_in_thankful1" />
-                      <input type="text" name="check_in[thankful2]" id="check_in_thankful2" />
-                      <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
+                      <h5>Things I&#39;m thankful for:</h5>
+                      <div className="input-field">
+                        <input type="text" name="check_in[thankful1]" id="check_in_thankful1" />
+                        <label htmlFor="check_in_thankful1">1.</label>
+                      </div>
+                      <div className="input-field">
+                        <input type="text" name="check_in[thankful2]" id="check_in_thankful2" />
+                        <label htmlFor="check_in_thankful2">2.</label>
+                      </div>
+                      <div className="input-field">
+                        <input type="text" name="check_in[thankful3]" id="check_in_thankful3" />
+                        <label htmlFor="check_in_thankful3">3.</label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -56,7 +65,7 @@ var EveningScreen = React.createClass({
                     <div className="card">
                       <div className="card-content">
                         <div>
-                          <h5>Tomorrow, I&#39;m Looking Forward To:</h5>
+                          <h5>Tomorrow, I&#39;m looking forward to:</h5>
                           <input type="text" name="check_in[horizon]" id="check_in_horizon" />
                         </div>
                       </div>
