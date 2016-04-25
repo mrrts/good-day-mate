@@ -15,12 +15,7 @@ var Current = React.createClass({
   },
   handleSwipeRight: function (e) {
     var $here = $(e.initialTouch.target).closest('div.card');
-    // $here.toggle('drop', {direction: 'right'});
-    $here.animate({
-      opacity: 0.25,
-      right: '-=50',
-      height: 'toggle'
-    }, 400);
+    $here.toggle('drop', {direction: 'right'});
   },
   render: function() {
     return (
