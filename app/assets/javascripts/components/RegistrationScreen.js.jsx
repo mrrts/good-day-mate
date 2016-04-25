@@ -17,13 +17,19 @@ var RegistrationScreen = React.createClass({
       url: '/users',
       data: here.serialize()
     }).done(function(resp){
-      var errorsList = resp.errors.map(function(error, i) {
-        return <li key={i} className='errors'>{error}</li>
-      })
-      this.setState({errorMessagesList: errorsList})
+      if (resp.errors) {
+        var errorsList = resp.errors.map(function(error, i) {
+          return <li key={i} className='errors'>{error}</li>
+          })
+        this.setState({errorMessagesList: errorsList});
+      } else {
+        this.props.onUpdate('home', {loggedIn: true, userId: resp.user_id})
+      }
     }.bind(this))
+
   },
   render: function(){
+    console.log("Rendering");
     return (
       <div className='container' >
         <div className='row'>
