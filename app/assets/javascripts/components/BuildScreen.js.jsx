@@ -29,11 +29,17 @@ var BuildScreen = React.createClass({
       selectedCurrents: this.state.selectedCurrents.concat([newCurrent])
     });
   },
+  handleDelete: function(i) {
+    this.state.selectedCurrents.splice(i, 1)
+    this.setState({
+      selectedCurrents: this.state.selectedCurrents
+    });
+  },
   render: function () {
     // console.log(this.state.availableCurrents)
     return (
       <div className="container">
-        <SelectedCurrents currentList={this.state.selectedCurrents} />
+        <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
         <CurrentSelector
           onChange={this.handleSelectChange}
           currentList={this.state.availableCurrents}
