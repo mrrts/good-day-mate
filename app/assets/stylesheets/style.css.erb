@@ -4,8 +4,21 @@ body {
   font-weight: bold;
 }
 
+body.evening, body.goodnight, body.build {
+  background: #06496F;
+}
+
+.evening h4 {
+  color: #fff;
+  text-align: center;
+}
+
 #main-nav {
   background: #476373;
+}
+
+.evening #main-nav, .goodnight #main-nav, .build #main-nav {
+  background: #0D3851;
 }
 
 form {
@@ -31,11 +44,13 @@ form {
   font-weight: bolder;
 }
 
-.sun-icon {
+nav .sun-icon, nav .moon-icon {
   height: 40px;
   width: 40px;
   margin-top: 7px;
 }
+
+
 
 .swipe {
   overflow: hidden;
@@ -95,7 +110,7 @@ form {
 }
 
 #build-button .build {
-  background-color: #476373;
+  background-color: #367498;
   margin: 20px auto;
   display: block;
   margin-top: -140px;
@@ -135,13 +150,21 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 .placeholder i {
   vertical-align: -0.3em;
-  color: #7E8BBF;
+  color: #7F8A9C;
   font-size: 35px;
   margin-right: 10px;
+}
+
+
+#goodnight-card {
+  background: rgba(16, 50, 70, 0.71);
 }
 
 #stream button {
   background-color: #476373;
 }
 
-
+#goodnight-card svg.moon-icon {
+  height: 80px;
+  width: 80px;
+}

@@ -33,7 +33,7 @@ var CurrentSelector = React.createClass({
     return (
       <select defaultValue="null" onChange={this.handleChange} className="browser-default">
         {this.optionsList()}
-        <option value="null" disabled>Choose Current:</option>
+        <option value="null" disabled>Add a Current:</option>
       </select>
     )
   }

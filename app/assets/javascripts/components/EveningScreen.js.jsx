@@ -25,6 +25,7 @@ var EveningScreen = React.createClass({
   render: function(){
     return (
       <div className='container flow-text row' onSubmit={this.handleFormSubmit}>
+        <h4>Good Evening</h4>
         <form className='center-align col s12' acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
           <div id="slider" className="row swipe">
             <div className='swipe-wrap'>
@@ -34,6 +35,7 @@ var EveningScreen = React.createClass({
                     <div className="card-content">
                       <h5>I am feeling:</h5>
                       <input type="text" name="check_in[feeling]" id="check_in_feeling" />
+                    
                     </div>
                   </div>
                 </div>
