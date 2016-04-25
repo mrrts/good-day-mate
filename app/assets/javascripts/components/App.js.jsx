@@ -73,9 +73,11 @@ var App = React.createClass({
 	},
 	render: function () {
 		return (
-				<div key={this.state.uniqueId} >
+				<div>
 					{this.getNavBar()}
-					{this.getScreenContent()}
+					<div className="screenContent">
+						{this.getScreenContent()}
+					</div>
 				</div>
 		)
 	}

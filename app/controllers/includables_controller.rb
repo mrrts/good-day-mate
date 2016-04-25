@@ -8,7 +8,6 @@ class IncludablesController < ApplicationController
   end
 
   def create
-
     user = current_user
     @stream = user.streams.create(label: "Test")
 
@@ -18,8 +17,6 @@ class IncludablesController < ApplicationController
 
       @stream.inclusions << Inclusion.create(includable_id: id, includable_type: type, order: i)
     end
-
-    # @stream.addCurrents()
     render :nothing => true
   end
 
