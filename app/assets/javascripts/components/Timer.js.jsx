@@ -11,32 +11,53 @@ var Timer = React.createClass({
       } else {
         clearInterval(this.interval);
       }
-
   },
   componentDidMount: function(){
-    this.interval = setInterval(this.tick, 1000);
+
   },
   componentWillUnmount: function() {
     clearInterval(this.interval);
   },
-  render: function () {
-
+  timeRemaining: function() {
+    var minutes = Math.floor(this.state.timeLeft / 60)
+    var seconds = this.state.timeLeft % 60
+    if (seconds < 10) {
+      seconds = "0" + seconds
+    }
+    return (<span>{minutes}:{seconds}</span>)
+  },
+  startButton: function() {
+    if (this.state.start) {
+      return (<span className="right"> {this.timeRemaining()} </span>)
+    } else {
+      return (
+          <button className="btn-floating waves-effect waves-light right" type="submit" onClick={this.startCount} name="action">
+          <i className="material-icons right">play_arrow</i>
+          </button>
+            )
+    }
+  },
+  startCount: function() {
+    this.interval = setInterval(this.tick, 1000);
+    this.setState({start: true});
+  },
+  showState: function() {
     if (this.state.timeLeft <= 0) {
+      return (<p>
+          FINISHED!
+        </p>)
+    } else {
+      return (<p>
+          {this.props.label}
+          {this.startButton()}
+        </p>)
+    }
+  },
+  render: function () {
       return (
       <div className="card-content">
-        <p>
-          YOU{"'"}RE DONE KID
-        </p>
-      </div>
-      )
-    } else {
-    return (
-      <div className="card-content">
-        <p>
-          {this.props.label} = {this.state.timeLeft}
-        </p>
+        {this.showState()}
       </div>
       )
     }
-  }
 });

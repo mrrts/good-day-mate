@@ -140,5 +140,8 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   margin-right: 10px;
 }
 
+#stream button {
+  background-color: #476373;
+}
 
 
