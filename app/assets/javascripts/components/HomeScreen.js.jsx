@@ -12,9 +12,9 @@ var HomeScreen = React.createClass({
     return (
       <div id="home-buttons" className='container valign-wrapper'>
         <div className="valign center-align">
-          <a onClick={this.handleBuildClick} className="home-button btn-large waves-effect waves-light">Build Your Day</a>
-          <a onClick={this.handleStartClick} className="home-button btn-large waves-effect waves-light">Start Your Day</a>
-          <a onClick={this.handleEndClick} className="home-button btn-large waves-effect waves-light">End Your Day</a>
+
+          <a onClick={this.handleStartClick} className="home-button btn-large waves-effect waves-light">Good Morning</a>
+          <a onClick={this.handleEndClick} className="home-button btn-large waves-effect waves-light">Good Night</a>
         </div>
       </div>
     )
