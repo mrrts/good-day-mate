@@ -8,13 +8,17 @@ body.evening, body.goodnight, body.build {
   background: #06496F;
 }
 
+body.home {
+  background-image: url("<%=asset_path('water.jpg')%>")
+}
+
 .evening h4 {
   color: #fff;
   text-align: center;
 }
 
 #main-nav {
-  background: #476373;
+  background: #1C243B;
 }
 
 .evening #main-nav, .goodnight #main-nav, .build #main-nav {
@@ -75,10 +79,17 @@ nav .sun-icon, nav .moon-icon {
   margin: 0 auto;
 }
 
+#home-buttons {
+  width: 100%;
+}
+
 #home-buttons .home-button {
-  background-color: #476373;
+  color: #1C243B;
+  background-color: white;
+  opacity: 0.65;
   margin: 20px auto;
   display: block;
+  width: 100%;
 }
 
 #currents-save-button .save-button {
@@ -167,4 +178,17 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 #goodnight-card svg.moon-icon {
   height: 80px;
   width: 80px;
+}
+
+#logout-icon {
+  font-size: 2em;
+}
+
+#home-icon {
+  font-size: 2em;
+}
+
+.anchor-icon path {
+  fill: white;
+  vertical-align: -0.3em;
 }
