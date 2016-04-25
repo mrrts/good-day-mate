@@ -2,9 +2,18 @@ var Podcast = React.createClass({
   render: function(){
     return (
       <div className="podcast card-content">
-        <a href={this.props.url}>{this.props.title}</a>
-        <p>Genre: {this.props.genre}</p>
-        <p>Duration: {this.props.duration}</p>
+        <ul>
+          <li>
+            <div>
+              <img className="podcast-icon" src={this.props.icon} />
+            </div>
+            <div className="podcast-info">
+              <p>{this.props.genre}</p>
+              <p>{this.props.duration}</p>
+            </div>
+          </li>
+          <li className="podcast-link"><a href={this.props.url}>{this.props.label}</a></li>
+        </ul>
       </div>
     )
   }

@@ -5,10 +5,11 @@ class Podcast < ActiveRecord::Base
     current_hash = {
       current_type: 'Podcast',
       creator_id: self.creator_id,
-      title: self.title,
+      label: self.label,
       genre: self.genre,
       url: self.url,
-      duration: self.duration
+      duration: self.duration,
+      icon: self.icon
     }
   end
 
