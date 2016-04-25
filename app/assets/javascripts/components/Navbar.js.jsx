@@ -13,6 +13,13 @@ var Navbar = React.createClass({
 	    closeOnClick: true
 	  });
   },
+  getLogoutLink: function () {
+    if (this.props.loggedIn === true) {
+      return <li><a onClick={this.handleLogoutClick} >Logout</a></li>
+    } else {
+      return ""
+    }
+  },
 	render: function () {
 		return (
 			<div className="navbar-fixed">
@@ -22,11 +29,11 @@ var Navbar = React.createClass({
 			      <a href="#" data-activates="mobile-demo" className="right button-collapse"><i className="material-icons">menu</i></a>
 			      <ul className="right hide-on-med-and-down">
 			        <li><a onClick={this.handleHomeClick} >Home</a></li>
-			        <li><a onClick={this.handleLogoutClick} >Logout</a></li>
+			        {this.getLogoutLink()}
 			      </ul>
 			      <ul className="side-nav" id="mobile-demo">
 			        <li><a onClick={this.handleHomeClick} >Home</a></li>
-			        <li><a onClick={this.handleLogoutClick} >Logout</a></li>
+			        {this.getLogoutLink()}
 			      </ul>
 			    </div>
 			  </nav>

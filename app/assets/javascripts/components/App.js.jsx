@@ -65,7 +65,7 @@ var App = React.createClass({
 	},
 	getNavBar: function() {
 		if (this.state.screen != "splash") {
-			return (<Navbar onUpdate={this.updateScreen} />);
+			return (<Navbar loggedIn={this.state.loggedIn} onUpdate={this.updateScreen} />);
 		}
 		else {
 			return ("");
