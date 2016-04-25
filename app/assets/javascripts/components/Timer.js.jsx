@@ -28,11 +28,11 @@ var Timer = React.createClass({
   },
   startButton: function() {
     if (this.state.start) {
-      return (<span> {this.timeRemaining()} </span>)
+      return (<span className="right"> {this.timeRemaining()} </span>)
     } else {
       return (
-          <button className="btn waves-effect waves-light right" type="submit" onClick={this.startCount} name="action">Start
-          <i className="material-icons right">send</i>
+          <button className="btn-floating waves-effect waves-light right" type="submit" onClick={this.startCount} name="action">
+          <i className="material-icons right">play_arrow</i>
           </button>
             )
     }

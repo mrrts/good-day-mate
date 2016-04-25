@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "hello"
     @user = User.new(user_params)
     if @user.save
       p @user
