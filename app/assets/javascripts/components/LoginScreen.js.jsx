@@ -31,7 +31,7 @@ var LoginScreen = React.createClass({
       <div className='container'>
         <div className='row'>
           <div>
-            <form onSubmit={this.handleFormSubmit} className='col s12' acceptCharset="UTF-8">
+            <form onSubmit={this.handleFormSubmit} className='col s12 flow-text' acceptCharset="UTF-8">
               <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
               <div className='input-field col s12'>
                 <input type="email" name="user[email]" id="user_email" />
