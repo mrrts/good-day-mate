@@ -1,7 +1,7 @@
 class CreatePodcasts < ActiveRecord::Migration
   def change
     create_table :podcasts do |t|
-      t.string   :title
+      t.string   :label
       t.string   :genre
       t.string   :url
       t.string   :duration

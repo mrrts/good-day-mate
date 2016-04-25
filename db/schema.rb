@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20160425141258) do
   end
 
   create_table "podcasts", force: :cascade do |t|
-    t.string   "title"
+    t.string   "label"
     t.string   "genre"
     t.string   "url"
     t.string   "duration"
