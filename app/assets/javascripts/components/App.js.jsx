@@ -3,7 +3,7 @@ var App = React.createClass({
 		return {
 			screen: "splash",
 			availableCurrents: "",
-			timeRemaining: 4,
+			timeRemaining: 1,
 			loggedIn: false,
 			userId: undefined
 
@@ -16,7 +16,7 @@ var App = React.createClass({
     }
     if (this.state.timeRemaining <= 0) {
     	clearInterval(this.interval)
-    	this.setState({screen: "home"})
+    	this.setState({screen: "build"})
     }
   },
 	componentDidMount: function () {
@@ -38,6 +38,9 @@ var App = React.createClass({
 			newStatesObj[newState]= newStates[newState]
 		}
 		this.setState(newStatesObj)
+		var screens = "splash home login registration review start evening build goodnight lookback";
+		console.log('hello');
+		$('body').removeClass(screens).addClass(newScreen);
 	},
 	getScreenContent: function () {
 		switch(this.state.screen) {
@@ -68,7 +71,7 @@ var App = React.createClass({
 	},
 	getNavBar: function() {
 		if (this.state.screen != "splash") {
-			return (<Navbar loggedIn={this.state.loggedIn} onUpdate={this.updateScreen} />);
+			return (<Navbar screen={this.state.screen} loggedIn={this.state.loggedIn} onUpdate={this.updateScreen} />);
 		}
 		else {
 			return ("");
