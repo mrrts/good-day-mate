@@ -52,6 +52,15 @@ Placeholder.create(creator_id: 0, icon: 'drive_eta', label: "Drive")
 Placeholder.create(creator_id: 0, icon: 'local_post_office', label: "Mail Letter")
 Placeholder.create(creator_id: 0, icon: 'local_laundry_service', label: "Laundry")
 
+Podcast.create(creator_id: 0, label: "Pop Culture Happy Hour", genre: "TV & Film", url: "http://www.npr.org/podcasts/510282/pop-culture-happy-hour", duration: "approx. 1 hour", icon: "http://media.npr.org/assets/img/2015/04/02/popculturehour_sq-3a232a02eaf552912ea7ccb57db2dc9a30ce5f69-s300-c85.jpg")
+Podcast.create(creator_id: 0, label: "Radiolab", genre: "Society & Culture", url: "http://www.npr.org/podcasts/452538884/radiolab", duration: "30 minutes to 1 hour", icon: "https://upload.wikimedia.org/wikipedia/en/b/b8/WNYC_Radiolab_logo.svg")
+Podcast.create(creator_id: 0, label: "TED Radio Hour", genre: "Technology", url: "http://www.npr.org/podcasts/510298/ted-radio-hour", duration: "approx. 1 hour", icon: "http://media.npr.org/assets/img/2015/03/18/ted_sq-3426270a541795b78233a698dd7965d407545cf3-s300-c85.jpg")
+Podcast.create(creator_id: 0, label: "Stuff You Should Know", genre: "Many", url: "http://www.stuffyoushouldknow.com/podcasts", duration: "approx. 1 hour", icon: "http://www.stuffyoushouldknow.com/static/skins/stuffyoushouldknow/img/og_image.jpg")
+Podcast.create(creator_id: 0, label: "Planet Money", genre: "Business", url:"http://www.npr.org/podcasts/510289/planet-money", duration: "20-30 minutes", icon: "http://d217i264rvtnq0.cloudfront.net/images/fanfare/icon_510289.png")
+Podcast.create(creator_id: 0, label: "Star Talk Radio Show", genre: "Science", url: "http://www.startalkradio.net/shows-archive/", duration: "approx. 1 hour", icon: "http://www.dailyemerald.com/wp-content/uploads/2015/01/startalk.jpg")
+Podcast.create(creator_id: 0, label: "Sawbones", genre: "Medicine/History", url: "http://www.maximumfun.org/shows/sawbones", duration: "approx. 1 hour", icon: "http://static.libsyn.com/p/assets/9/7/e/b/97ebad626b4d937f/Sawbones-logo-final.png")
+Podcast.create(creator_id: 0, label: "Judge John Hodgman", genre: "Comedy", url: "http://www.maximumfun.org/shows/judge-john-hodgman", duration: "approx. 1 hour", icon: "http://33.media.tumblr.com/30d89f758bd74b84263edc64f2decb6b/tumblr_inline_n4rfr1ueFn1r09pw6.jpg")
+
 
 Inclusion.create(stream_id: 1, order: 1,
   includable_id: 1, includable_type: "Placeholder")
