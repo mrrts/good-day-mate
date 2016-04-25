@@ -3,7 +3,7 @@ var News = React.createClass({
   headlines: function() {
     var stories = this.props.headlines.map(function(story, i) {
       return (
-        <li key={i}> <a href={story.url}>{story.headline_text}</a> </li>
+        <li className="collection-item" key={i}> <a href={story.url}>{story.headline_text}</a> </li>
         )
     });
     console.log(stories);
@@ -13,7 +13,7 @@ var News = React.createClass({
     return (
       <div className="card-content">
         <p>{this.props.label}</p>
-        <ul className="browser-default">
+        <ul className="browser-default collection">
           {this.headlines()}
         </ul>
       </div>

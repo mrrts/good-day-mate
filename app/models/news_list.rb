@@ -11,11 +11,16 @@ class NewsList < ActiveRecord::Base
     response = http.request(request)
     json = JSON.parse(response.body)
     headlines = []
-    json["response"]["results"].each do |thing|
-      if thing["type"] == "article"
-        article_hash = {headline_text: thing["webTitle"], url: thing["webUrl"]}
-        headlines << article_hash
+    test = false
+    if json["response"]["results"]
+      json["response"]["results"].each do |thing|
+        if thing["type"] == "article"
+          article_hash = {headline_text: thing["webTitle"], url: thing["webUrl"]}
+          headlines << article_hash
+        end
       end
+    else
+      headlines << {headline_text: "Sorry, we could not find any stories", url: "#"}
     end
     headlines
   end
