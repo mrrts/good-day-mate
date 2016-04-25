@@ -4,14 +4,9 @@ var CurrentSelector = React.createClass({
   },
   optionsList: function () {
     var list = this.props.currentList.map(function(current, i) {
-      // console.log(current)
+      console.log(current)
       return (
-        <option
-          data-includable-id={current.id}
-          data-includable-type={current.includable_type}
-          key={i}>
-            {current.label}
-        </option>
+          <p></p>
         )
     });
     // console.log(list);

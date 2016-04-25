@@ -39,7 +39,6 @@ var App = React.createClass({
 		}
 		this.setState(newStatesObj)
 		var screens = "splash home login registration review start evening build goodnight lookback";
-		console.log('hello');
 		$('body').removeClass(screens).addClass(newScreen);
 	},
 	getScreenContent: function () {

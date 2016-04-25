@@ -6,7 +6,6 @@ var News = React.createClass({
         <li className="collection-item" key={i}> <a href={story.url}>{story.headline_text}</a> </li>
         )
     });
-    console.log(stories);
     return stories.splice(0,3);
   },
   render: function(){

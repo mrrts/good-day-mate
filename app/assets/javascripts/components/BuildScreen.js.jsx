@@ -14,6 +14,7 @@ var BuildScreen = React.createClass({
   },
   handleSaveClick: function() {
     var stuff = {stuff: this.state.selectedCurrents}
+    console.log(stuff)
     $.ajax({
       method: 'POST',
       url: '/includables',
@@ -41,12 +42,13 @@ var BuildScreen = React.createClass({
       <div className="container flow-text">
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
         <div className="divider"></div>
-        
- 
+
+
 
         <CurrentSelector
           onChange={this.handleSelectChange}
           currentList={this.state.availableCurrents} />
+        <CustomCurrentBuilder onChange={this.handleSelectChange} />
         <div id="currents-save-button" className='container valign-wrapper'>
           <div className="valign center-align">
             <a className="save-button btn-large waves-effect waves-light" onClick={this.handleSaveClick} >Save</a>
