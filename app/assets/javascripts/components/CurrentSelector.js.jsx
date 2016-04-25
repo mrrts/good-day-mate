@@ -3,12 +3,17 @@ var CurrentSelector = React.createClass({
     return {}
   },
   optionsList: function () {
-    var list = this.props.currentList.map(function(current, i) {
-      console.log(current)
-      return (
-          <p></p>
+    var list = [];
+    var i = 0;
+    for(prop in this.props.currentList) {
+      list.push(
+        <div className="col s4 center" key={i}>
+          <a className="btn-floating btn-large waves-effect waves-light yellow darken-2"><i className="material-icons">add</i></a>
+
+        </div>
         )
-    });
+      i++;
+    }
     // console.log(list);
     return list;
   },
@@ -26,10 +31,9 @@ var CurrentSelector = React.createClass({
   },
   render: function () {
     return (
-      <select defaultValue="null" onChange={this.handleChange} className="browser-default">
-        {this.optionsList()}
-        <option value="null" disabled>Add a Current:</option>
-      </select>
+        <div className="row">
+          {this.optionsList()}
+        </div>
     )
   }
 });

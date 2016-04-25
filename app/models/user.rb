@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     currents_array = []
     includable_classes.each do |klass|
       currents_array << klass.where(creator_id: 0)
-      currents_array << klass.where(creator_id: current_user.id)
+      currents_array << klass.where(creator_id: self.id)
     end
     currents_array = currents_array.flatten.map! do |c|
       type = c.class.to_s

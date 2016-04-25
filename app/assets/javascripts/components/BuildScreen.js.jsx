@@ -1,7 +1,7 @@
 var BuildScreen = React.createClass({
   getInitialState: function() {
     return {
-      availableCurrents: [],
+      availableCurrents: {},
       selectedCurrents: []
     }
   },
@@ -48,7 +48,6 @@ var BuildScreen = React.createClass({
         <CurrentSelector
           onChange={this.handleSelectChange}
           currentList={this.state.availableCurrents} />
-        <CustomCurrentBuilder onChange={this.handleSelectChange} />
         <div id="currents-save-button" className='container valign-wrapper'>
           <div className="valign center-align">
             <a className="save-button btn-large waves-effect waves-light" onClick={this.handleSaveClick} >Save</a>
