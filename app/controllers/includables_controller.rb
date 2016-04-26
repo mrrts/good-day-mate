@@ -11,7 +11,8 @@ class IncludablesController < ApplicationController
     p "RIGHT HERE HI HELLO"
     p params[:label]
     tracker = Tracker.find_by(creator_id: current_user.id, label: params[:label])
-    p tracker
+    current_user.tracker_values << TrackerValue.create(tracker_id: tracker.id)
+
     render json: "Sup"
   end
 
