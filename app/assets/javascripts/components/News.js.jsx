@@ -3,7 +3,7 @@ var News = React.createClass({
   headlines: function() {
     var stories = this.props.headlines.map(function(story, i) {
       return (
-        <li className="collection-item" key={i}> <a href={story.url}>{story.headline_text}</a> </li>
+        <li className="collection-item" key={i}> <a target="_blank" href={story.url}>{story.headline_text}</a> </li>
         )
     });
     return stories.splice(0,3);

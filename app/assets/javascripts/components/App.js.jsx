@@ -16,7 +16,7 @@ var App = React.createClass({
     }
     if (this.state.timeRemaining <= 0) {
     	clearInterval(this.interval)
-    	this.setState({screen: "build"})
+    	this.updateScreen('home')
     }
   },
 	componentDidMount: function () {

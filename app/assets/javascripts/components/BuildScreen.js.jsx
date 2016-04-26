@@ -56,9 +56,8 @@ var BuildScreen = React.createClass({
     // console.log(this.state.availableCurrents)
     return (
       <div id="build-screen" className="container flow-text">
-
+        <h4>Build Your Morning Stream</h4>
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
-        <div className="divider"></div>
 
         <CurrentSelector
           onSelectCurrent={this.handleSelectCurrent}

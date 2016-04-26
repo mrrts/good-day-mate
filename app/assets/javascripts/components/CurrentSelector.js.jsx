@@ -27,20 +27,26 @@ var CurrentSelector = React.createClass({
     // console.log(list);
     return list;
   },
+  handleAddButtonClick: function (e) {
+    this.props.onSelectCurrent(e);
+    $clicked = $(e.currentTarget);
+    $itsModal = $($clicked.closest('.modal'));
+    $itsModal.closeModal();
+  },
   currentsInCategory: function (currentsArray) {
     return currentsArray.map(function(current, i) {
       return (
-          <div key={i} className="card-panel">
+          <div key={i} className="card-panel valign-wrapper">
             <a
               data-includable-id={current.id}
               data-includable-type={current.includable_type}
               data-includable-label={current.label}
-              onClick={this.props.onSelectCurrent}
-              className="current-add-button btn-floating blue"
+              onClick={this.handleAddButtonClick}
+              className="valign current-add-button btn-floating blue"
               >
                 <i className="material-icons">add</i>
             </a>
-            <p className="current-add-label">
+            <p className="valign current-add-label">
               {current.label}
             </p>
           </div>
@@ -65,7 +71,7 @@ var CurrentSelector = React.createClass({
   componentDidMount: function () {
     setTimeout(function() {
       this.findModals();
-    }.bind(this), 1000);
+    }.bind(this), 800);
   },
   render: function () {
     return (
