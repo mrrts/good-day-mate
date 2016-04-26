@@ -350,3 +350,39 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   margin-right: -6px;
   font-size: 0.8em;
 }
+
+
+/** Bobbing Boat **********************************************/
+.bobbing {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    animation: bobbingAnim ease-in-out 1s infinite;
+    -moz-animation: bobbingAnim ease-in-out 1s infinite;
+    -webkit-animation: bobbingAnim ease-in-out 1s infinite;
+}
+.bobbing img {
+  width: 80px;
+}
+.bobbing.text {
+    font-size: 50px;
+    color: #000;
+    left: 30px;
+    top: 30px;
+}
+@keyframes bobbingAnim {
+   50% {
+       transform: translate(0, 3px) translateZ(0);
+   }
+}
+@-webkit-keyframes bobbingAnim {
+   50% {
+       -webkit-transform: translate3d(0, 3px, 0);
+   }
+}
+@-moz-keyframes bobbingAnim {
+   50% {
+       -moz-transform: translate3d(0, 3px, 0);
+   }
+}
+/***************************************************************/
