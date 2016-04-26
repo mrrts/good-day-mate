@@ -12,25 +12,41 @@ class IncludablesController < ApplicationController
     @stream = user.streams.create(label: "Test")
 
     params[:stuff].each_with_index do |thing, i|
-      type = thing[1][:includable_type]
-      id = thing[1][:includable_id]
-      if thing[1][:custom]
-        klass = Object.cont_get(type)
-        label = thing[1][:label]
-        data = thing[1][:data]
-        klass.create(label: label, icon: label)
+      object = thing[1]
+      type = object[:includable_type]
+
+      if object[:custom]
+        # klass = type.constantize
+        label = object[:label]
+        data = object[:data]
+
+        case type
+          when "Timer"
+            duration = (data[:duration].to_i * 60)
+            current = Timer.create(label: label, duration: duration)
+            id = current.id
+          when "Placeholder"
+            icon = data[:icon]
+            current = Placeholder.create(label: label, icon: icon)
+            id = current.id
+          when "Tracker"
+            unit = data[:unit]
+            current = Timer.create(label: label, unit: unit)
+            id = current.id
+          else
+        end
+
       else
-        @stream.inclusions << Inclusion.create(includable_id: id, includable_type: type, order: i)
+        id = object[:includable_id]
       end
+        @stream.inclusions << Inclusion.create(includable_id: id, includable_type: type, order: i)
     end
     render :nothing => true
   end
 
 
   private
-  def includables_params
-    params.require(:includable).permit(:includable_type, :includable_id)
-  end
+
 
 
 end
