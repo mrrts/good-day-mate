@@ -4,6 +4,7 @@ class CreateBottleMessages < ActiveRecord::Migration
       t.integer :user_id
       t.text :content
       t.date :delivery_date
+      t.boolean :seen, default: false
 
       t.timestamps null: false
     end

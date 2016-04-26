@@ -12,6 +12,9 @@ var Navbar = React.createClass({
 	    edge: 'right',
 	    closeOnClick: true
 	  });
+    setTimeout(function(){
+      $('.modal-trigger').leanModal();
+    }, 800)
   },
   getLogoutLink: function () {
     if (this.props.loggedIn === true) {
@@ -30,10 +33,13 @@ var Navbar = React.createClass({
 			      <ul className="right hide-on-med-and-down">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
 			        {this.getLogoutLink()}
+              <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
 			      </ul>
 			      <ul className="side-nav" id="mobile-demo">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
 			        {this.getLogoutLink()}
+              <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
+
 			      </ul>
 			    </div>
 			  </nav>
