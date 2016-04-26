@@ -12,6 +12,9 @@ var EveningScreen = React.createClass({
       this.setState({authenticity_token: auth_token})
     }.bind(this))
   },
+  handleLastStreamSubmit: function(event){
+    this.props.onUpdate('goodnight')
+  },
   handleFormSubmit: function(event){
     event.preventDefault();
     var here = $(event.target);
@@ -39,6 +42,7 @@ var EveningScreen = React.createClass({
   },
   render: function(){
     return (
+    <div>
       <div id='evening-check-in-form' className='container flow-text row' onSubmit={this.handleFormSubmit}>
         <h4>Good Evening</h4>
           <div id="slider" className="row swipe">
@@ -101,9 +105,14 @@ var EveningScreen = React.createClass({
                         </div>
                       </div>
                       <div>
-                        <div id="build-button" className='container valign-wrapper'>
-                          <div className="valign center-align">
-                            <button className="build btn-large waves-effect waves-light" type="submit" name="commit">Build Tomorrow</button>
+                        <div className='container valign-wrapper'>
+                          <div className='valign'>
+                            <div id="build-button"className="center-align">
+                              <button className="build btn-large waves-effect waves-light" type="submit" name="commit">Build Tomorrow</button>
+                            </div>
+                            <div id="use-last-button" className="center-align">
+                              <a onClick={this.handleLastStreamSubmit}className="build btn-large waves-effect waves-light" type="submit" name="commit">Use Last Stream</a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -117,6 +126,7 @@ var EveningScreen = React.createClass({
             </div>
           </div>
         </div>
+      </div>
     )
   }
 })
