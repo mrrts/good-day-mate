@@ -14,7 +14,7 @@ var BuildScreen = React.createClass({
   },
   handleSaveClick: function() {
     var stuff = {stuff: this.state.selectedCurrents}
-    console.log(stuff);
+
     $.ajax({
       method: 'POST',
       url: '/includables',
@@ -70,6 +70,7 @@ var BuildScreen = React.createClass({
       <div id="build-screen" className="container flow-text">
         <h4>Build Your Morning Stream</h4>
         <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
+
 
         <CurrentSelector
           onSelectCurrent={this.handleSelectCurrent}
