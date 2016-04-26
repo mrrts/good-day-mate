@@ -10,11 +10,23 @@ var HomeScreen = React.createClass({
   },
   render: function(){
     return (
-      <div id="home-buttons" className='container valign-wrapper'>
-        <div className="valign center-align">
+      <div id="home-buttons" className='container'>
+        <div className="valign-wrapper outer-valign-wrapper center-align">
+          <div className="valign">
 
-          <a onClick={this.handleStartClick} className="home-button btn-large waves-effect waves-light">Good Morning</a>
-          <a onClick={this.handleEndClick} className="home-button btn-large waves-effect waves-light"><Anchor />Good Night</a>
+            <div className="valign-wrapper">
+              <button onClick={this.handleStartClick} className="valign home-button btn-large waves-effect waves-light">
+                  Good Morning
+              </button>
+            </div>
+
+            <div className="valign-wrapper">
+              <button onClick={this.handleEndClick} className="valign home-button btn-large waves-effect waves-light">
+                <Anchor /> Good Night
+              </button>
+            </div>
+
+          </div>
         </div>
       </div>
     )

@@ -12,8 +12,18 @@ var EveningScreen = React.createClass({
       this.setState({authenticity_token: auth_token})
     }.bind(this))
   },
+  submitFormData: function(newScreen) {
+    var data = {check_in: {feeling: $('#check_in_feeling').val(), thankful1: $('#check_in_thankful1').val(), thankful2: $('#check_in_thankful2').val(), thankful3: $('#check_in_thankful3').val(), horizon: $('#check_in_horizon').val()}, authenticity_token: $('#auth-token').val()}
+      $.ajax({
+        method: 'POST',
+        url: '/check_ins',
+        data: data
+      }).done(function(resp){
+        this.props.onUpdate(newScreen);
+      }.bind(this))
+  },
   handleLastStreamSubmit: function(event){
-    this.props.onUpdate('goodnight')
+    this.submitFormData('goodnight');
   },
   handleFormSubmit: function(event){
     event.preventDefault();
@@ -24,15 +34,7 @@ var EveningScreen = React.createClass({
       window.mySwipe.next();
     }
     else if (here.attr('id') === 'form-3') {
-       var data = {check_in: {feeling: $('#check_in_feeling').val(), thankful1: $('#check_in_thankful1').val(), thankful2:$('#check_in_thankful2').val(), thankful3:$('#check_in_thankful3').val(), horizon: $('#check_in_horizon').val()}, authenticity_token: $('#auth-token').val()}
-       console.log(data)
-      $.ajax({
-        method: 'POST',
-        url: '/check_ins',
-        data: data
-      }).done(function(resp){
-        this.props.onUpdate('build');
-      }.bind(this))
+      this.submitFormData('build');
     }
   },
   swipeCallback: function (index, elem) {

@@ -75,8 +75,8 @@ nav .sun-icon, nav .moon-icon {
   position: relative;
 }
 
-.home .valign-wrapper {
-  height: 53vh;
+.home .valign-wrapper.outer-valign-wrapper {
+  height: 60vh;
 }
 
 .valign {
@@ -91,12 +91,13 @@ nav .sun-icon, nav .moon-icon {
   color: #1C243B;
   background-color: white;
   opacity: 0.65;
-  margin: 25px auto;
+  margin: 10px auto;
   display: block;
   width: 300px;
   height: 90px;
   font-size: 2em;
 }
+
 
 #currents-save-button .save-button {
   background-color: #476373;
@@ -268,7 +269,11 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   font-size: 2em;
 }
 
+.anchor-icon {
+  vertical-align: -0.25em;
+}
+
 .anchor-icon path {
   fill: #1C243B;
-  vertical-align: -1em;
+
 }
