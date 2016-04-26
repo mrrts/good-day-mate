@@ -28,7 +28,8 @@ var LoginScreen = React.createClass({
   },
   render: function(){
     return (
-      <div className='container'>
+    <div className='container'>
+      <div className='card'>
         <div className='row'>
           <div>
             <form onSubmit={this.handleFormSubmit} className='col s12 flow-text' acceptCharset="UTF-8">
@@ -52,7 +53,8 @@ var LoginScreen = React.createClass({
         <div className="flow-text errors">
           <p>{this.state.errorMessage}</p>
         </div>
-        <div className='flow-text container row'>
+      </div>
+        <div id='login-form' className='flow-text container row'>
           <p>Don't have an account? <a onClick={this.handleRegisterClick}>Register</a></p>
         </div>
       </div>
