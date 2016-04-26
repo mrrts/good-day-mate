@@ -37,6 +37,56 @@ class User < ActiveRecord::Base
     return result
   end
 
+  def users_feels
+    counts_hash = {}
+    check_ins.map(&:feeling).each do |feel_string|
+      if counts_hash[feel_string]
+        counts_hash[feel_string] += 1
+      else
+        counts_hash[feel_string] = 1
+      end
+    end
+    feels_frequency_array = counts_hash.sort_by { |feeling, count| count }.reverse
+  end
+
+  def users_gratitudes
+    counts_hash = {}
+    check_ins.map(&:thankful1).each do |thankful|
+      if counts_hash[thankful]
+        counts_hash[thankful] += 1
+      else
+        counts_hash[thankful] = 1
+      end
+    end
+    check_ins.map(&:thankful2).each do |thankful|
+      if counts_hash[thankful]
+        counts_hash[thankful] += 1
+      else
+        counts_hash[thankful] = 1
+      end
+    end
+    check_ins.map(&:thankful3).each do |thankful|
+      if counts_hash[thankful]
+        counts_hash[thankful] += 1
+      else
+        counts_hash[thankful] = 1
+      end
+    end
+    gratitudes_frequency_array = counts_hash.sort_by { |thankful, count| count }.reverse
+  end
+
+  def users_tomorrows
+    counts_hash = {}
+    check_ins.map(&:horizon).each do |horizon_string|
+      if counts_hash[horizon_string]
+        counts_hash[horizon_string] += 1
+      else
+        counts_hash[horizon_string] = 1
+      end
+    end
+    horizons_frequency_array = counts_hash.sort_by { |horizon, count| count }.reverse
+  end
+
 
   private
 
