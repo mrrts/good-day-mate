@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   post '/journals' => 'journals#create_entry'
 
+  get '/bottle_messages/new' => 'bottle_messages#new'
+  post '/bottle_messages' => 'bottle_messages#create'
+  get '/bottle_messages/today' => 'bottle_messages#today'
+  put '/bottle_messages/:id' => 'bottle_messages#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
