@@ -34,6 +34,7 @@ var CurrentSelector = React.createClass({
             <a
               data-includable-id={current.id}
               data-includable-type={current.includable_type}
+              data-includable-label={current.label}
               onClick={this.props.onSelectCurrent}
               className="current-add-button btn-floating blue"
               >

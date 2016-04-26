@@ -15,14 +15,14 @@ var BuildScreen = React.createClass({
   handleSaveClick: function() {
     var stuff = {stuff: this.state.selectedCurrents}
     console.log(stuff);
-    // $.ajax({
-    //   method: 'POST',
-    //   url: '/includables',
-    //   data: stuff,
-    //   dataType: "json"
-    // }).done(function(){
+    $.ajax({
+      method: 'POST',
+      url: '/includables',
+      data: stuff,
+      dataType: "json"
+    }).done(function(){
 
-    // }.bind(this))
+    }.bind(this))
     this.props.onUpdate('goodnight')
   },
   handleSelectChange: function (newCurrent) {
@@ -41,9 +41,11 @@ var BuildScreen = React.createClass({
     console.log($clicked);
     var includableType = $clicked.attr('data-includable-type');
     var includableId = $clicked.attr('data-includable-id');
+    var includableLabel = $clicked.attr('data-includable-label');
     var newCurrent = {
       includable_type: includableType,
-      includable_id: includableId
+      includable_id: includableId,
+      label: includableLabel
     }
     this.setState({
       selectedCurrents: this.state.selectedCurrents.concat([newCurrent])

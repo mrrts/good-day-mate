@@ -19,7 +19,7 @@ var SelectedCurrents = React.createClass({
   },
   render: function() {
     return (
-      <ul className="browser-default">
+      <ul id="selected-currents" className="browser-default">
         {this.currentsList()}
       </ul>
     )
