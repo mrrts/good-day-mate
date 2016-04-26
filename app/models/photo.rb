@@ -1,3 +1,6 @@
 class Photo < ActiveRecord::Base
-  include Includable
+
+  belongs_to :photo_collection
+
+
 end
