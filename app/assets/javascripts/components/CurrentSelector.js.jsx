@@ -31,12 +31,20 @@ var CurrentSelector = React.createClass({
     return currentsArray.map(function(current, i) {
       return (
           <div key={i} className="card-panel">
-            <a className="btn-floating blue">
-              <i className="material-icons">add</i>
-            </a>{current.label}
+            <a
+              data-includable-id={current.id}
+              data-includable-type={current.includable_type}
+              onClick={this.props.onSelectCurrent}
+              className="current-add-button btn-floating blue"
+              >
+                <i className="material-icons">add</i>
+            </a>
+            <p className="current-add-label">
+              {current.label}
+            </p>
           </div>
         )
-    });
+    }.bind(this));
   },
   handleChange: function (e) {
     var $selectBox = $(e.target)
@@ -51,16 +59,18 @@ var CurrentSelector = React.createClass({
     $selectBox.val('null');
   },
   findModals: function() {
-    setTimeout(function(){
-      $('.modal-trigger').leanModal()
-    }, 1000);
+    $('.modal-trigger').leanModal();
+  },
+  componentDidMount: function () {
+    setTimeout(function() {
+      this.findModals();
+    }.bind(this), 1000);
   },
   render: function () {
     return (
         <div id="current-selector" className="row">
           <h5>Add a Current:</h5>
           {this.categoryList()}
-          {this.findModals()}
         </div>
     )
   }
