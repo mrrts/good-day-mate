@@ -1,4 +1,17 @@
 var HomeScreen = React.createClass({
+  getInitialState: function(){
+    return {bottleMessagesToDisplay: []}
+  },
+  componentDidMount: function(){
+    $.ajax({
+      method: 'GET',
+      url: '/bottle_messages/today'
+    }).done(function(resp){
+      if ( resp.length > 0 ) {
+        this.setState({bottleMessagesToDisplay: resp})
+      }
+    }.bind(this))
+  },
   handleBuildClick: function(event){
     this.props.onUpdate('build')
   },
@@ -22,6 +35,8 @@ var HomeScreen = React.createClass({
                   <ShipWheel />Morning
               </button>
             </div>
+
+            <BottleMessageDisplay messages={this.state.bottleMessagesToDisplay}/>
 
             <div className="valign-wrapper">
               <button onClick={this.handleEndClick} className="valign home-button btn-large waves-effect waves-light">

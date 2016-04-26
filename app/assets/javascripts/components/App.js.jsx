@@ -83,6 +83,7 @@ var App = React.createClass({
 					<div className="screenContent">
 						{this.getScreenContent()}
 					</div>
+					<BottleMessageForm />
 				</div>
 		)
 	}
