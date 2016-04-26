@@ -69,12 +69,25 @@ NewsList.create(label: "Top Stories from The Guardian", creator_id: 0)
 Inclusion.create(stream_id: 1, order: 4, includable_id: 1, includable_type: "NewsList")
 
 
-
-
 gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
 "excellent food", "health", "food", "sleep", "Corgis", "moon & stars",
 "biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies",
 "summer coming", "graduating soon", "learning", "great experience at DBC",
 "new friends", "old friends", "change", "travel", "clean sheets", "soap", "chairs"]
+
+feels = ["tired", "happy", "excited", "anxious", "interested", "content", "fabulous", "frustrated", "dense"]
+
+tomorrow = ["more features"]
+
+20.times do
+  CheckIn.create(
+    user_id: 4,
+    feeling: feels.sample,
+    thankful1: gratitudes.sample,
+    thankful2: gratitudes.sample,
+    thankful3: gratitudes.sample,
+    horizon: tomorrow.sample
+    )
+end
 
 

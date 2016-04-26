@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
     return result
   end
 
+
   private
 
   def includable_classes
