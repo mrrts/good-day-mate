@@ -39,13 +39,16 @@ var Journal = React.createClass({
     else {
       return (
         <div>
-          <p>{this.props.label} <button className="btn-floating waves-effect waves-light right" type="submit" onClick={this.saveJournal} name="action">
-          <i className="material-icons right">save</i>
-          </button> </p>
-        <div className="input-field col s12">
-        <textarea id="journal-box" className="journal-box materialize-textarea"></textarea>
-        <label for="journal-box">Type Here</label>
-        </div>
+          <p>
+            {this.props.label}
+            <button className="btn-floating waves-effect waves-light right" type="submit" onClick={this.saveJournal} name="action">
+              <i className="material-icons right">save</i>
+            </button>
+          </p>
+          <div className="input-field col s12">
+            <textarea id="journal-box" className="journal-box materialize-textarea"></textarea>
+            <label htmlFor="journal-box">Type Here</label>
+          </div>
         </div>
         )
     }

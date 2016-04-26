@@ -23,14 +23,18 @@ class User < ActiveRecord::Base
     currents_array = []
     includable_classes.each do |klass|
       currents_array << klass.where(creator_id: 0)
+      currents_array << klass.where(creator_id: self.id)
     end
-    p currents_array
     currents_array = currents_array.flatten.map! do |c|
       type = c.class.to_s
       {id: c.id, includable_type: type, label: c.label}
     end
-    p currents_array
-    return currents_array
+    result = {}
+    includable_classes.each do |klass|
+      collection = currents_array.select {|c| c[:includable_type] == klass.to_s}
+      result[klass.to_s] = collection
+    end
+    return result
   end
 
   private
