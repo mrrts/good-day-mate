@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   post '/journals' => 'journals#create_entry'
 
-
+  post 'includables/tracker' => 'includables#tracker'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

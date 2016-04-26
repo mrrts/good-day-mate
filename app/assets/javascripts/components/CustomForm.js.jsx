@@ -10,17 +10,52 @@ var CustomForm = React.createClass({
       showForm: !this.state.showForm
     })
   },
+  componentDidMount: function() {
+    setInterval(function() {
+      this.dropdownInit();
+    }.bind(this), 500);
+  },
+  dropdownInit: function() {
+
+    $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: true, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left' // Displays dropdown with edge aligned to the left of button
+      }
+    );
+
+  },
+  updatePreview: function(e) {
+    var target = $(e.target)
+    console.log(target.text());
+    $("#icon-preview").text(target.text());
+    $("#icon").val(target.text());
+  },
   inputFields: function() {
     switch(this.props.type) {
       case "Placeholder":
         return ( <div className="input-field col s12">
-          <i className="material-icons col s4">done</i>
+          <i id="icon-preview" className="material-icons col s4">done</i>
+          <a className='dropdown-button waves-effect waves-light blue' href='#' data-activates='dropdown1'>Icon</a>
+          <ul id='dropdown1' className='dropdown-content browser-default'>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">done</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">person</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">school</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">notifications none</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">spa</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">child care</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">free breakfast</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">restaurant</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">directions walk</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">directions bike</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">flash on</i></li>
+            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">color lens</i></li>
+          </ul>
 
-          <nav id="nav" className="col s8">
-            <ul>
-              <li><a href="#">Home</a></li>
-            </ul>
-         </nav>
           <input type="hidden" name="icon" id="icon" value="done"></input>
           <input type="hidden" name="type" id="type" value="Placeholder"></input>
           </div>)
@@ -31,9 +66,9 @@ var CustomForm = React.createClass({
           <input type="hidden" name="type" id="type" value="Timer"></input></div>)
         break;
       case "Tracker":
-        return (<div className="input-field col s12"><input type="text" name="unit" min="1" id="unit"></input>
+        return (<div className="input-field col s12"><input type="text" placeholder="e.g. Miles Ran" name="unit" min="1" id="unit"></input>
           <label htmlFor="unit">Unit you want to Track:</label>
-          <input type="hidden" name="type" id="type" value="Tracker"></input></div>)
+          <input type="hidden" name="type" id="type" value="Tracker" ></input></div>)
         break;
       default:
         return (<p>Sorry there was a problem with this form.</p>)
