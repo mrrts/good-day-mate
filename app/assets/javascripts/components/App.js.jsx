@@ -83,9 +83,7 @@ var App = React.createClass({
 					<div className="screenContent">
 						{this.getScreenContent()}
 					</div>
-					// <div className="canvas-container">
-					// 	<CanvasClass />
-					// </div>
+
 				</div>
 		)
 	}
