@@ -68,6 +68,23 @@ Inclusion.create(stream_id: 1, order: 1,
 NewsList.create(label: "Top Stories from The Guardian", creator_id: 0)
 Inclusion.create(stream_id: 1, order: 4, includable_id: 1, includable_type: "NewsList")
 
+PhotoCollection.create(creator_id: 0, label: "cute animals")
+Photo.create(photo_collection_id: 1, filename: "baboon.jpg")
+Photo.create(photo_collection_id: 1, filename: "babushka_dog.jpg")
+Photo.create(photo_collection_id: 1, filename: "black_dog.jpg")
+Photo.create(photo_collection_id: 1, filename: "chihuahua.jpg")
+Photo.create(photo_collection_id: 1, filename: "dirty_llama.jpg")
+Photo.create(photo_collection_id: 1, filename: "dog_in_a_cup.jpg")
+Photo.create(photo_collection_id: 1, filename: "elephant_and_baby.jpg")
+Photo.create(photo_collection_id: 1, filename: "giraffe.jpg")
+Photo.create(photo_collection_id: 1, filename: "hedgehog.jpg")
+Photo.create(photo_collection_id: 1, filename: "hippos.jpg")
+Photo.create(photo_collection_id: 1, filename: "kitten_playing.jpg")
+Photo.create(photo_collection_id: 1, filename: "koalas.jpg")
+Photo.create(photo_collection_id: 1, filename: "large_pig.jpg")
+Photo.create(photo_collection_id: 1, filename: "piglets.jpg")
+Photo.create(photo_collection_id: 1, filename: "sofa_cat.jpg")
+
 
 gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
 "excellent food", "health", "food", "sleep", "Corgis", "moon & stars",

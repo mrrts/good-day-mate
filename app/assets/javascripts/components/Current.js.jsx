@@ -13,6 +13,8 @@ var Current = React.createClass({
         return <Tracker {...this.props} />
       case 'Podcast':
         return <Podcast {...this.props} />
+      case 'PhotoCollection':
+        return <Photo {...this.props} />
     }
   },
   handleSwipedRight: function (e) {
