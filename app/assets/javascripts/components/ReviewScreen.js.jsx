@@ -34,8 +34,8 @@ var ReviewScreen = React.createClass({
               You are looking forward to {this.state.horizon}
             </div>
           </div>
-          <div id="start-day-button" className='container valign-wrapper'>
-            <div className="valign center-align">
+          <div id="start-day-button" className='container'>
+            <div className="center-align">
              <a onClick={this.handleStartClick} className='start-day btn-large waves-effect waves-light' id='start-day-button'>Start Your Day</a>
             </div>
           </div>

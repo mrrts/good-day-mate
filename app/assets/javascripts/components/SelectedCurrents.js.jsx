@@ -4,8 +4,13 @@ var SelectedCurrents = React.createClass({
 
       return (
           <li className="card" data-key={i} key={i}>
-            <div className="card-content">
-              {current.label} <a className="right btn-floating" onClick={this.closeButton}> <i className=" tiny material-icons">close</i></a>
+            <div className="card-content valign-wrapper">
+              <div className="valign left-align">
+                {current.label}
+              </div>
+              <div className="valign right-align">
+                <a className="btn-floating" onClick={this.closeButton}> <i className=" tiny material-icons">close</i></a>
+              </div>
             </div>
           </li>
       )
@@ -19,10 +24,9 @@ var SelectedCurrents = React.createClass({
   },
   render: function() {
     return (
-      <ul className="browser-default">
+      <ul id="selected-currents" className="browser-default">
         {this.currentsList()}
       </ul>
     )
   }
-
-})
+});

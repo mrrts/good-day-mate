@@ -12,7 +12,7 @@ var Podcast = React.createClass({
               <p>{this.props.duration}</p>
             </div>
           </li>
-          <li className="podcast-link"><a href={this.props.url}>{this.props.label}</a></li>
+          <li className="podcast-link"><a target="_blank" href={this.props.url}>{this.props.label}</a></li>
         </ul>
       </div>
     )
