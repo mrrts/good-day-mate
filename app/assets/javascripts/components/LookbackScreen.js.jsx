@@ -12,11 +12,13 @@ var LookbackScreen = React.createClass({
     var grats = this.state.gratitudes;
     if (grats) {
       grats = grats.map(function(gratitude, i) {
-        return (
-          <li data-key={i} key={i}>
-             Gratitude: {gratitude[0]}, frequency: {gratitude[1]}
-          </li>
-        )
+        if (gratitude[1] >1 ) { 
+          return (
+            <li data-key={i} key={i} className="review-input">
+               {gratitude[0]}
+            </li>
+          )
+        }
       })
     } else {
       grats = "UNKNOWN"
@@ -48,7 +50,7 @@ var LookbackScreen = React.createClass({
       <div className='container flow-text'>
           <div className="card">
             <div className="card-content">
-              I'm grateful for: 
+              <p className="review-header">I'm grateful for:</p>
               <ul>
                 {this.gratitudesList()}
               </ul>
