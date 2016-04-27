@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425235455) do
+ActiveRecord::Schema.define(version: 20160427181938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +36,6 @@ ActiveRecord::Schema.define(version: 20160425235455) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "health_tips", force: :cascade do |t|
-    t.string   "label"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "inclusions", force: :cascade do |t|
     t.integer  "stream_id"
     t.integer  "order"
@@ -49,6 +43,20 @@ ActiveRecord::Schema.define(version: 20160425235455) do
     t.string   "includable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "joke_lists", force: :cascade do |t|
+    t.integer  "creator_id", default: 0
+    t.string   "label"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "jokes", force: :cascade do |t|
+    t.string   "joke"
+    t.integer  "joke_list_id", default: 1
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "journal_entries", force: :cascade do |t|

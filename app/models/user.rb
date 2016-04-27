@@ -94,7 +94,7 @@ class User < ActiveRecord::Base
   private
 
   def includable_classes
-    [NewsList, Placeholder, Journal, Timer, Podcast, PhotoCollection, Tracker]
+    [NewsList, Placeholder, Journal, Timer, Podcast, PhotoCollection, Tracker, JokeList]
   end
 
 end

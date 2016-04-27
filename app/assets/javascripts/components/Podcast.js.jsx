@@ -2,6 +2,7 @@ var Podcast = React.createClass({
   render: function(){
     return (
       <div className="podcast card-content">
+        <p>Podcast</p>
         <ul>
           <li>
             <div>
