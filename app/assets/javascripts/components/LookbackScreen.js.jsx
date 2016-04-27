@@ -1,4 +1,4 @@
-var ReviewScreen = React.createClass({
+var LookbackScreen = React.createClass({
   getInitialState: function(){
     return {}
   },
