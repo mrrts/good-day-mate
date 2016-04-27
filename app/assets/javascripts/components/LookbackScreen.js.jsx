@@ -11,7 +11,7 @@ var LookbackScreen = React.createClass({
   gratitudesList: function() {
     var grats = this.state.gratitudes;
     if (grats) {
-      grats.map(function(gratitude, i) {
+      grats = grats.map(function(gratitude, i) {
         return (
           <li data-key={i} key={i}>
              Gratitude: {gratitude[0]}, frequency: {gratitude[1]}
@@ -19,7 +19,7 @@ var LookbackScreen = React.createClass({
         )
       })
     } else {
-      "UNKNOWN"
+      grats = "UNKNOWN"
     }
     // var firstGrat = grats ? grats[0] : "UNKNOWN"
     // console.log("firstGrat " + firstGrat);
