@@ -15,6 +15,8 @@ var Current = React.createClass({
         return <Podcast {...this.props} />
       case 'PhotoCollection':
         return <Photo {...this.props} />
+      case 'JokeList':
+        return <JokeList {...this.props} />
     }
   },
   handleSwipedRight: function (e) {
