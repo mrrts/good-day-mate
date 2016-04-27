@@ -22,9 +22,15 @@ var Navbar = React.createClass({
       $('.modal-trigger').leanModal();
     }, 800)
   },
-  getLogoutLink: function () {
+  getLinksForLoggedInUser: function () {
     if (this.props.loggedIn === true) {
-      return <li><a onClick={this.handleLogoutClick} ><i id='logout-icon' className="fa fa-sign-out" aria-hidden="true"></i></a></li>
+      return (
+        <div>
+          <li><a onClick={this.handleLogoutClick} ><i id='logout-icon' className="fa fa-sign-out" aria-hidden="true"></i></a></li>
+          <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
+          <li  ><a><i onClick={this.toggleMusic} id='music-button' className="material-icons">volume_mute</i></a></li>
+        </div>
+        )
     } else {
       return ""
     }
@@ -55,15 +61,12 @@ var Navbar = React.createClass({
 			      <a href="#" data-activates="mobile-demo" className="right button-collapse"><i className="material-icons">menu</i></a>
 			      <ul className="right hide-on-med-and-down">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
-			        {this.getLogoutLink()}
-              <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
+			        {this.getLinksForLoggedInUser()}
+              
 			      </ul>
 			      <ul className="side-nav" id="mobile-demo">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
-			        {this.getLogoutLink()}
-              <li  ><a><i onClick={this.toggleMusic} id='music-button' className="material-icons">volume_mute</i></a></li>
-              <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
-
+			        {this.getLinksForLoggedInUser()}
 			      </ul>
 			    </div>
 			  </nav>
