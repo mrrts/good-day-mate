@@ -29,12 +29,14 @@ var Tracker = React.createClass({
     if (this.state.form) {
     return (
       <div className="card-content">
-        <span className="card-title">Tracker: {this.props.label}</span>
+        <div className='row'>
+          <p className='col s10'>Tracker: {this.props.label}</p><i id='stream-icon' className="col s2 fa fa-line-chart" aria-hidden="true"></i>
+        </div>
         <div className="tracker">
           <form>
             <div className="input-field">
               <input id="input-number" type="number" name="value" placeholder={this.props.unit} />
-              <a className="btn" onClick={this.submitData}>Save</a>
+              <a id='tracker-button' className="btn-large waves-effect waves-light" onClick={this.submitData}>Save</a>
             </div>
           </form>
         </div>

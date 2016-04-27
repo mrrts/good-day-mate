@@ -68,7 +68,7 @@ Inclusion.create(stream_id: 1, order: 1,
 NewsList.create(label: "Top Stories from The Guardian", creator_id: 0)
 Inclusion.create(stream_id: 1, order: 4, includable_id: 1, includable_type: "NewsList")
 
-PhotoCollection.create(creator_id: 0, label: "cute animals")
+PhotoCollection.create(creator_id: 0, label: "Cute Animals")
 Photo.create(photo_collection_id: 1, filename: "baboon.jpg")
 Photo.create(photo_collection_id: 1, filename: "babushka_dog.jpg")
 Photo.create(photo_collection_id: 1, filename: "black_dog.jpg")
@@ -84,6 +84,21 @@ Photo.create(photo_collection_id: 1, filename: "koalas.jpg")
 Photo.create(photo_collection_id: 1, filename: "large_pig.jpg")
 Photo.create(photo_collection_id: 1, filename: "piglets.jpg")
 Photo.create(photo_collection_id: 1, filename: "sofa_cat.jpg")
+
+JokeList.create(creator_id: 0, label: 'Random Jokes')
+Joke.create(joke_list_id: 1, joke: 'I went to the zoo the other day, there was only one dog in it, it was a shitzu.')
+Joke.create(joke_list_id: 1, joke: 'A sandwich walks into a bar. The barman says "Sorry we don\'t serve food in here"')
+Joke.create(joke_list_id: 1, joke: 'There\'s two fish in a tank, and one says "How do you drive this thing?"')
+Joke.create(joke_list_id: 1, joke: "Today a man knocked on my door and asked for a small donation towards the local swimming pool. I gave him a glass of water.")
+Joke.create(joke_list_id: 1, joke: 'Change is inevitable, except from a vending machine.')
+Joke.create(joke_list_id: 1, joke: "There's too much blood in my caffeine system.")
+Joke.create(joke_list_id: 1, joke: "Before the new spaghetti factory could open, it had to pasta inspection.")
+Joke.create(joke_list_id: 1, joke: 'Upon removing his boots at Waterloo, Napoleon could smell defeat.')
+Joke.create(joke_list_id: 1, joke: 'Said the potato: "I think therefore I yam."')
+Joke.create(joke_list_id: 1, joke: 'Did you hear about the unruly circus driver? He refused to tow the lion.')
+Joke.create(joke_list_id: 1, joke: 'When a clock is hungry, it goes back four seconds.')
+
+
 
 
 gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",

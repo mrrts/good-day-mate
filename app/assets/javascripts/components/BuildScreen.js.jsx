@@ -7,9 +7,11 @@ var BuildScreen = React.createClass({
   },
   componentDidMount: function() {
     $.get("/includables/index", function(response){
+      console.log(response)
       this.setState({
         availableCurrents: response
       });
+
     }.bind(this))
   },
   handleSaveClick: function() {
