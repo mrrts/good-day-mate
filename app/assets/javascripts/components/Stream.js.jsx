@@ -1,4 +1,3 @@
-
 var Stream = React.createClass({
   getInitialState: function(){
     return {
@@ -6,10 +5,12 @@ var Stream = React.createClass({
     }
   },
   componentDidMount: function() {
+    $('#main-loader').show();
     $.get('/streams/show', function(resp) {
       this.setState({
         currentList: this.makeCurrentCards(resp)
       });
+      $('#main-loader').fadeOut();
     }.bind(this));
   },
   makeCurrentCards: function(objCollection) {

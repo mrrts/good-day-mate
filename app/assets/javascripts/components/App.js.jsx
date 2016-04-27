@@ -80,6 +80,7 @@ var App = React.createClass({
 		return (
 				<div>
 					{this.getNavBar()}
+					<Spinner />
 					<div className="screenContent">
 						{this.getScreenContent()}
 					</div>
