@@ -11,7 +11,7 @@ var News = React.createClass({
   render: function(){
     return (
       <div className="card-content">
-        <h5>{this.props.label}</h5>
+        <p>{this.props.label}</p>
         <ul className="browser-default collection">
           {this.headlines()}
         </ul>

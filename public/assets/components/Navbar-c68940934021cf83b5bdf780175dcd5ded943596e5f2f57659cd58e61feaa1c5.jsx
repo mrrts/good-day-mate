@@ -1,9 +1,4 @@
 var Navbar = React.createClass({
-  getInitialState: function() {
-    return {
-      music: false
-    }
-  },
 	handleHomeClick: function() {
 		this.props.onUpdate('home')
 	},
@@ -29,23 +24,6 @@ var Navbar = React.createClass({
       return ""
     }
   },
-  toggleMusic: function () {
-    if (this.state.music)
-    {
-      document.getElementById("ambient-sounds").pause()
-      $("#music-button").text("volume_mute");
-
-    } else {
-      document.getElementById("ambient-sounds").play()
-      document.getElementById("ambient-sounds").loop = true;
-      $("#music-button").text("volume_up");
-    }
-
-    this.setState({
-      music: !this.state.music
-    })
-
-  },
 	render: function () {
 		return (
 			<div className="navbar-fixed">
@@ -61,15 +39,11 @@ var Navbar = React.createClass({
 			      <ul className="side-nav" id="mobile-demo">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
 			        {this.getLogoutLink()}
-              <li  ><a><i onClick={this.toggleMusic} id='music-button' className="material-icons">volume_mute</i></a></li>
               <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
 
 			      </ul>
 			    </div>
 			  </nav>
-        <audio id="ambient-sounds" preload="auto">
-          <source src="<%= asset_path('Heaven_Be_Here.mp3')%>" type="audio/mpeg" />
-        </audio>
 			</div>
 		)
 	}
