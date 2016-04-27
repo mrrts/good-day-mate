@@ -1,7 +1,11 @@
 body {
-  background-color: #efefef;
+  background-color: #D1DDE8;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
+}
+
+body.splash {
+  background-color: #EFEFEF;
 }
 
 body.evening, body.goodnight, body.build {
@@ -133,6 +137,10 @@ nav .sun-icon, nav .moon-icon {
   display: block;
   font-weight: normal;
   font-size: 0.75em;
+}
+
+#evening-check-in-form button {
+  background-color: #367498;
 }
 
 #build-button .build {
@@ -385,3 +393,47 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   margin-right: -6px;
   font-size: 0.8em;
 }
+
+
+/** Bobbing Boat **********************************************/
+.splash .bobbing,
+.start .bobbing,
+.evening .bobbing,
+.build .bobbing {
+  display: none;
+}
+
+.bobbing {
+    width: 20vw;
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    animation: bobbingAnim ease-in-out 1s infinite;
+    -moz-animation: bobbingAnim ease-in-out 1s infinite;
+    -webkit-animation: bobbingAnim ease-in-out 1s infinite;
+}
+.bobbing img {
+  width: 100%;
+}
+.bobbing.text {
+    font-size: 50px;
+    color: #000;
+    left: 30px;
+    top: 30px;
+}
+@keyframes bobbingAnim {
+   50% {
+       transform: translate(0, 3px) translateZ(0);
+   }
+}
+@-webkit-keyframes bobbingAnim {
+   50% {
+       -webkit-transform: translate3d(0, 3px, 0);
+   }
+}
+@-moz-keyframes bobbingAnim {
+   50% {
+       -moz-transform: translate3d(0, 3px, 0);
+   }
+}
+/***************************************************************/
