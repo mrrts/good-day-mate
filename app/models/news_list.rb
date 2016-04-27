@@ -12,7 +12,7 @@ class NewsList < ActiveRecord::Base
     json = JSON.parse(response.body)
     headlines = []
     test = false
-    if json["response"]["results"]
+    if json && json["response"] && json["response"]["results"]
       json["response"]["results"].each do |thing|
         if thing["type"] == "article"
           article_hash = {headline_text: thing["webTitle"], url: thing["webUrl"]}
