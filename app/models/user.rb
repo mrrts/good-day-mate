@@ -87,6 +87,9 @@ class User < ActiveRecord::Base
     horizons_frequency_array = counts_hash.sort_by { |horizon, count| count }.reverse
   end
 
+  def bottle_messages_today
+    self.bottle_messages.where(seen: false).select{|bm| bm.delivery_date <= Date.today}
+  end
 
   private
 
