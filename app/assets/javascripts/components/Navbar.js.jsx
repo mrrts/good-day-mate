@@ -10,6 +10,7 @@ var Navbar = React.createClass({
   componentDidMount: function() {
   	$(".button-collapse").sideNav({
 	    edge: 'right',
+      menuWidth: 150,
 	    closeOnClick: true
 	  });
     setTimeout(function(){
