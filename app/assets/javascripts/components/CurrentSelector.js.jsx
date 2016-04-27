@@ -16,6 +16,7 @@ var CurrentSelector = React.createClass({
             <div className="modal-content">
               <h5>Choose a {prop}:</h5>
               <ul className="collection">
+                {this.newCurrentForm(prop)}
                 {this.currentsInCategory(this.props.currentList[prop])}
               </ul>
             </div>
@@ -33,10 +34,26 @@ var CurrentSelector = React.createClass({
     $itsModal = $($clicked.closest('.modal'));
     $itsModal.closeModal();
   },
+  newCurrentForm: function(prop) {
+    switch(prop) {
+      case "Placeholder":
+        return (<CustomForm type={prop}  handleCustomCurrent={this.props.handleCustomCurrent} />)
+        break;
+      case "Timer":
+        return (<CustomForm type={prop}  handleCustomCurrent={this.props.handleCustomCurrent} />)
+        break;
+      case "Tracker":
+        return (<CustomForm type={prop}  handleCustomCurrent={this.props.handleCustomCurrent} />)
+        break;
+      default:
+        return (<p></p>)
+    }
+
+  },
   currentsInCategory: function (currentsArray) {
     return currentsArray.map(function(current, i) {
       return (
-          <div key={i} className="card-panel valign-wrapper">
+          <div key={i + 1} className="card-panel valign-wrapper">
             <a
               data-includable-id={current.id}
               data-includable-type={current.includable_type}

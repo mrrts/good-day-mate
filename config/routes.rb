@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   get '/' => 'pages#index'
   get '/test' => 'pages#test'
   get '/streams/show' => 'streams#show'
-  get '/includables/index' => 'includables#index'
-  post '/includables' => 'includables#create'
+
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
@@ -20,10 +19,15 @@ Rails.application.routes.draw do
 
   post '/journals' => 'journals#create_entry'
 
+  get '/includables/index' => 'includables#index'
+  post '/includables' => 'includables#create'
+  post 'includables/tracker' => 'includables#tracker'
+
   get '/bottle_messages/new' => 'bottle_messages#new'
   post '/bottle_messages' => 'bottle_messages#create'
   get '/bottle_messages/today' => 'bottle_messages#today'
   put '/bottle_messages/:id' => 'bottle_messages#update'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
