@@ -21,6 +21,8 @@ var Current = React.createClass({
                 </p>)
       case 'Good Day':
         return (<p className="valign"> <strong> Have a Good Day, Mate! </strong> </p>)
+      case 'JokeList':
+        return <JokeList {...this.props} />
     }
   },
   buildClick: function() {

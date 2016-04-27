@@ -55,7 +55,7 @@ var ReviewScreen = React.createClass({
                       <p className='review-input'>{this.state.thankful3}</p>
                     </div>
                   </div>
-                  <button onClick={this.handleNextClick} id='next-icon' className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
+                  <button onClick={this.handleNextClick} id='next-icon' className="build btn-floating" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
                 </div>
               </div>
             </div>
