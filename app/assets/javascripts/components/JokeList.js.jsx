@@ -3,7 +3,7 @@ var JokeList = React.createClass({
     return (
       <div className="card-content">
         <div className='row'>
-          <p className='col s10'>Joke</p><i className="smiley col s2 material-icons right">tag_faces</i>
+          <p className='col s10'>Joke</p><i id='stream-icon' className="col s2 material-icons right">tag_faces</i>
         </div>
 
         <div className='row'>

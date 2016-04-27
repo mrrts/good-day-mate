@@ -29,7 +29,9 @@ var Tracker = React.createClass({
     if (this.state.form) {
     return (
       <div className="card-content">
-        <p>Tracker: {this.props.label}</p>
+        <div className='row'>
+          <p className='col s10'>Tracker: {this.props.label}</p><i id='stream-icon' className="col s2 fa fa-line-chart" aria-hidden="true"></i>
+        </div>
         <div className="tracker">
           <form>
             <div className="input-field">

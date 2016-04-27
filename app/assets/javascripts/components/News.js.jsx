@@ -11,7 +11,9 @@ var News = React.createClass({
   render: function(){
     return (
       <div className="card-content">
-        <p>News</p>
+        <div className='row'>
+         <p className='col s10'>News</p><i id='stream-icon' className="col s2 fa fa-newspaper-o" aria-hidden="true"></i>
+        </div>
         <ul className="browser-default collection">
           {this.headlines()}
         </ul>
