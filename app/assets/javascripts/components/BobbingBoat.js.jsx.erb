@@ -4,9 +4,8 @@ var BobbingBoat = React.createClass({
     return ( <div>
               <div id="bobbing-boat" className="bobbing">
                   <img src="<%= asset_path 'boat2.png' %>" />
-                  <img id="waves-pic" src="<%= asset_path 'waves.png' %>" style={{display: "none"}} />
               </div>
-
+              		<CanvasClass />
             </div>
     );
   }
