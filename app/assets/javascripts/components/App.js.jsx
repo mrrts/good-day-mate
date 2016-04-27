@@ -57,7 +57,7 @@ var App = React.createClass({
 			case "review":
 				return <ReviewScreen onUpdate={this.updateScreen} />
 			case "start":
-				return <MorningScreen currents={this.props.currents} />
+				return <MorningScreen onUpdate={this.updateScreen} currents={this.props.currents} />
 			case "evening":
 				return <EveningScreen onUpdate={this.updateScreen} />
 			case "build":

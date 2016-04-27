@@ -15,7 +15,17 @@ var Current = React.createClass({
         return <Podcast {...this.props} />
       case 'PhotoCollection':
         return <Photo {...this.props} />
+      case 'Return Button':
+        return (<p>You need to end your day or build a stream first.
+              <a className="btn valign "onClick={this.buildClick}>Build</a>
+                </p>)
+      case 'Good Day':
+        return (<p className="valign"> <strong> Have a Good Day, Mate! </strong> </p>)
     }
+  },
+  buildClick: function() {
+    console.log("hey hey haaaaay")
+    this.props.onUpdate("build");
   },
   handleSwipedRight: function (e) {
     var $here = $(e.currentTarget);
@@ -23,7 +33,7 @@ var Current = React.createClass({
   },
   render: function() {
     return (
-      <Swipeable onSwipedRight={this.handleSwipedRight}>
+      <Swipeable key={this.props.key} onSwipedRight={this.handleSwipedRight}>
         <div className='current card flow-text'>
           {this.getCurrentComponent()}
         </div>
