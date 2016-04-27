@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     return result
   end
 
+  def bottle_messages_today
+    self.bottle_messages.where(seen: false).select{|bm| bm.delivery_date <= Date.today}
+  end
+
   private
 
   def includable_classes

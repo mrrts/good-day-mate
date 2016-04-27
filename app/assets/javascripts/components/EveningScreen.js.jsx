@@ -61,7 +61,7 @@ var EveningScreen = React.createClass({
                         <input type="text" name="check_in[feeling]" id="check_in_feeling" />
                       </div>
                     </div>
-                      <button className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
+                      <button id='next-icon' className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
                   </div>
               </form>
             </div>
@@ -87,7 +87,7 @@ var EveningScreen = React.createClass({
                         </div>
                       </div>
                     </div>
-                      <button className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
+                      <button id='next-icon' className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
                   </div>
               </form>
             </div>
