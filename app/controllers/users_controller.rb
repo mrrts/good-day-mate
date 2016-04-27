@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   end
 
   def history
-    @user = User.find(session[:user_id])
-    p @user
+    user = User.find(session[:user_id])
+
+    render json: {gratitudes: user.users_gratitudes}
   end
 
 private
