@@ -3,7 +3,14 @@ var SelectedCurrents = React.createClass({
     return this.props.currentList.map(function(current, i) {
 
       return (
-          <li className="card" data-key={i} key={i}>
+          <li className="selected-current card" 
+            data-key={i} 
+            key={i}
+            data-includable-type={current.includable_type}
+            data-includable-id={current.includable_id}
+            data-label={current.label}
+            data-order={current.order || -1}
+            >
             <div className="card-content valign-wrapper">
               <div className="valign left-align">
                 {current.label}
@@ -17,10 +24,21 @@ var SelectedCurrents = React.createClass({
     }.bind(this));
   },
   closeButton: function(e) {
-   target = $(e.target).closest("li")
-
+    target = $(e.target).closest("li");
     console.log(target)
     this.props.delete(target[0].getAttribute("data-key"));
+  },
+  handleSort: function () {
+    this.props.onSort();
+  },
+  componentDidMount: function () {
+    Sortable.create(document.getElementById('selected-currents'), {
+      draggable: '.selected-current',
+      onSort: this.handleSort
+    })
+  },
+  componentDidUpdate: function () {
+    
   },
   render: function() {
     return (

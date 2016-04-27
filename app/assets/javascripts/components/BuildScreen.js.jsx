@@ -79,19 +79,31 @@ var BuildScreen = React.createClass({
     });
     console.log(this.state.selectedCurrents)
   },
+  handleSort: function () {
+    var list = $('.selected-current')
+    var newList = [];
+    for (var i = 0; i < list.length; i++) {
+      $item = $(list[i])
+      $item.attr('data-order', i);
+    }
+  },
   render: function () {
     // console.log(this.state.availableCurrents)
     return (
       <div id="build-screen" className="container flow-text">
         <h4>Build My Morning Stream</h4>
-        <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
+        <SelectedCurrents 
+          currentList={this.state.selectedCurrents} 
+          delete={this.handleDelete} 
+          onSort={this.handleSort} />
 
         {this.getSaveButton()}
 
         <CurrentSelector
           onSelectCurrent={this.handleSelectCurrent}
           currentList={this.state.availableCurrents}
-          handleCustomCurrent={this.handleCustomCurrent} />
+          handleCustomCurrent={this.handleCustomCurrent}
+           />
 
       </div>
     )
