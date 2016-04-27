@@ -8,20 +8,23 @@ var Stream = React.createClass({
     $('#main-loader').show();
     $.get('/streams/show', function(resp) {
       this.setState({
-        currentList: this.makeCurrentCards(resp)
+        currentList: resp
       });
+      testVariable = this.state.currentList;
       $('#main-loader').fadeOut();
     }.bind(this));
+
   },
   makeCurrentCards: function(objCollection) {
     return objCollection.map(function(current, i) {
-      return <Current {...current} key={i} />
+      return <Current data-key={i}  onUpdate={this.props.onUpdate} {...current} key={i} />
     }.bind(this));
   },
+
   render: function(){
     return (
       <div id="stream" className='container'>
-        {this.state.currentList}
+        {this.makeCurrentCards(this.state.currentList)}
       </div>
     )
   }

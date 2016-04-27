@@ -1,7 +1,7 @@
 var MorningScreen = React.createClass({
   render: function () {
     return (
-      <Stream currents={this.props.currents} />
+      <Stream onUpdate={this.props.onUpdate} currents={this.props.currents} />
     )
   }
 });
