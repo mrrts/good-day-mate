@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
+  get '/users/history' => 'users#history'
 
 
   get '/check_ins/new' => 'check_ins#new'

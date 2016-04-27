@@ -92,4 +92,19 @@ gratitudes = ["family", "friends", "nice weather", "books", "a good night's slee
 "summer coming", "graduating soon", "learning", "great experience at DBC",
 "new friends", "old friends", "change", "travel", "clean sheets", "soap", "chairs"]
 
+feels = ["tired", "happy", "excited", "anxious", "interested", "content", "fabulous", "frustrated", "dense"]
+
+tomorrow = ["more features"]
+
+20.times do
+  CheckIn.create(
+    user_id: 4,
+    feeling: feels.sample,
+    thankful1: gratitudes.sample,
+    thankful2: gratitudes.sample,
+    thankful3: gratitudes.sample,
+    horizon: tomorrow.sample
+    )
+end
+
 

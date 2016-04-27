@@ -18,6 +18,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def history
+    user = User.find(session[:user_id])
+
+    render json: {gratitudes: user.users_gratitudes}
+  end
+
 private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :password, :email)

@@ -21,17 +21,17 @@ var ReviewScreen = React.createClass({
       <div className='container flow-text'>
           <div className="card">
             <div className="card-content">
-              You were feeling {this.state.feeling}
+              I was feeling {this.state.feeling}
             </div>
           </div>
           <div className='card'>
             <div className="card-content">
-              You were thankful for {this.state.thankful1}, {this.state.thankful2}, and {this.state.thankful3}
+              I was thankful for {this.state.thankful1}, {this.state.thankful2}, and {this.state.thankful3}
             </div>
           </div>
           <div className='card'>
             <div className="card-content">
-              You are looking forward to {this.state.horizon}
+              I'm looking forward to {this.state.horizon}
             </div>
           </div>
           <div id="start-day-button" className='container'>

@@ -21,8 +21,8 @@ var HomeScreen = React.createClass({
   handleEndClick: function(event){
     this.props.onUpdate('evening')
   },
-  handleLookBack: function(event){
-
+  handleLookBackClick: function(event){
+    this.props.onUpdate('lookback')
   },
   render: function(){
     return (
