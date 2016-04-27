@@ -6,7 +6,7 @@ var LookbackScreen = React.createClass({
     this.props.onUpdate('start')
   },
   componentDidMount: function() {
-    $.get("/check_ins/show", function(response){
+    $.get("/users/history", function(response){
       this.setState({
         feeling: response.review.feeling,
         thankful1: response.review.thankful1,
