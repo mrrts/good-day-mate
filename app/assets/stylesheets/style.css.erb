@@ -242,7 +242,6 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   vertical-align: -0.3em;
   color: #7F8A9C;
   font-size: 35px;
-  margin-right: 10px;
 }
 
 
@@ -355,8 +354,9 @@ canvas {
   bottom: 0px;
   margin-right: auto;
   margin-left: auto;
-  height:  7%;
+  height:  20%;
   width: 100%;
+  z-index: -5;
 }
 
 .telescope-icon {
@@ -447,21 +447,24 @@ canvas {
 
 
 /** Bobbing Boat **********************************************/
-.splash .bobbing,
+
 .start .bobbing,
+.start #MyCanvas,
+.evening #MyCanvas,
 .evening .bobbing,
-.build .bobbing {
+.build .bobbing,
+.build #MyCanvas {
   display: none;
 }
 
 .bobbing {
     width: 20vw;
     position: fixed;
-    bottom: 10px;
-    right: 50px;
-    animation: bobbingAnim ease-in-out 1s infinite;
-    -moz-animation: bobbingAnim ease-in-out 1s infinite;
-    -webkit-animation: bobbingAnim ease-in-out 1s infinite;
+    bottom: 20px;
+    right: 100px;
+    animation: bobbingAnim ease-in-out 14s infinite;
+    -moz-animation: bobbingAnim ease-in-out 14s infinite;
+    -webkit-animation: bobbingAnim ease-in-out 14s infinite;
 }
 .bobbing img {
   width: 100%;
@@ -474,17 +477,17 @@ canvas {
 }
 @keyframes bobbingAnim {
    50% {
-       transform: translate(0, 3px) translateZ(0);
+       transform: translate(-50px, 10px) translateZ(0);
    }
 }
 @-webkit-keyframes bobbingAnim {
    50% {
-       -webkit-transform: translate3d(0, 3px, 0);
+       -webkit-transform: translate3d(-50px, 10px, 0);
    }
 }
 @-moz-keyframes bobbingAnim {
    50% {
-       -moz-transform: translate3d(0, 3px, 0);
+       -moz-transform: translate3d(-50px, 10px, 0);
    }
 }
 /***************************************************************/
@@ -503,4 +506,24 @@ canvas {
   color: white;
 }
 
+#tracker-button {
+  background-color: #476373;
+  font-size: 1em;
+  padding: .1em;
+  font-size: .5em;
+  height: 35px;
+  width: 50px;
+  line-height: 2;
+}
+
+#stream-icon {
+  color: #476373;
+  font-size: 1.2em
+}
+
+.create-current-button {
+  margin-right: 15px;
+  vertical-align: 0.05em;
+  display: inline-block;
+}
 

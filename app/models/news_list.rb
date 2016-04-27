@@ -25,13 +25,30 @@ class NewsList < ActiveRecord::Base
     headlines
   end
 
+  def get_times_news
+    @content = URI.parse("http://api.nytimes.com/svc/topstories/v1/home.json?api-key=#{ENV['NY_TIMES_TOP_STORIES']}")
+    http = Net::HTTP.new(@content.host, @content.port)
+    request = Net::HTTP::Get.new(@content.request_uri)
+    response = http.request(request)
+    json = JSON.parse(response.body)
+    headlines = []
+    if json && json['results']
+      json['results'].each do |thing|
+        article_hash = {headline_text: thing['abstract'], url: thing['url']}
+        headlines << article_hash
+      end
+    else
+      headlines << {headline_text: "Sorry, we could not find any stories", url: "#"}
+    end
+    p headlines
+  end
+
   def get_hash
     current_hash = {current_type: "News"}
     current_hash[:headlines] = self.get_news
     current_hash[:label] = self.label
     current_hash
   end
-
 
 
 end
