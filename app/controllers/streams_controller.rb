@@ -8,7 +8,6 @@ def show #Need to add authorization check
     render json: @stream.get_currents_json << {current_type: "Good Day"}
   else
     render json: [{current_type: "Return Button"}]
-
   end
 
 end

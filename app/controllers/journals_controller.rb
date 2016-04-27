@@ -11,5 +11,19 @@ class JournalsController < ApplicationController
   end
 
 
+  def review
+
+    user = current_user
+
+    entries = JournalEntry.where(user_id: user.id).sample(3)
+
+    entries = entries.map {|entry| {content: entry.content}}
+
+    render json: entries
+
+
+  end
+
+
 
 end
