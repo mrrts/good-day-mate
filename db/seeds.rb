@@ -109,10 +109,11 @@ Photo.create(photo_collection_id: 4, filename: "turtle.jpg")
 Photo.create(photo_collection_id: 4, filename: "seal.jpg")
 Photo.create(photo_collection_id: 4, filename: "yellowfish.jpg")
 Photo.create(photo_collection_id: 4, filename: "jellyfish.jpg")
-Photo.create(photo_collection_id: 4, filename: "turtle.jpg")
+Photo.create(photo_collection_id: 4, filename: "seashells.jpg")
+Photo.create(photo_collection_id: 4, filename: "seaurchin.jpg")
 
 
-JokeList.create(creator_id: 0, label: 'Cheesy Jokes')
+JokeList.create(creator_id: 0, label: 'Slapstick Humor')
 Joke.create(joke_list_id: 1, joke: 'I went to the zoo the other day, there was only one dog in it, it was a shitzu.')
 Joke.create(joke_list_id: 1, joke: 'A sandwich walks into a bar. The barman says "Sorry we don\'t serve food in here"')
 Joke.create(joke_list_id: 1, joke: 'There\'s two fish in a tank, and one says "How do you drive this thing?"')
@@ -124,6 +125,19 @@ Joke.create(joke_list_id: 1, joke: 'Upon removing his boots at Waterloo, Napoleo
 Joke.create(joke_list_id: 1, joke: 'Said the potato: "I think therefore I yam."')
 Joke.create(joke_list_id: 1, joke: 'Did you hear about the unruly circus driver? He refused to tow the lion.')
 Joke.create(joke_list_id: 1, joke: 'When a clock is hungry, it goes back four seconds.')
+
+JokeList.create(id:2, creator_id: 0, label: 'Nerdy Jokes')
+Joke.create(joke_list_id: 2, joke: 'There are 10 types of people in the world: those who understand binary, and those who don\'t')
+Joke.create(joke_list_id: 2, joke: 'Why was the JavaScript developer sad?
+Because he didn\'t Node how to Express himself')
+Joke.create(joke_list_id: 2, joke: 'There\'s a band called 1023MB. They haven\'t had any gigs yet.')
+Joke.create(joke_list_id: 2, joke: 'Why do Java developers wear glasses? Because they can\'t C#')
+Joke.create(joke_list_id: 2, joke: 'Why was the JavaScript developer sad?
+Because he didn\'t Node how to Express himself')
+
+
+
+
 
 
 gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
