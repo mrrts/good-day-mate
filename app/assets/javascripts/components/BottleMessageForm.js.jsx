@@ -28,6 +28,7 @@ var BottleMessageForm = React.createClass({
       url: '/bottle_messages',
       data: $('#bottle-message-modal form').serialize()
     }).done(function(resp){
+      $('#bottle-message-modal form')[0].reset();
     }.bind(this))
   },
   render: function(){

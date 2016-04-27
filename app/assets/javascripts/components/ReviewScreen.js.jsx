@@ -5,7 +5,14 @@ var ReviewScreen = React.createClass({
   handleStartClick: function(event){
     this.props.onUpdate('start')
   },
+  handleNextClick: function(event){
+    window.mySwipe.next();
+  },
   componentDidMount: function() {
+    window.mySwipe = Swipe(document.getElementById('slider'), {
+      continuous: false,
+      callback: this.swipeCallback
+     });
     $.get("/check_ins/show", function(response){
       this.setState({
         feeling: response.review.feeling,
@@ -18,27 +25,61 @@ var ReviewScreen = React.createClass({
   },
   render: function(){
     return (
-      <div className='container flow-text'>
-          <div className="card">
-            <div className="card-content">
-              I was feeling {this.state.feeling}
+      <div id='review-view' className='container flow-text'>
+        <h4 className='center-align'>Yesterday</h4>
+        <div id="slider" className="row swipe">
+          <div className='swipe-wrap'>
+            <div>
+              <div className='center-align col s12'>
+                <div className='row'>
+                  <div className="card col s10 offset-s1">
+                    <div className="card-content">
+                      <p className='review-header'>I was feeling</p>
+                      <p className='review-input'>{this.state.feeling}</p>
+                    </div>
+                  </div>
+                  <button onClick={this.handleNextClick} id='next-icon' className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className='card'>
-            <div className="card-content">
-              I was thankful for {this.state.thankful1}, {this.state.thankful2}, and {this.state.thankful3}
+
+
+            <div>
+              <div className='center-align col s12'>
+                <div className='row'>
+                  <div className='card col s10 offset-s1'>
+                    <div className="card-content">
+                      <p className='review-header'>I was thankful for</p>
+                      <p className='review-input'>{this.state.thankful1}</p>
+                      <p className='review-input'>{this.state.thankful2}</p>
+                      <p className='review-input'>{this.state.thankful3}</p>
+                    </div>
+                  </div>
+                  <button onClick={this.handleNextClick} id='next-icon' className="build btn-floating waves-effect waves-light" type="submit" name="commit"><i className="material-icons">navigate_next</i></button>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className='card'>
-            <div className="card-content">
-              I'm looking forward to {this.state.horizon}
+
+            <div>
+              <div className='center-align col s12'>
+                <div className='row'>
+                  <div className='card col s10 offset-s1'>
+                    <div className="card-content">
+                      <p className='review-header'>I was looking forward to</p>
+                      <p className='review-input'>{this.state.horizon}</p>
+                    </div>
+                  </div>
+                  <div id="start-day-button" className='container'>
+                    <div className="center-align">
+                     <a onClick={this.handleStartClick} className='start-day btn-large waves-effect waves-light' id='start-day-button'>Start My Day</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
-          <div id="start-day-button" className='container'>
-            <div className="center-align">
-             <a onClick={this.handleStartClick} className='start-day btn-large waves-effect waves-light' id='start-day-button'>Start Your Day</a>
-            </div>
-          </div>
+        </div>
       </div>
     )
   }
