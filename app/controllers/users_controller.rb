@@ -7,21 +7,22 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      p @user
       session[:user_id] = @user.id
       render :nothing => true
       # redirect to home page
     else
       @errors = @user.errors.full_messages
-      p @errors
       render json: {errors: @errors}
     end
   end
 
   def history
     user = User.find(session[:user_id])
-
-    render json: {gratitudes: user.users_gratitudes}
+    render json: {
+      gratitudes: user.users_gratitudes,
+      feelings: user.users_feels,
+      horizons: user.users_tomorrows 
+    }
   end
 
 private
