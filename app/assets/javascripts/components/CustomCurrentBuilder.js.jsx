@@ -38,7 +38,7 @@ var CustomCurrentBuilder = React.createClass({
     switch (this.state.form) {
       case "Placeholder":
         return (<form>
-          THIS IS A FORM MOTHA FUCKA
+          form
          </form>)
       break;
       case "Timer":

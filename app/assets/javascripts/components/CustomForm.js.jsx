@@ -105,12 +105,16 @@ var CustomForm = React.createClass({
             <label htmlFor="label">Name:</label>
           </div>
 
-          <a onClick={this.addCurrent} className="btn-floating btn waves-effect waves-light yellow darken-4"><i className="material-icons">add</i></a>
-          Create
+          <a onClick={this.addCurrent} className="valign current-add-button btn-floating"><i className="material-icons">add</i></a>
+
         </form>)
 
     } else {
-      return (<div><a onClick={this.toggleForm} className="valign btn-floating btn waves-effect waves-light yellow darken-4"><i className="material-icons">mode_edit</i></a><span className="valign"> Create your own. </span></div>)
+      return (
+        <div>
+          <a onClick={this.toggleForm} className="col s2 valign create-current-button btn-floating"><i className="material-icons">mode_edit</i>
+          </a>
+          <span className="col s10 valign"> Create your own</span></div>)
     }
   },
   render: function() {
