@@ -32,7 +32,7 @@ Stream.create(label: "Taylor Stream", user_id: 2)
 Stream.create(label: "Jack Stream", user_id: 3)
 Stream.create(label: "Heather Stream", user_id: 4)
 
-Tracker.create(creator_id: 0, label: "Tires", unit: "PSI")
+Tracker.create(creator_id: 0, label: "Sleep", unit: "hours")
 TrackerValue.create(tracker_id: 1, value: 36.2)
 Inclusion.create(stream_id: 1, order: 2,
   includable_id: 1, includable_type: "Tracker")

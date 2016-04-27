@@ -7,15 +7,15 @@ var Podcast = React.createClass({
         </div>
         <ul>
           <li>
-            <div>
-              <img className="podcast-icon" src={this.props.icon} />
-            </div>
-            <div className="podcast-info">
-              <p>{this.props.genre}</p>
-              <p>{this.props.duration}</p>
+            <div className='row'>
+              <a target="_blank" href={this.props.url}><img className="podcast-icon" src={this.props.icon} /></a>
+
+              <div className="podcast-info">
+                <p>{this.props.genre}</p>
+                <p id='pod-duration'>{this.props.duration}</p>
+              </div>
             </div>
           </li>
-          <li className="podcast-link"><a target="_blank" href={this.props.url}>{this.props.label}</a></li>
         </ul>
       </div>
     )
