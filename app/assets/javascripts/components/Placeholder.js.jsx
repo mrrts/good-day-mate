@@ -1,12 +1,11 @@
 var Placeholder = React.createClass({
   render: function(){
     return (
-      <div className="placeholder card-content valign-wrapper">
-        <div className="valign left-align">
-          <i className="material-icons">{this.props.icon}</i>
-        </div>
-        <div className="valign right-align">
-          <p>{this.props.label}</p>
+      <div className="placeholder card-content">
+        <p>Task</p>
+        <div className='row'>
+          <i className="col s2 material-icons">{this.props.icon}</i>
+          <p className='col s10'>{this.props.label}</p>
         </div>
       </div>
     )

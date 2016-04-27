@@ -29,12 +29,12 @@ var Tracker = React.createClass({
     if (this.state.form) {
     return (
       <div className="card-content">
-        <span className="card-title">Tracker: {this.props.label}</span>
+        <p>Tracker: {this.props.label}</p>
         <div className="tracker">
           <form>
             <div className="input-field">
               <input id="input-number" type="number" name="value" placeholder={this.props.unit} />
-              <a className="btn" onClick={this.submitData}>Save</a>
+              <a id='tracker-button' className="btn-large waves-effect waves-light" onClick={this.submitData}>Save</a>
             </div>
           </form>
         </div>
