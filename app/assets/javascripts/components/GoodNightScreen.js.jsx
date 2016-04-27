@@ -3,7 +3,7 @@ var GoodNightScreen = React.createClass({
     return (
       <div className="container">
         <div className="valign-wrapper">
-          <h4 id='goodnight-message' className='center valign center-align'>Goodnight!</h4>
+          <h3 id='goodnight-message' className='center valign center-align'>Good Night!</h3>
         </div>
       </div>
       )

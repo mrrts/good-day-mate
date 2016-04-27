@@ -52,23 +52,32 @@ var BuildScreen = React.createClass({
     });
     console.log(this.state.selectedCurrents);
   },
-  render: function () {
-    // console.log(this.state.availableCurrents)
-    return (
-      <div id="build-screen" className="container flow-text">
-        <h4>Build Your Morning Stream</h4>
-        <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
-
-
-        <CurrentSelector
-          onSelectCurrent={this.handleSelectCurrent}
-          currentList={this.state.availableCurrents} />
-
+  getSaveButton: function () {
+    if (this.state.selectedCurrents.length > 0) {
+      return (
         <div id="currents-save-button" className='container valign-wrapper'>
           <div className="valign center-align">
             <a className="save-button btn-large waves-effect waves-light" onClick={this.handleSaveClick} >Save</a>
           </div>
         </div>
+        );
+    } else {
+      return (<div></div>);
+    }
+  },
+  render: function () {
+    // console.log(this.state.availableCurrents)
+    return (
+      <div id="build-screen" className="container flow-text">
+        <h4>Build My Morning Stream</h4>
+        <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
+
+        {this.getSaveButton()}
+
+        <CurrentSelector
+          onSelectCurrent={this.handleSelectCurrent}
+          currentList={this.state.availableCurrents} />
+
       </div>
     )
   }

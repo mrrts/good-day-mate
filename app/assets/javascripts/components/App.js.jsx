@@ -3,7 +3,7 @@ var App = React.createClass({
 		return {
 			screen: "splash",
 			availableCurrents: "",
-			timeRemaining: 3,
+			timeRemaining: 1,
 			loggedIn: false,
 			userId: undefined
 
@@ -16,7 +16,7 @@ var App = React.createClass({
     }
     if (this.state.timeRemaining <= 0) {
     	clearInterval(this.interval)
-    	this.updateScreen('home')
+    	this.updateScreen('build')
     }
   },
 	componentDidMount: function () {

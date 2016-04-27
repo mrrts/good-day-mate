@@ -9,15 +9,16 @@ body.splash {
 }
 
 body.evening, body.goodnight, body.build {
-  background-color: #06496F;
+  background-color: #232E46;
   -webkit-transition: background-color 1300ms linear;
   -moz-transition: background-color 1300ms linear;
   -o-transition: background-color 1300ms linear;
   transition: background-color 1300ms linear;
 }
 
-body.home {
-  background-image: url("<%=asset_path('water.jpg')%>")
+body.home, body.evening, body.build, body.goodnight {
+  background-image: url("<%=asset_path('water.jpg')%>");
+  background-attachment: fixed;
 }
 
 .evening h4 {
@@ -103,9 +104,17 @@ nav .sun-icon, nav .moon-icon {
   border-radius: 8px;
 }
 
+#home-buttons .home-button svg {
+  margin-right: 15px;
+}
+
+#home-buttons .home-button svg.telescope-icon {
+  margin-right: 5px;
+  margin-left: 10px;
+}
 
 #currents-save-button .save-button {
-  background-color: #476373;
+  background-color: #0D3851;
   margin: 20px auto;
   display: block;
 }
@@ -166,6 +175,7 @@ nav .sun-icon, nav .moon-icon {
 
 #goodnight-message {
   color: white;
+  margin-top: 25%;
 }
 
 .errors {
@@ -239,6 +249,10 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   color: #233139;
 }
 
+#build-screen #selected-currents a.btn-floating {
+  background-color: #C17F7F;
+}
+
 #build-screen #selected-currents .valign-wrapper {
   height: auto;
 }
@@ -256,9 +270,18 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   margin-top: 40px;
 }
 
+#build-screen #current-selector .card {
+  background-color: rgba(255, 255, 255, 0.42);
+}
+
 #build-screen #current-selector .modal {
   color: #233139;
   background: #DEDEDE;
+}
+
+#build-screen #current-selector .category-add-button,
+#build-screen #current-selector .modal .current-add-button {
+  background: #576990;
 }
 
 #build-screen #current-selector .modal .current-add-button,
@@ -311,6 +334,7 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 .telescope-icon {
   vertical-align: -0.40em;
+  margin-right: 8px;
 }
 
 #home-button-text .row .col {

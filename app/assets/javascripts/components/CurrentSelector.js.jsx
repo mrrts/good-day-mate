@@ -9,7 +9,7 @@ var CurrentSelector = React.createClass({
       list.push(
         <div key={i}>
           <div className="col s4 center">
-            <a href={'#modal-' + prop} className="btn-floating btn-large waves-effect waves-light yellow darken-4 modal-trigger"><i className="material-icons">add</i></a>
+            <a href={'#modal-' + prop} className="category-add-button btn-floating btn-large waves-effect waves-light modal-trigger"><i className="material-icons">add</i></a>
             <p>{prop}</p>
           </div>
           <div className="modal" id={"modal-" + prop}>
@@ -42,7 +42,7 @@ var CurrentSelector = React.createClass({
               data-includable-type={current.includable_type}
               data-includable-label={current.label}
               onClick={this.handleAddButtonClick}
-              className="valign current-add-button btn-floating blue"
+              className="valign current-add-button btn-floating"
               >
                 <i className="material-icons">add</i>
             </a>
@@ -75,9 +75,13 @@ var CurrentSelector = React.createClass({
   },
   render: function () {
     return (
-        <div id="current-selector" className="row">
-          <h5>Add a Current:</h5>
-          {this.categoryList()}
+        <div id="current-selector">
+          <div className="card">
+            <div className="card-content row">
+              <h5>Add Some Currents:</h5>
+              {this.categoryList()}
+            </div>
+          </div>
         </div>
     )
   }
