@@ -25,6 +25,11 @@ class NewsList < ActiveRecord::Base
     headlines
   end
 
+  def get_times_news
+    content = URI.parse("http://api.nytimes.com/svc/topstories/v1/home.json?api-key=#{ENV['NY_TIMES_TOP_STORIES']}")
+    p content
+  end
+
   def get_hash
     current_hash = {current_type: "News"}
     current_hash[:headlines] = self.get_news
