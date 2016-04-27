@@ -52,6 +52,18 @@ var BuildScreen = React.createClass({
     });
     console.log(this.state.selectedCurrents);
   },
+  handleCustomCurrent: function(stuff) {
+    var newCurrent = {
+      includable_type: stuff.type,
+      label: stuff.label,
+      custom: true,
+      data: stuff.data
+    }
+    this.setState({
+      selectedCurrents: this.state.selectedCurrents.concat([newCurrent])
+    });
+    console.log(this.state.selectedCurrents)
+  },
   render: function () {
     // console.log(this.state.availableCurrents)
     return (
@@ -62,7 +74,8 @@ var BuildScreen = React.createClass({
 
         <CurrentSelector
           onSelectCurrent={this.handleSelectCurrent}
-          currentList={this.state.availableCurrents} />
+          currentList={this.state.availableCurrents}
+          handleCustomCurrent={this.handleCustomCurrent} />
 
         <div id="currents-save-button" className='container valign-wrapper'>
           <div className="valign center-align">
