@@ -17,9 +17,12 @@ body.evening, body.goodnight, body.build {
   transition: background-color 1300ms linear;
 }
 
-body.home, body.evening, body.build, body.goodnight, body.login, body.registration {
-  background-image: url("<%=asset_path('water.jpg')%>");
 
+body.home, body.evening, body.build, body.goodnight, body.login, body.registration,
+body.review, body.start, body.lookback {
+  background-image: url("<%=asset_path('water.jpg')%>");
+  background-postion: bottom left;
+  background-repeat: repeat;
 
   background-attachment: fixed;
 }
@@ -536,6 +539,10 @@ canvas {
   font-weight: bold;
 }
 
+.lookback-input {
+  font-style: italic;
+  font-size: 1.1em;
+}
 #review-view h4 {
   color: white;
 }

@@ -2,11 +2,6 @@ var LookbackScreen = React.createClass({
   getInitialState: function(){
     return {}
   },
-  // code came from the ReviewScreen...will need to change this to handle moving
-  // through the different views on lookbacks
-  handleStartClick: function(event){
-    this.props.onUpdate('start')
-  },
 
   gratitudesList: function() {
     var grats = this.state.gratitudes;
@@ -14,7 +9,7 @@ var LookbackScreen = React.createClass({
       grats = grats.map(function(gratitude, i) {
         if (gratitude[1] >1 ) {
           return (
-            <li data-key={i} key={i} className="review-input">
+            <li data-key={i} key={i} className="lookback-input">
                {gratitude[0]}
             </li>
           )
@@ -23,14 +18,29 @@ var LookbackScreen = React.createClass({
     } else {
       grats = "UNKNOWN"
     }
-    // var firstGrat = grats ? grats[0] : "UNKNOWN"
-    // console.log("firstGrat " + firstGrat);
     return grats
+  },
+
+  feelsList: function() {
+    var feels = this.state.feelings;
+    if (feels) {
+      feels = feels.map(function(feeling, i) {
+        if (feeling[1] > 1 ) {
+          return (
+            <li data-key={i} key={i} className="lookback-input">
+               {feeling[0]}
+            </li>
+          )
+        }
+      })
+    } else {
+      feels = "UNKNOWN"
+    }
+    return feels
   },
 
   componentDidMount: function() {
     $.get("/users/history", function(response){
-      console.log(response)
       this.setState({
         gratitudes: response.gratitudes,
         feelings: response.feelings,
@@ -38,12 +48,6 @@ var LookbackScreen = React.createClass({
       })
     }.bind(this))
   },
-
-  // var grats: this.state.gratitudes,
-  // var feels: this.state.feelings,
-  // var tomorrows: this.state.horizons,
-
-
 
   render: function(){
     return (
@@ -56,6 +60,16 @@ var LookbackScreen = React.createClass({
               </ul>
             </div>
           </div>
+
+          <div className="card">
+            <div className="card-content">
+              <p className="review-header">I{"'"}ve been feeling:</p>
+              <ul>
+                {this.feelsList()}
+              </ul>
+            </div>
+          </div>
+
           <div className="card">
             <div className="card-content">
               <JournalReview />
