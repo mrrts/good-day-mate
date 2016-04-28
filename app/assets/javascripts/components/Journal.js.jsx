@@ -50,7 +50,7 @@ var Journal = React.createClass({
             <label htmlFor="journal-box">Type Here</label>
           </div>
         </div>
-        )
+      )
     }
   },
   render: function(){
