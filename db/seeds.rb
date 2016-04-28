@@ -4,7 +4,7 @@ Journal.create(label: "Journal", creator_id: 0)
 
 
 User.create(
-  first_name: "Ryan",
+  first_name: "Mallory",
   last_name: "Smith",
   email: "ryan@something.com",
   password: "password")
@@ -124,6 +124,15 @@ Photo.create(photo_collection_id: 5, filename: "sanfran.jpg")
 Photo.create(photo_collection_id: 5, filename: "shanghai.jpg")
 Photo.create(photo_collection_id: 5, filename: "taipei.jpg")
 Photo.create(photo_collection_id: 5, filename: "dubai.jpg")
+
+PhotoCollection.create(id: 6, creator_id: 0, label: "Giphy Surprise")
+Photo.create(photo_collection_id: 6, filename: "goat.gif")
+Photo.create(photo_collection_id: 6, filename: "goat-cat.gif")
+Photo.create(photo_collection_id: 6, filename: "hedge.gif")
+Photo.create(photo_collection_id: 6, filename: "hedgehogmassage.gif")
+Photo.create(photo_collection_id: 6, filename: "movingwalkway.gif")
+Photo.create(photo_collection_id: 6, filename: "sleepy.gif")
+Photo.create(photo_collection_id: 6, filename: "bigears.gif")
 
 
 JokeList.create(creator_id: 0, label: 'Slapstick Humor')

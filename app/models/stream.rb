@@ -2,6 +2,7 @@ class Stream < ActiveRecord::Base
   belongs_to :user
   has_many :inclusions
 
+
   def get_currents_json
     return_array = []
     self.currents.each do |current|
@@ -9,6 +10,7 @@ class Stream < ActiveRecord::Base
     end
     return return_array
   end
+
 
   def currents
     currents = []
