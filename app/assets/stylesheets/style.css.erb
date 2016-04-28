@@ -1,13 +1,21 @@
+html {
+  height: 100%;
+
+}
+
 body {
   background-color: #D1DDE8;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
+  height: 100%;
+
+  background-image: url("<%=asset_path('water.jpg')%>");
+  background-postion: bottom left;
+  background-repeat: repeat;
+
+  background-attachment: fixed;
 }
 
-body.splash {
-  background-color: #F3F3F3;
-  background-image: none;
-}
 
 body.evening, body.goodnight, body.build {
   background-color: #232E46;
@@ -17,11 +25,31 @@ body.evening, body.goodnight, body.build {
   transition: background-color 1300ms linear;
 }
 
-body.home, body.evening, body.build, body.goodnight, body {
+
+body.home, body.evening, body.build, body.goodnight, body.login, body.registration,
+body.review, body.start, body.lookback {
   background-image: url("<%=asset_path('water.jpg')%>");
+  background-postion: bottom left;
+  background-repeat: repeat;
 
   background-attachment: fixed;
 }
+
+body.splash {
+  height: 110%;
+  background-image: none;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6678c4+0,7d9fed+40,f9f981+73,ea9e41+91,e8bc8b+100&1+69,1+79,0.86+99 */
+  background: -moz-linear-gradient(top,  rgba(102,120,196,1) 0%, rgba(125,159,237,1) 40%, rgba(234,238,142,1) 69%, rgba(249,249,129,1) 73%, rgba(244,219,108,1) 79%, rgba(234,158,65,0.92) 91%, rgba(232,185,131,0.86) 99%, rgba(232,188,139,0.86) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(102,120,196,1) 0%,rgba(125,159,237,1) 40%,rgba(234,238,142,1) 69%,rgba(249,249,129,1) 73%,rgba(244,219,108,1) 79%,rgba(234,158,65,0.92) 91%,rgba(232,185,131,0.86) 99%,rgba(232,188,139,0.86) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(102,120,196,1) 0%,rgba(125,159,237,1) 40%,rgba(234,238,142,1) 69%,rgba(249,249,129,1) 73%,rgba(244,219,108,1) 79%,rgba(234,158,65,0.92) 91%,rgba(232,185,131,0.86) 99%,rgba(232,188,139,0.86) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6678c4', endColorstr='#dbe8bc8b',GradientType=0 ); /* IE6-9 */
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+
 
 #main-loader {
   position: absolute;
@@ -72,6 +100,10 @@ form {
   color: #1C243B;
   font-weight: bolder;
   font-size: 4em;
+  text-shadow: 0px 0px 15px #fff;
+  /* Slight white letter outline on webkit only:; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
 }
 
 nav .sun-icon, nav .moon-icon {
@@ -140,8 +172,9 @@ nav .sun-icon, nav .moon-icon {
   background-color: #8CB4CE;
   margin: 20px auto;
   display: block;
-  width: 65%;
+  width: 63%;
   font-weight: 400;
+  padding: 0;
 }
 
 #login-button .login {
@@ -202,14 +235,11 @@ nav .sun-icon, nav .moon-icon {
 }
 
 .podcast-icon {
-  max-height: 50%;
-  max-width: 25%;
-  min-width: 20%;
-  min-height: 40%;
+  height: 8em;
+  width: 8em;
   display: inline-block;
   float: left;
   padding-left: 5px;
-  width: 8em;
 }
 
 .podcast-link {
@@ -262,6 +292,10 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   background-color: #476373;
 }
 
+#stream button.timer-button {
+  margin-top: -20px;
+}
+
 #goodnight-card svg.moon-icon {
   height: 80px;
   width: 80px;
@@ -294,10 +328,17 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 #build-screen #current-selector {
   margin-top: 40px;
+  color: #0E3650;
+  text-shadow: 0px 0px 2px #6D6D6D;
+  font-weight: bold;
 }
 
 #build-screen #current-selector .card {
   background-color: rgba(255, 255, 255, 0.42);
+}
+
+#build-screen #current-selector .card-content {
+  margin-left: -8px;
 }
 
 #build-screen #current-selector .modal {
@@ -326,6 +367,13 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 #build-screen #current-selector .modal .valign-wrapper {
   height: auto;
+}
+
+#build-screen #icon-select {
+  padding-right: 30px;
+}
+#build-screen #icon-select #dropdown1 {
+  margin-left: 60px;
 }
 
 #logout-icon {
@@ -466,14 +514,14 @@ canvas {
 .login .bobbing,
 .login #MyCanvas,
 .registration .bobbing,
-.registration #MyCanvas, {
+.registration #MyCanvas {
   display: none;
 }
 
 .bobbing {
     width: 20vw;
     position: fixed;
-    bottom: 20px;
+    bottom: 17px;
     right: 100px;
     animation: bobbingAnim ease-in-out 14s infinite;
     -moz-animation: bobbingAnim ease-in-out 14s infinite;
@@ -491,17 +539,17 @@ canvas {
 }
 @keyframes bobbingAnim {
    50% {
-       transform: translate(-50px, 10px) translateZ(0);
+       transform: translate(-50px, 8px) translateZ(0);
    }
 }
 @-webkit-keyframes bobbingAnim {
    50% {
-       -webkit-transform: translate3d(-50px, 10px, 0);
+       -webkit-transform: translate3d(-50px, 8px, 0);
    }
 }
 @-moz-keyframes bobbingAnim {
    50% {
-       -moz-transform: translate3d(-50px, 10px, 0);
+       -moz-transform: translate3d(-50px, 8px, 0);
    }
 }
 /***************************************************************/
