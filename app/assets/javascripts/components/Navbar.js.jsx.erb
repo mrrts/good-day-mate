@@ -42,6 +42,7 @@ var Navbar = React.createClass({
     }
   },
   toggleMusic: function () {
+    console.log("Music!")
     if (this.state.music)
     {
       document.getElementById("ambient-sounds").pause()
@@ -68,7 +69,7 @@ var Navbar = React.createClass({
 			      <ul className="right hide-on-med-and-down">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
 			        {this.getLinksForLoggedInUser()}
-              
+
 			      </ul>
 			      <ul className="side-nav" id="mobile-demo">
 			        <li><a onClick={this.handleHomeClick} ><i id='home-icon' className="material-icons">home</i></a></li>
