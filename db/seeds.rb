@@ -4,7 +4,7 @@ Journal.create(label: "Journal", creator_id: 0)
 
 
 User.create(
-  first_name: "Mallory",
+  first_name: "Ryan",
   last_name: "Smith",
   email: "ryan@something.com",
   password: "password")
@@ -130,9 +130,10 @@ Photo.create(photo_collection_id: 6, filename: "goat.gif")
 Photo.create(photo_collection_id: 6, filename: "goat-cat.gif")
 Photo.create(photo_collection_id: 6, filename: "hedge.gif")
 Photo.create(photo_collection_id: 6, filename: "hedgehogmassage.gif")
-Photo.create(photo_collection_id: 6, filename: "movingwalkway.gif")
 Photo.create(photo_collection_id: 6, filename: "sleepy.gif")
 Photo.create(photo_collection_id: 6, filename: "bigears.gif")
+Photo.create(photo_collection_id: 6, filename: "panda.gif")
+Photo.create(photo_collection_id: 6, filename: "babycat.gif")
 
 
 JokeList.create(creator_id: 0, label: 'Slapstick Humor')
@@ -161,29 +162,25 @@ Joke.create(joke_list_id: 2, joke: 'Why did the geek add body { padding-top: 100
 
 
 
-gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep", "music", "family",
-"excellent food", "health", "food", "sleep", "Corgis", "moon & stars", "friends", "sunrise", "rain",
-"biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies", "home",
+gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
+"excellent food", "health", "food", "sleep", "Corgis", "moon & stars",
+"biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies",
 "summer coming", "graduating soon", "learning", "great experience at DBC",
 "new friends", "old friends", "change", "travel", "clean sheets", "soap", "chairs"]
 
-feels = ["tired", "happy", "sad", "happy", "excited", "anxious", "interested", "content", "fabulous", 
-  "frustrated", "dense", "melancholy", "well-rested"]
+feels = ["tired", "happy", "excited", "anxious", "interested", "content", "fabulous", "frustrated", "dense"]
 
 tomorrow = ["more features"]
 
-user = 1
-while user <= 4
-  20.times do
-    CheckIn.create(
-      user_id: user,
-      feeling: feels.sample,
-      thankful1: gratitudes.sample,
-      thankful2: gratitudes.sample,
-      thankful3: gratitudes.sample,
-      horizon: tomorrow.sample
-      )
-  end
-  user += 1
+20.times do
+  CheckIn.create(
+    user_id: 4,
+    feeling: feels.sample,
+    thankful1: gratitudes.sample,
+    thankful2: gratitudes.sample,
+    thankful3: gratitudes.sample,
+    horizon: tomorrow.sample
+    )
 end
+
 
