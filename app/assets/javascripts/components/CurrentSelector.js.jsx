@@ -3,10 +3,17 @@ var CurrentSelector = React.createClass({
     return {}
   },
   renderPropName: function(propName) {
-    if (propName=="PhotoCollection") {
-      return "Photos";
-    } else {
-      return propName;
+    switch (propName) {
+      case "PhotoCollection":
+        return "Photo";
+      case "Placeholder":
+        return "Task";
+      case "NewsList":
+        return "News Feed";
+      case "JokeList":
+        return "Joke";
+      default:
+        return propName;
     }
   },
   categoryList: function () {
@@ -21,7 +28,7 @@ var CurrentSelector = React.createClass({
           </div>
           <div className="modal" id={"modal-" + prop}>
             <div className="modal-content">
-              <h5>Choose a {prop}:</h5>
+              <h5>Choose a {this.renderPropName(prop)}:</h5>
               <ul className="collection">
                 {this.newCurrentForm(prop)}
                 {this.currentsInCategory(this.props.currentList[prop])}
