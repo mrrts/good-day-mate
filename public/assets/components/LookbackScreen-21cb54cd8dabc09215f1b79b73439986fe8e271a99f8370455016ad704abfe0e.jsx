@@ -34,7 +34,7 @@ var LookbackScreen = React.createClass({
         }
       })
     } else {
-      feels = "UNKNOWN"
+      feels = "loading..."
     }
     return feels
   },

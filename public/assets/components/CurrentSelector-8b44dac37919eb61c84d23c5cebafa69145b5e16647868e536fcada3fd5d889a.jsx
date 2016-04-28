@@ -2,6 +2,13 @@ var CurrentSelector = React.createClass({
   getInitialState: function () {
     return {}
   },
+  renderPropName: function(propName) {
+    if (propName=="PhotoCollection") {
+      return "Photos";
+    } else {
+      return propName;
+    }
+  },
   categoryList: function () {
     var list = [];
     var i = 0;
@@ -10,7 +17,7 @@ var CurrentSelector = React.createClass({
         <div key={i}>
           <div className="col s4 center">
             <a href={'#modal-' + prop} className="category-add-button btn-floating btn-large waves-effect waves-light modal-trigger"><i className="material-icons">add</i></a>
-            <p className="category-add-label">{prop}</p>
+            <p className="category-add-label">{this.renderPropName(prop)}</p>
           </div>
           <div className="modal" id={"modal-" + prop}>
             <div className="modal-content">

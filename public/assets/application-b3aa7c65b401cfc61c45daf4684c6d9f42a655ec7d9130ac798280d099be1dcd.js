@@ -39336,7 +39336,7 @@ var App = React.createClass({
 			case "build":
 				return React.createElement(BuildScreen, { onUpdate: this.updateScreen });
 			case "goodnight":
-				return React.createElement(GoodNightScreen, { onUpdate: this.updateScreen });
+				return React.createElement(GoodNightScreen, { onUpdate: this.updateScreen, currentScreen: this.state.screen });
 			case "lookback":
 				return React.createElement(LookbackScreen, null);
 		}
@@ -39836,6 +39836,13 @@ var CurrentSelector = React.createClass({
   getInitialState: function () {
     return {};
   },
+  renderPropName: function (propName) {
+    if (propName == "PhotoCollection") {
+      return "Photos";
+    } else {
+      return propName;
+    }
+  },
   categoryList: function () {
     var list = [];
     var i = 0;
@@ -39858,7 +39865,7 @@ var CurrentSelector = React.createClass({
           React.createElement(
             "p",
             { className: "category-add-label" },
-            prop
+            this.renderPropName(prop)
           )
         ),
         React.createElement(
@@ -40692,8 +40699,10 @@ var GoodNightScreen = React.createClass({
 
   componentDidMount: function () {
     setTimeout((function () {
-      this.props.onUpdate('home');
-    }).bind(this), 5000);
+      if (this.props.currentScreen == "goodnight") {
+        this.props.onUpdate('home');
+      }
+    }).bind(this), 3000);
   },
   render: function () {
     return React.createElement(
@@ -41103,7 +41112,7 @@ var LookbackScreen = React.createClass({
         }
       });
     } else {
-      feels = "UNKNOWN";
+      feels = "loading...";
     }
     return feels;
   },
