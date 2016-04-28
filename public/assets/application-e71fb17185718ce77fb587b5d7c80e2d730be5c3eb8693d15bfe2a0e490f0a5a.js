@@ -39265,7 +39265,7 @@ var App = React.createClass({
 		return {
 			screen: "splash",
 			availableCurrents: "",
-			timeRemaining: 1,
+			timeRemaining: 6,
 			loggedIn: false,
 			userId: undefined
 
@@ -39278,7 +39278,11 @@ var App = React.createClass({
 		}
 		if (this.state.timeRemaining <= 0) {
 			clearInterval(this.interval);
-			this.updateScreen('build');
+			if (this.state.loggedIn == true) {
+				this.updateScreen('home');
+			} else {
+				this.updateScreen('login');
+			}
 		}
 	},
 	componentDidMount: function () {
