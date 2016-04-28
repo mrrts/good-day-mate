@@ -1,4 +1,11 @@
 var GoodNightScreen = React.createClass({
+  componentDidMount: function () {
+    setTimeout(function () {
+      if (this.props.currentScreen == "goodnight") {
+        this.props.onUpdate('home');
+      }
+    }.bind(this), 3000)
+  },
   render: function(){
     return (
       <div className="container">

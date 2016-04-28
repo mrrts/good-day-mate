@@ -20,6 +20,11 @@ var App = React.createClass({
 	    	this.updateScreen('home')
     	} else {
     		this.updateScreen('login')
+    		console.log('dogged in')
+    		$("body").append('<div style="display: none" ></div>')
+    		this.forceUpdate();
+    		// Show sideNav
+				// $('.button-collapse').sideNav('show');
     	}
     }
   },
@@ -67,7 +72,7 @@ var App = React.createClass({
 			case "build":
 				return <BuildScreen onUpdate={this.updateScreen} />
 			case "goodnight":
-				return <GoodNightScreen />
+				return <GoodNightScreen onUpdate={this.updateScreen} currentScreen={this.state.screen} />
 			case "lookback":
 				return <LookbackScreen />
 		}
@@ -81,8 +86,9 @@ var App = React.createClass({
 		}
 	},
 	render: function () {
+		console.log('app rendered!')
 		return (
-				<div>
+				<div id="app">
 					{this.getNavBar()}
 					<Spinner />
 					<div className="screenContent">
