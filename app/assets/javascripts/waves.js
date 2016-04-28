@@ -14,7 +14,7 @@ function Wave($canvas, $y, $colour) {
   }
   this.draw = function() {
     this.ctx.clearRect(0, 0, Waves.width,Waves.height);
-    this.ctx.fillStyle = "#121726";
+    this.ctx.fillStyle = "rgba(28, 37, 64, 0.86)";
     this.ctx.beginPath();
     this.ctx.moveTo(0, this.y);
     this.ctx.quadraticCurveTo(Waves.width / 4, this.y + ( this.wavePower * this.force ), Waves.width / 2, this.y);

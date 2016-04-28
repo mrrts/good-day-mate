@@ -5,7 +5,7 @@ body {
 }
 
 body.splash {
-  background-color: #F2F2F3;
+  background-color: #F3F3F3;
   background-image: none;
 }
 
@@ -17,7 +17,7 @@ body.evening, body.goodnight, body.build {
   transition: background-color 1300ms linear;
 }
 
-body.home, body.splash, body.evening, body.build, body.goodnight, body {
+body.home, body.evening, body.build, body.goodnight, body {
   background-image: url("<%=asset_path('water.jpg')%>");
 
   background-attachment: fixed;
@@ -462,7 +462,11 @@ canvas {
 .evening #MyCanvas,
 .evening .bobbing,
 .build .bobbing,
-.build #MyCanvas {
+.build #MyCanvas,
+.login .bobbing,
+.login #MyCanvas,
+.registration .bobbing,
+.registration #MyCanvas, {
   display: none;
 }
 
@@ -474,6 +478,7 @@ canvas {
     animation: bobbingAnim ease-in-out 14s infinite;
     -moz-animation: bobbingAnim ease-in-out 14s infinite;
     -webkit-animation: bobbingAnim ease-in-out 14s infinite;
+    z-index: -3;
 }
 .bobbing img {
   width: 100%;
@@ -554,3 +559,6 @@ canvas {
 
 }
 
+.sortable-chosen {
+  background-color: #ccc !important;
+}
