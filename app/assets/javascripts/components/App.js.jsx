@@ -20,6 +20,9 @@ var App = React.createClass({
 	    	this.updateScreen('home')
     	} else {
     		this.updateScreen('login')
+    		console.log('dogged in')
+    		$("body").append('<div style="display: none" ></div>')
+    		this.forceUpdate();
     	}
     }
   },
@@ -81,6 +84,7 @@ var App = React.createClass({
 		}
 	},
 	render: function () {
+		console.log('app rendered!')
 		return (
 				<div>
 					{this.getNavBar()}
