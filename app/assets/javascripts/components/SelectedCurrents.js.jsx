@@ -4,8 +4,8 @@ var SelectedCurrents = React.createClass({
 
       return (
           <li className="selected-current card" 
-            data-key={i} 
-            key={i}
+            data-key={current.includable_type + current.includable_id + current.label + i} 
+            key={current.includable_type + current.includable_id + current.label + i}
             data-includable-type={current.includable_type}
             data-includable-id={current.includable_id}
             data-label={current.label}
@@ -24,9 +24,9 @@ var SelectedCurrents = React.createClass({
     }.bind(this));
   },
   closeButton: function(e) {
-    target = $(e.target).closest("li");
-    console.log(target)
-    this.props.delete(target[0].getAttribute("data-key"));
+    var target = $(e.currentTarget).closest("li");
+    console.log('target', $(target).attr("data-key"))
+    this.props.delete($(target).attr("data-key"));
   },
   handleSort: function () {
     this.props.onSort();

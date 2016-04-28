@@ -15,8 +15,19 @@ var BuildScreen = React.createClass({
     }.bind(this))
   },
   handleSaveClick: function() {
-    var stuff = {stuff: this.state.selectedCurrents}
-
+    var finalSelectedCurrents = []
+    var currents = $('.selected-current')
+    for (var i = 0; i < currents.length; i++) {
+      $item = $(currents[i]);
+      finalSelectedCurrents.push({
+        includable_type: $item.attr('data-includable-type'),
+        includable_id: $item.attr('data-includable-id'),
+        order: $item.attr('data-order'),
+        label: $item.attr('data-label')
+      })
+    }
+    var stuff = {stuff: finalSelectedCurrents}
+    console.log(stuff);
     $.ajax({
       method: 'POST',
       url: '/includables',
@@ -33,10 +44,7 @@ var BuildScreen = React.createClass({
     });
   },
   handleDelete: function(i) {
-    this.state.selectedCurrents.splice(i, 1)
-    this.setState({
-      selectedCurrents: this.state.selectedCurrents
-    });
+    $('#selected-currents li[data-key="'+i+'"]').remove();
   },
   handleSelectCurrent: function (e) {
     var $clicked = $(e.currentTarget);
