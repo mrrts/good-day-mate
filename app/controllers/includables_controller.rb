@@ -19,36 +19,44 @@ class IncludablesController < ApplicationController
   def create
     user = current_user
     @stream = user.streams.create(label: "Test")
+    p "#" * 50 
+    p params[:stuff]
+    i = 0
+    params[:stuff].each_value do |object_hash|
+      p "%" * 50 
+      p object_hash
+      type = object_hash[:includable_type]
 
-    params[:stuff].each_with_index do |thing, i|
-      object = thing[1]
-      type = object[:includable_type]
-
-      if object[:custom]
+      if object_hash[:custom] == "true"
+        p "*" * 50
+        p object_hash
         # klass = type.constantize
-        label = object[:label]
-        data = object[:data]
+        label = object_hash[:label]
+        data = object_hash[:data]
 
         case type
           when "Timer"
-            duration = (data[:duration].to_i * 60)
-            current = Timer.create(label: label, duration: duration, creator_id: user.id)
+            duration = (data.to_i * 60)
+            current = Timer.create!(label: label, duration: duration, creator_id: user.id)
             id = current.id
           when "Placeholder"
-            icon = data[:icon]
-            current = Placeholder.create(label: label, icon: icon, creator_id: user.id)
+            icon = data
+            current = Placeholder.create!(label: label, icon: icon, creator_id: user.id)
             id = current.id
           when "Tracker"
-            unit = data[:unit]
-            current = Tracker.create(label: label, unit: unit, creator_id: user.id)
+            unit = data
+            current = Tracker.create!(label: label, unit: unit, creator_id: user.id)
             id = current.id
           else
         end
 
-      else
-        id = object[:includable_id]
+      elsif object_hash[:custom] == "false"
+        id = object_hash[:includable_id]
+        p "^" * 50
+        p id
       end
-        @stream.inclusions << Inclusion.create(includable_id: id, includable_type: type, order: i)
+      @stream.inclusions << Inclusion.create!(includable_id: id.to_i, includable_type: type, order: i)
+      i += 1
     end
     render :nothing => true
   end

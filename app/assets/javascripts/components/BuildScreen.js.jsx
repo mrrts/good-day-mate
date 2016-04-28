@@ -15,8 +15,21 @@ var BuildScreen = React.createClass({
     }.bind(this))
   },
   handleSaveClick: function() {
-    var stuff = {stuff: this.state.selectedCurrents}
-
+    var finalSelectedCurrents = []
+    var currents = $('.selected-current')
+    for (var i = 0; i < currents.length; i++) {
+      $item = $(currents[i]);
+      finalSelectedCurrents.push({
+        includable_type: $item.attr('data-includable-type'),
+        includable_id: $item.attr('data-includable-id'),
+        order: $item.attr('data-order'),
+        label: $item.attr('data-label'),
+        custom: $item.attr('data-custom'),
+        data: $item.attr('data-data')
+      })
+    }
+    var stuff = {stuff: finalSelectedCurrents}
+    console.log(stuff);
     $.ajax({
       method: 'POST',
       url: '/includables',
@@ -33,10 +46,7 @@ var BuildScreen = React.createClass({
     });
   },
   handleDelete: function(i) {
-    this.state.selectedCurrents.splice(i, 1)
-    this.setState({
-      selectedCurrents: this.state.selectedCurrents
-    });
+    $('#selected-currents li[data-key="'+i+'"]').remove();
   },
   handleSelectCurrent: function (e) {
     var $clicked = $(e.currentTarget);
@@ -44,10 +54,12 @@ var BuildScreen = React.createClass({
     var includableType = $clicked.attr('data-includable-type');
     var includableId = $clicked.attr('data-includable-id');
     var includableLabel = $clicked.attr('data-includable-label');
+    var custom = $clicked.attr('data-custom') ? true : false;
     var newCurrent = {
       includable_type: includableType,
       includable_id: includableId,
-      label: includableLabel
+      label: includableLabel,
+      custom: custom
     }
     this.setState({
       selectedCurrents: this.state.selectedCurrents.concat([newCurrent])
@@ -79,19 +91,31 @@ var BuildScreen = React.createClass({
     });
     console.log(this.state.selectedCurrents)
   },
+  handleSort: function () {
+    var list = $('.selected-current')
+    var newList = [];
+    for (var i = 0; i < list.length; i++) {
+      $item = $(list[i])
+      $item.attr('data-order', i);
+    }
+  },
   render: function () {
     // console.log(this.state.availableCurrents)
     return (
       <div id="build-screen" className="container flow-text">
         <h4>Build My Morning Stream</h4>
-        <SelectedCurrents currentList={this.state.selectedCurrents} delete={this.handleDelete} />
+        <SelectedCurrents 
+          currentList={this.state.selectedCurrents} 
+          delete={this.handleDelete} 
+          onSort={this.handleSort} />
 
         {this.getSaveButton()}
 
         <CurrentSelector
           onSelectCurrent={this.handleSelectCurrent}
           currentList={this.state.availableCurrents}
-          handleCustomCurrent={this.handleCustomCurrent} />
+          handleCustomCurrent={this.handleCustomCurrent}
+           />
 
       </div>
     )
