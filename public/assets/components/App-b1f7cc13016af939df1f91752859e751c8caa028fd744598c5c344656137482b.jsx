@@ -72,7 +72,7 @@ var App = React.createClass({
 			case "build":
 				return <BuildScreen onUpdate={this.updateScreen} />
 			case "goodnight":
-				return <GoodNightScreen />
+				return <GoodNightScreen onUpdate={this.updateScreen} />
 			case "lookback":
 				return <LookbackScreen />
 		}

@@ -1,4 +1,9 @@
 var GoodNightScreen = React.createClass({
+  componentDidMount: function () {
+    setTimeout(function () {
+      this.props.onUpdate('home')
+    }.bind(this), 5000)
+  },
   render: function(){
     return (
       <div className="container">

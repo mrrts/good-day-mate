@@ -33,33 +33,34 @@ var CustomForm = React.createClass({
     var target = $(e.target)
     console.log(target.text());
     $("#icon-preview").text(target.text());
-    $("#icon").val(target.text());
+    $("#data").val(target.text());
   },
   inputFields: function() {
     switch(this.props.type) {
       case "Placeholder":
         return (
-          <div className="input-field col s12">
-            <i id='icon-preview' className="right col s7 material-icons">format_list_numbered</i>
-            <a id='dropdown-button' className='col s5 left valign dropdown-button waves-effect waves-light' href='#' data-activates='dropdown1'>Icon: </a>
-            <ul id='dropdown1' className='dropdown-content'>
+          <div>
+            <div id="icon-select" className="input-field col s12">
+              <i id='icon-preview' className="right col s7 material-icons">format_list_numbered</i>
+              <a id='dropdown-button' className='col s5 left valign dropdown-button waves-effect waves-light' href='#' data-activates='dropdown1'>Icon: </a>
+              <ul id='dropdown1' className='dropdown-content'>
 
-              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">person</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">school</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">notifications none</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">spa</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">restaurant</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">local_gas_station</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">add_shopping_cart</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">build</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">flight_takeoff</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">pets</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">email</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">message</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">directions_car</i></li>
-              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">cake</i></li>
-            </ul>
-
+                <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">person</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">school</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">notifications none</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">spa</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">restaurant</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">local_gas_station</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">add_shopping_cart</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">build</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">flight_takeoff</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">pets</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">email</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">message</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">directions_car</i></li>
+                <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">cake</i></li>
+              </ul>
+            </div>
             <input type="hidden" name="data" id="data" value="done"></input>
             <input type="hidden" name="type" id="type" value="Placeholder"></input>
           </div>)

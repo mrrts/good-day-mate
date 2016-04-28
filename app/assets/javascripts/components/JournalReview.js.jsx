@@ -20,7 +20,7 @@ var JournalReview = React.createClass({
   },
   render: function () {
     return (<div>
-              Here{"'"}s some things you wrote before...
+              My past journal entries:
               <ul className="browser-default collection">{this.renderList()}</ul>
             </div>
             )

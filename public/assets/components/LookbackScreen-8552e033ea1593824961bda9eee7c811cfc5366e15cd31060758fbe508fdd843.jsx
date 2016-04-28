@@ -16,7 +16,7 @@ var LookbackScreen = React.createClass({
         }
       })
     } else {
-      grats = "UNKNOWN"
+      grats = "loading..."
     }
     return grats
   },

@@ -39336,7 +39336,7 @@ var App = React.createClass({
 			case "build":
 				return React.createElement(BuildScreen, { onUpdate: this.updateScreen });
 			case "goodnight":
-				return React.createElement(GoodNightScreen, null);
+				return React.createElement(GoodNightScreen, { onUpdate: this.updateScreen });
 			case "lookback":
 				return React.createElement(LookbackScreen, null);
 		}
@@ -39857,7 +39857,7 @@ var CurrentSelector = React.createClass({
           ),
           React.createElement(
             "p",
-            null,
+            { className: "category-add-label" },
             prop
           )
         ),
@@ -40169,151 +40169,155 @@ var CustomForm = React.createClass({
     var target = $(e.target);
     console.log(target.text());
     $("#icon-preview").text(target.text());
-    $("#icon").val(target.text());
+    $("#data").val(target.text());
   },
   inputFields: function () {
     switch (this.props.type) {
       case "Placeholder":
         return React.createElement(
           'div',
-          { className: 'input-field col s12' },
+          null,
           React.createElement(
-            'i',
-            { id: 'icon-preview', className: 'right col s7 material-icons' },
-            'format_list_numbered'
-          ),
-          React.createElement(
-            'a',
-            { id: 'dropdown-button', className: 'col s5 left valign dropdown-button waves-effect waves-light', href: '#', 'data-activates': 'dropdown1' },
-            'Icon: '
-          ),
-          React.createElement(
-            'ul',
-            { id: 'dropdown1', className: 'dropdown-content' },
+            'div',
+            { id: 'icon-select', className: 'input-field col s12' },
             React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'person'
-              )
+              'i',
+              { id: 'icon-preview', className: 'right col s7 material-icons' },
+              'format_list_numbered'
             ),
             React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'school'
-              )
+              'a',
+              { id: 'dropdown-button', className: 'col s5 left valign dropdown-button waves-effect waves-light', href: '#', 'data-activates': 'dropdown1' },
+              'Icon: '
             ),
             React.createElement(
-              'li',
-              null,
+              'ul',
+              { id: 'dropdown1', className: 'dropdown-content' },
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'notifications none'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'person'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'spa'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'school'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'restaurant'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'notifications none'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'local_gas_station'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'spa'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'add_shopping_cart'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'restaurant'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'build'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'local_gas_station'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'flight_takeoff'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'add_shopping_cart'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'pets'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'build'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'email'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'flight_takeoff'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'message'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'pets'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'directions_car'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'email'
+                )
+              ),
               React.createElement(
-                'i',
-                { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
-                'cake'
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'message'
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'directions_car'
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'i',
+                  { onClick: this.updatePreview, id: 'icon-preview', className: 'material-icons col s4' },
+                  'cake'
+                )
               )
             )
           ),
@@ -40686,6 +40690,11 @@ var EveningScreen = React.createClass({
 var GoodNightScreen = React.createClass({
   displayName: "GoodNightScreen",
 
+  componentDidMount: function () {
+    setTimeout((function () {
+      this.props.onUpdate('home');
+    }).bind(this), 5000);
+  },
   render: function () {
     return React.createElement(
       "div",
@@ -40921,9 +40930,7 @@ var JournalReview = React.createClass({
     return React.createElement(
       "div",
       null,
-      "Here",
-      "'",
-      "s some things you wrote before...",
+      "My past journal entries:",
       React.createElement(
         "ul",
         { className: "browser-default collection" },
@@ -41078,7 +41085,7 @@ var LookbackScreen = React.createClass({
         }
       });
     } else {
-      grats = "UNKNOWN";
+      grats = "loading...";
     }
     return grats;
   },
@@ -41221,7 +41228,7 @@ var Navbar = React.createClass({
   },
   handleLogoutClick: function () {
     $.get('/logout', (function (resp) {
-      this.props.onUpdate('home', { loggedIn: false, userId: undefined });
+      this.props.onUpdate('login', { loggedIn: false, userId: undefined });
     }).bind(this));
   },
   componentDidMount: function () {
@@ -42251,7 +42258,7 @@ var Timer = React.createClass({
     } else {
       return React.createElement(
         "button",
-        { className: "btn-floating waves-effect waves-light right", type: "submit", onClick: this.startCount, name: "action" },
+        { className: "timer-button btn-floating waves-effect waves-light right", type: "submit", onClick: this.startCount, name: "action" },
         React.createElement(
           "i",
           { className: "material-icons right" },

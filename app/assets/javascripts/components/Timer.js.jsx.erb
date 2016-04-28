@@ -33,7 +33,7 @@ var Timer = React.createClass({
       return (<span className="right"> {this.timeRemaining()} </span>)
     } else {
       return (
-          <button className="btn-floating waves-effect waves-light right" type="submit" onClick={this.startCount} name="action">
+          <button className="timer-button btn-floating waves-effect waves-light right" type="submit" onClick={this.startCount} name="action">
           <i className="material-icons right">query_builder</i>
           </button>
             )

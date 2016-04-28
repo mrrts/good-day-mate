@@ -172,8 +172,9 @@ nav .sun-icon, nav .moon-icon {
   background-color: #8CB4CE;
   margin: 20px auto;
   display: block;
-  width: 57%;
+  width: 63%;
   font-weight: 400;
+  padding: 0;
 }
 
 #login-button .login {
@@ -291,6 +292,10 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   background-color: #476373;
 }
 
+#stream button.timer-button {
+  margin-top: -20px;
+}
+
 #goodnight-card svg.moon-icon {
   height: 80px;
   width: 80px;
@@ -323,10 +328,16 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 #build-screen #current-selector {
   margin-top: 40px;
+  color: #0E3650;
+  text-shadow: 0px 0px 2px #6D6D6D;
 }
 
 #build-screen #current-selector .card {
   background-color: rgba(255, 255, 255, 0.42);
+}
+
+#build-screen #current-selector .card-content {
+  margin-left: -8px;
 }
 
 #build-screen #current-selector .modal {
@@ -355,6 +366,13 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 #build-screen #current-selector .modal .valign-wrapper {
   height: auto;
+}
+
+#build-screen #icon-select {
+  padding-right: 30px;
+}
+#build-screen #icon-select #dropdown1 {
+  margin-left: 60px;
 }
 
 #logout-icon {
@@ -495,7 +513,7 @@ canvas {
 .login .bobbing,
 .login #MyCanvas,
 .registration .bobbing,
-.registration #MyCanvas, {
+.registration #MyCanvas {
   display: none;
 }
 

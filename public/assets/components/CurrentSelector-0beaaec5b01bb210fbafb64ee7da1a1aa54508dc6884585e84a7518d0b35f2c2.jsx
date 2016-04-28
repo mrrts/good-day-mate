@@ -10,7 +10,7 @@ var CurrentSelector = React.createClass({
         <div key={i}>
           <div className="col s4 center">
             <a href={'#modal-' + prop} className="category-add-button btn-floating btn-large waves-effect waves-light modal-trigger"><i className="material-icons">add</i></a>
-            <p>{prop}</p>
+            <p className="category-add-label">{prop}</p>
           </div>
           <div className="modal" id={"modal-" + prop}>
             <div className="modal-content">
