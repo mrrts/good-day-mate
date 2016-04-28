@@ -158,15 +158,11 @@ Joke.create(joke_list_id: 2, joke: 'Why do Java developers wear glasses? Because
 Joke.create(joke_list_id: 2, joke: 'Why did the geek add body { padding-top: 1000px; } to his Facebook profile? He wanted to keep a low profile.')
 
 
-
-
-
-
-gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
-"excellent food", "health", "food", "sleep", "Corgis", "moon & stars",
-"biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies",
-"summer coming", "graduating soon", "learning", "great experience at DBC",
-"new friends", "old friends", "change", "travel", "clean sheets", "soap", "chairs"]
+gratitudes = ["family", "family", "family" , "friends", "friends", "friends", "sleep", "nice weather", "books",
+ "a good night's sleep", "music", "family", "excellent food", "health", "food", "sleep", "Corgis", "moon & stars", 
+ "friends", "sunrise", "rain", "biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies", 
+ "home", "summer coming", "graduating soon", "learning", "great experience at DBC", "new friends", "old friends", 
+ "change", "travel", "clean sheets", "soap", "chairs"]
 
 feels = ["tired", "happy", "excited", "anxious", "interested", "content", "fabulous", "frustrated", "dense"]
 

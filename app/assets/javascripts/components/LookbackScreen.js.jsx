@@ -7,11 +7,14 @@ var LookbackScreen = React.createClass({
     var grats = this.state.gratitudes;
     if (grats) {
       grats = grats.map(function(gratitude, i) {
-        if (gratitude[1] >1 ) {
+        if (gratitude[1] >1 ) {   
+          var minSize = 1.1
+          var size = gratitude[1]/10 + minSize
           return (
-            <li data-key={i} key={i} className="lookback-input">
-               {gratitude[0]}
-            </li>
+            <div data-key={i} key={i} className="lookback-input" style={{fontSize: size + 'em'}}>
+               <p>{gratitude[0]}</p>
+            </div>
+
           )
         }
       })
@@ -55,9 +58,9 @@ var LookbackScreen = React.createClass({
           <div className="card">
             <div className="card-content">
               <p className="review-header">I{"'"}m grateful for:</p>
-              <ul>
+              <div className="row">
                 {this.gratitudesList()}
-              </ul>
+              </div>
             </div>
           </div>
 
