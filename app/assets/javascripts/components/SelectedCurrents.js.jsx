@@ -10,6 +10,8 @@ var SelectedCurrents = React.createClass({
             data-includable-id={current.includable_id}
             data-label={current.label}
             data-order={current.order || -1}
+            data-custom={current.custom || false}
+            data-data={current.data || "none"}
             >
             <div className="card-content valign-wrapper">
               <div className="valign left-align">

@@ -60,17 +60,17 @@ var CustomForm = React.createClass({
               <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">cake</i></li>
             </ul>
 
-            <input type="hidden" name="icon" id="icon" value="done"></input>
+            <input type="hidden" name="data" id="data" value="done"></input>
             <input type="hidden" name="type" id="type" value="Placeholder"></input>
           </div>)
         break;
       case "Timer":
-        return (<div className="input-field col s12"><input type="number" name="duration" min="1" id="duration"></input>
+        return (<div className="input-field col s12"><input type="number" name="data" min="1" id="data"></input>
           <label htmlFor="duration">Duration in Minutes:</label>
           <input type="hidden" name="type" id="type" value="Timer"></input></div>)
         break;
       case "Tracker":
-        return (<div className="input-field col s12"><input type="text" placeholder="e.g. Miles Ran" name="unit" min="1" id="unit"></input>
+        return (<div className="input-field col s12"><input type="text" placeholder="e.g. Miles Ran" name="data" min="1" id="data"></input>
           <label htmlFor="unit">Unit you want to Track:</label>
           <input type="hidden" name="type" id="type" value="Tracker" ></input></div>)
         break;
@@ -81,6 +81,8 @@ var CustomForm = React.createClass({
   addCurrent: function(e) {
 
     var inputs = $(e.currentTarget).closest("form").find("input");
+    var data_value = $('#data').val();
+    console.log('data', data_value)
 
     var data = {}
     for (var i in inputs) {
@@ -91,7 +93,8 @@ var CustomForm = React.createClass({
     stuff = {
       type: data.type,
       label: data.label,
-      data: data
+      data: data_value,
+      custom: true
     }
     this.props.handleCustomCurrent(stuff);
 

@@ -31,15 +31,15 @@ class IncludablesController < ApplicationController
 
         case type
           when "Timer"
-            duration = (data[:duration].to_i * 60)
+            duration = (data.to_i * 60)
             current = Timer.create(label: label, duration: duration, creator_id: user.id)
             id = current.id
           when "Placeholder"
-            icon = data[:icon]
+            icon = data
             current = Placeholder.create(label: label, icon: icon, creator_id: user.id)
             id = current.id
           when "Tracker"
-            unit = data[:unit]
+            unit = data
             current = Tracker.create(label: label, unit: unit, creator_id: user.id)
             id = current.id
           else
