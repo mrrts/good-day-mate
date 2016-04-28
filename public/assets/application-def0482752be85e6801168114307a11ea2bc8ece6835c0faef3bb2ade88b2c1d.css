@@ -47,9 +47,9 @@ body.splash {
   background-repeat: no-repeat;
 
   background-attachment: fixed;
-
-
 }
+
+
 
 #main-loader {
   position: absolute;
@@ -100,6 +100,10 @@ form {
   color: #1C243B;
   font-weight: bolder;
   font-size: 4em;
+  text-shadow: 0px 0px 15px #fff;
+  /* Slight white letter outline on webkit only:; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
 }
 
 nav .sun-icon, nav .moon-icon {
@@ -230,14 +234,11 @@ nav .sun-icon, nav .moon-icon {
 }
 
 .podcast-icon {
-  max-height: 50%;
-  max-width: 25%;
-  min-width: 20%;
-  min-height: 40%;
+  height: 8em;
+  width: 8em;
   display: inline-block;
   float: left;
   padding-left: 5px;
-  width: 8em;
 }
 
 .podcast-link {

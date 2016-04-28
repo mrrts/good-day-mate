@@ -23,6 +23,8 @@ var App = React.createClass({
     		console.log('dogged in')
     		$("body").append('<div style="display: none" ></div>')
     		this.forceUpdate();
+    		// Show sideNav
+				// $('.button-collapse').sideNav('show');
     	}
     }
   },
@@ -86,7 +88,7 @@ var App = React.createClass({
 	render: function () {
 		console.log('app rendered!')
 		return (
-				<div>
+				<div id="app">
 					{this.getNavBar()}
 					<Spinner />
 					<div className="screenContent">

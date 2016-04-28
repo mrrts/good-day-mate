@@ -39285,6 +39285,8 @@ var App = React.createClass({
 				console.log('dogged in');
 				$("body").append('<div style="display: none" ></div>');
 				this.forceUpdate();
+				// Show sideNav
+				// $('.button-collapse').sideNav('show');
 			}
 		}
 	},
@@ -39350,7 +39352,7 @@ var App = React.createClass({
 		console.log('app rendered!');
 		return React.createElement(
 			"div",
-			null,
+			{ id: "app" },
 			this.getNavBar(),
 			React.createElement(Spinner, null),
 			React.createElement(
