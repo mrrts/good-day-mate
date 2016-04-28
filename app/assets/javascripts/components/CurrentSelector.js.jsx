@@ -2,6 +2,20 @@ var CurrentSelector = React.createClass({
   getInitialState: function () {
     return {}
   },
+  renderPropName: function(propName) {
+    switch (propName) {
+      case "PhotoCollection":
+        return "Photo";
+      case "Placeholder":
+        return "Task";
+      case "NewsList":
+        return "News Feed";
+      case "JokeList":
+        return "Joke";
+      default:
+        return propName;
+    }
+  },
   categoryList: function () {
     var list = [];
     var i = 0;
@@ -10,11 +24,11 @@ var CurrentSelector = React.createClass({
         <div key={i}>
           <div className="col s4 center">
             <a href={'#modal-' + prop} className="category-add-button btn-floating btn-large waves-effect waves-light modal-trigger"><i className="material-icons">add</i></a>
-            <p>{prop}</p>
+            <p className="category-add-label">{this.renderPropName(prop)}</p>
           </div>
           <div className="modal" id={"modal-" + prop}>
             <div className="modal-content">
-              <h5>Choose a {prop}:</h5>
+              <h5>Choose a {this.renderPropName(prop)}:</h5>
               <ul className="collection">
                 {this.newCurrentForm(prop)}
                 {this.currentsInCategory(this.props.currentList[prop])}

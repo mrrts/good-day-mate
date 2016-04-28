@@ -14,26 +14,26 @@ var CanvasClass = React.createClass({
   },
   drawCanvas: function() {
     var canvas = document.getElementById("MyCanvas");
-    
+
     if (canvas && !this.state.ready) {
-      
+
 
       this.setState({ ready: true});
     } else if (this.state.ready) {
-      
+
 
       if (!this.state.waves) {
-        var waves = new Waves(canvas, canvas.width, canvas.height)
+        var waves = new OurWaves(canvas, canvas.width, canvas.height)
         this.setState({
           waves: waves
         })
       }
 
       this.state.waves.update();
-      this.state.waves.draw(); 
+      this.state.waves.draw();
 
     }
-    
+
   },
   render: function() {
 

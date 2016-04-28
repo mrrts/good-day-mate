@@ -43,7 +43,7 @@ var BottleMessageForm = React.createClass({
                 <label htmlFor="bottle_message[content]">Message</label>
               </div>
               <div className="input-field col s12">
-                <input name='bottle_message[delivery_date]' type='date' className='datepicker' placeholder="Delivery Date" value={this.state.tomorrowDate} />
+                <input name='bottle_message[delivery_date]' readOnly="true" type='date' className='datepicker' placeholder="Delivery Date" value={this.state.tomorrowDate} />
                 <label className="active" htmlFor="bottle_message[delivery_date]">Deliver on</label>
               </div>
               <div className="center-align">
