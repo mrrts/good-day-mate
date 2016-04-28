@@ -8,6 +8,12 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
   height: 100%;
+
+  background-image: url("/assets/water-f15f419824dd4625e0f43cbe5d21548edf258b0c86f5d2e6bad0ce01d419b7f3.jpg");
+  background-postion: bottom left;
+  background-repeat: repeat;
+
+  background-attachment: fixed;
 }
 
 
