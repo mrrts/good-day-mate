@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/check_ins/:id' => 'check_ins#show'
 
   post '/journals' => 'journals#create_entry'
+  get '/journals/review' => 'journals#review'
 
   get '/includables/index' => 'includables#index'
   post '/includables' => 'includables#create'
