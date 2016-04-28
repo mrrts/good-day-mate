@@ -9,7 +9,7 @@ var Navbar = React.createClass({
 	},
   handleLogoutClick: function() {
    	$.get('/logout', function(resp) {
-   		this.props.onUpdate('home', {loggedIn: false, userId: undefined})
+   		this.props.onUpdate('login', {loggedIn: false, userId: undefined})
    	}.bind(this));
   },
   componentDidMount: function() {

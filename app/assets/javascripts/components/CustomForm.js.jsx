@@ -33,7 +33,7 @@ var CustomForm = React.createClass({
     var target = $(e.target)
     console.log(target.text());
     $("#icon-preview").text(target.text());
-    $("#icon").val(target.text());
+    $("#data").val(target.text());
   },
   inputFields: function() {
     switch(this.props.type) {
