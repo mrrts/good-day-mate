@@ -5,7 +5,7 @@ body {
 }
 
 body.splash {
-  background-color: #F2F2F3;
+  background-color: #F3F3F3;
   background-image: none;
 }
 
@@ -222,18 +222,26 @@ nav .sun-icon, nav .moon-icon {
   display: inline-block;
   float: left;
   padding-left: 5px;
+  width: 8em;
 }
 
 .podcast-link {
   clear: both;
+  font-size: 1.5em;
+  font-weight: bold;
   padding: 5px;
-
 }
+
 
 .podcast-info {
   display: inline-block;
   float: right;
   padding-right: 5px;
+}
+
+#pod-duration {
+  font-size: 0.75em;
+  font-style: italic;
 }
 
 
@@ -467,7 +475,11 @@ canvas {
 .evening #MyCanvas,
 .evening .bobbing,
 .build .bobbing,
-.build #MyCanvas {
+.build #MyCanvas,
+.login .bobbing,
+.login #MyCanvas,
+.registration .bobbing,
+.registration #MyCanvas, {
   display: none;
 }
 
@@ -479,6 +491,7 @@ canvas {
     animation: bobbingAnim ease-in-out 14s infinite;
     -moz-animation: bobbingAnim ease-in-out 14s infinite;
     -webkit-animation: bobbingAnim ease-in-out 14s infinite;
+    z-index: -3;
 }
 .bobbing img {
   width: 100%;
@@ -535,9 +548,26 @@ canvas {
   font-size: 1.2em
 }
 
-.create-current-button {
-  margin-right: 15px;
-  vertical-align: 0.05em;
+#create-new-button {
   display: inline-block;
+  background: #E6C024;
 }
 
+#add-new-current {
+  background-color: #E6C024;
+}
+
+#dropdown-button {
+  background-color: white;
+  font-size: 0.48em;
+  padding: 0;
+  color: #B3B3B3;
+}
+
+#timer-button {
+
+}
+
+.sortable-chosen {
+  background-color: #ccc !important;
+}

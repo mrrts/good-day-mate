@@ -8,7 +8,7 @@ class PhotoCollection < ActiveRecord::Base
     return {
       current_type: "PhotoCollection",
       label: self.label,
-      filename: ActionController::Base.helpers.image_path("cute_animals/" + filename)
+      filename: ActionController::Base.helpers.image_path(filename)
     }
   end
 

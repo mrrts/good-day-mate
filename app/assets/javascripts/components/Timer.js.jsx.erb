@@ -50,12 +50,13 @@ var Timer = React.createClass({
     if (this.state.timeLeft <= 0) {
       return (<p>
           FINISHED!
-          <button className="btn-floating waves-effect waves-light right" type="submit" onClick={this.stopMusic} name="action">
+          <button id='timer-button' className="valign btn-floating waves-effect waves-light right" type="submit" onClick={this.stopMusic} name="action">
           <i className="material-icons right">done</i>
           </button>
         </p>)
     } else {
-      return (<p>
+      return (
+        <p>
           {this.props.label}
           {this.startButton()}
         </p>)
@@ -64,6 +65,7 @@ var Timer = React.createClass({
   render: function () {
       return (
       <div className="card-content">
+        <p>Timer</p>
         {this.showState()}
         <audio controls preload="auto" className="hide" id="alarmSound">
         <source src="<%= asset_path('beautiful_sounds.mp3')%>" type="audio/mpeg" />

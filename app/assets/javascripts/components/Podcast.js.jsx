@@ -3,19 +3,19 @@ var Podcast = React.createClass({
     return (
       <div className="podcast card-content">
         <div className='row'>
-          <p className='col s10'>Podcast</p><i id='stream-icon' className="col s2 material-icons">hearing</i>
+          <p className='col s10'>Podcast</p><a target="_blank" href={this.props.url}><i id='stream-icon' className="col s2 material-icons">hearing</i></a>
         </div>
         <ul>
           <li>
-            <div>
+            <div className='row'>
               <img className="podcast-icon" src={this.props.icon} />
-            </div>
-            <div className="podcast-info">
-              <p>{this.props.genre}</p>
-              <p>{this.props.duration}</p>
+
+              <div className="podcast-info">
+                <p>{this.props.genre}</p>
+                <p id='pod-duration'>{this.props.duration}</p>
+              </div>
             </div>
           </li>
-          <li className="podcast-link"><a target="_blank" href={this.props.url}>{this.props.label}</a></li>
         </ul>
       </div>
     )

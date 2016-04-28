@@ -38,35 +38,39 @@ var CustomForm = React.createClass({
   inputFields: function() {
     switch(this.props.type) {
       case "Placeholder":
-        return ( <div className="input-field col s12">
-          <i id="icon-preview" className="material-icons col s4">done</i>
-          <a className='dropdown-button waves-effect waves-light blue' href='#' data-activates='dropdown1'>Icon</a>
-          <ul id='dropdown1' className='dropdown-content browser-default'>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">done</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">person</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">school</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">notifications none</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">spa</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">child care</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">free breakfast</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">restaurant</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">directions walk</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">directions bike</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">flash on</i></li>
-            <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">color lens</i></li>
-          </ul>
+        return (
+          <div className="input-field col s12">
+            <i id='icon-preview' className="right col s7 material-icons">format_list_numbered</i>
+            <a id='dropdown-button' className='col s5 left valign dropdown-button waves-effect waves-light' href='#' data-activates='dropdown1'>Icon: </a>
+            <ul id='dropdown1' className='dropdown-content'>
 
-          <input type="hidden" name="icon" id="icon" value="done"></input>
-          <input type="hidden" name="type" id="type" value="Placeholder"></input>
+              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">person</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">school</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">notifications none</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">spa</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">restaurant</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview" className="material-icons col s4">local_gas_station</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">add_shopping_cart</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">build</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">flight_takeoff</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">pets</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">email</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">message</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">directions_car</i></li>
+              <li><i onClick={this.updatePreview} id="icon-preview"className="material-icons col s4">cake</i></li>
+            </ul>
+
+            <input type="hidden" name="data" id="data" value="done"></input>
+            <input type="hidden" name="type" id="type" value="Placeholder"></input>
           </div>)
         break;
       case "Timer":
-        return (<div className="input-field col s12"><input type="number" name="duration" min="1" id="duration"></input>
+        return (<div className="input-field col s12"><input type="number" name="data" min="1" id="data"></input>
           <label htmlFor="duration">Duration in Minutes:</label>
           <input type="hidden" name="type" id="type" value="Timer"></input></div>)
         break;
       case "Tracker":
-        return (<div className="input-field col s12"><input type="text" placeholder="e.g. Miles Ran" name="unit" min="1" id="unit"></input>
+        return (<div className="input-field col s12"><input type="text" placeholder="e.g. Miles Ran" name="data" min="1" id="data"></input>
           <label htmlFor="unit">Unit you want to Track:</label>
           <input type="hidden" name="type" id="type" value="Tracker" ></input></div>)
         break;
@@ -77,6 +81,8 @@ var CustomForm = React.createClass({
   addCurrent: function(e) {
 
     var inputs = $(e.currentTarget).closest("form").find("input");
+    var data_value = $('#data').val();
+    console.log('data', data_value)
 
     var data = {}
     for (var i in inputs) {
@@ -87,7 +93,8 @@ var CustomForm = React.createClass({
     stuff = {
       type: data.type,
       label: data.label,
-      data: data
+      data: data_value,
+      custom: true
     }
     this.props.handleCustomCurrent(stuff);
 
@@ -105,16 +112,24 @@ var CustomForm = React.createClass({
             <label htmlFor="label">Name:</label>
           </div>
 
-          <a onClick={this.addCurrent} className="valign current-add-button btn-floating"><i className="material-icons">add</i></a>
+          <a id='add-new-current' onClick={this.addCurrent} className="valign btn-floating"><i className="material-icons">add</i></a>
 
         </form>)
 
     } else {
       return (
-        <div>
-          <a onClick={this.toggleForm} className="col s2 valign create-current-button btn-floating"><i className="material-icons">mode_edit</i>
-          </a>
-          <span className="col s10 valign"> Create your own</span></div>)
+        <div className='valign-wrapper'>
+          <div className='row'>
+            <div className='col s12'>
+              <div className='col s5 valign left'>
+                <a id='create-new-button' onClick={this.toggleForm} className="valign btn-floating"><i className="material-icons">mode_edit</i>
+                </a>
+              </div>
+              <p  className="valign col s7">Create one</p>
+            </div>
+          </div>
+        </div>
+      )
     }
   },
   render: function() {
