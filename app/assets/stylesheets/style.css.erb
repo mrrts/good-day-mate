@@ -17,9 +17,11 @@ body.evening, body.goodnight, body.build {
   transition: background-color 1300ms linear;
 }
 
-body.home, body.evening, body.build, body.goodnight, body {
+body.home, body.evening, body.build, body.goodnight, body.login, body.registration,
+body.review, body.start, body.lookback {
   background-image: url("<%=asset_path('water.jpg')%>");
-
+  background-postion: bottom left;
+  background-repeat: repeat;
   background-attachment: fixed;
 }
 
