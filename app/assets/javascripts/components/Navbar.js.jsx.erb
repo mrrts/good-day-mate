@@ -18,6 +18,12 @@ var Navbar = React.createClass({
       menuWidth: 150,
 	    closeOnClick: true
 	  });
+    this.bindModalTriggers();
+  },
+  componentWillUpdate: function () {
+    this.bindModalTriggers();
+  },
+  bindModalTriggers: function () {
     setTimeout(function(){
       $('.modal-trigger').leanModal();
     }, 800)

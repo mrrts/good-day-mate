@@ -161,25 +161,29 @@ Joke.create(joke_list_id: 2, joke: 'Why did the geek add body { padding-top: 100
 
 
 
-gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep",
-"excellent food", "health", "food", "sleep", "Corgis", "moon & stars",
-"biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies",
+gratitudes = ["family", "friends", "nice weather", "books", "a good night's sleep", "music", "family",
+"excellent food", "health", "food", "sleep", "Corgis", "moon & stars", "friends", "sunrise", "rain",
+"biking", "sunsets", "coffee", "hot showers", "movie night", "cats", "puppies", "home",
 "summer coming", "graduating soon", "learning", "great experience at DBC",
 "new friends", "old friends", "change", "travel", "clean sheets", "soap", "chairs"]
 
-feels = ["tired", "happy", "excited", "anxious", "interested", "content", "fabulous", "frustrated", "dense"]
+feels = ["tired", "happy", "sad", "happy", "excited", "anxious", "interested", "content", "fabulous", 
+  "frustrated", "dense", "melancholy", "well-rested"]
 
 tomorrow = ["more features"]
 
-20.times do
-  CheckIn.create(
-    user_id: 4,
-    feeling: feels.sample,
-    thankful1: gratitudes.sample,
-    thankful2: gratitudes.sample,
-    thankful3: gratitudes.sample,
-    horizon: tomorrow.sample
-    )
+user = 1
+while user <= 4
+  20.times do
+    CheckIn.create(
+      user_id: user,
+      feeling: feels.sample,
+      thankful1: gratitudes.sample,
+      thankful2: gratitudes.sample,
+      thankful3: gratitudes.sample,
+      horizon: tomorrow.sample
+      )
+  end
+  user += 1
 end
-
 

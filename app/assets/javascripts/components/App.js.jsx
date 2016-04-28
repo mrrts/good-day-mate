@@ -16,7 +16,11 @@ var App = React.createClass({
     }
     if (this.state.timeRemaining <= 0) {
     	clearInterval(this.interval)
-    	this.updateScreen('home')
+    	if (this.state.loggedIn == true) {
+	    	this.updateScreen('home')
+    	} else {
+    		this.updateScreen('login')
+    	}
     }
   },
 	componentDidMount: function () {
