@@ -20,7 +20,7 @@ var Current = React.createClass({
               <a className="btn valign "onClick={this.buildClick}>Build</a>
                 </p>)
       case 'Good Day':
-        return (<p className="valign"> <strong> Have a Good Day, Mate! </strong> </p>)
+        return (<p className="card-content valign"> <strong> Have a Good Day, Mate! </strong> </p>)
       case 'JokeList':
         return <JokeList {...this.props} />
     }
