@@ -41250,6 +41250,7 @@ var Navbar = React.createClass({
     }
   },
   toggleMusic: function () {
+    console.log("Music!");
     if (this.state.music) {
       document.getElementById("ambient-sounds").pause();
       $("#music-button").text("volume_mute");
@@ -41432,9 +41433,13 @@ var Podcast = React.createClass({
           'Podcast'
         ),
         React.createElement(
-          'i',
-          { id: 'stream-icon', className: 'col s2 material-icons' },
-          'hearing'
+          'a',
+          { target: '_blank', href: this.props.url },
+          React.createElement(
+            'i',
+            { id: 'stream-icon', className: 'col s2 material-icons' },
+            'hearing'
+          )
         )
       ),
       React.createElement(
@@ -41446,11 +41451,7 @@ var Podcast = React.createClass({
           React.createElement(
             'div',
             { className: 'row' },
-            React.createElement(
-              'a',
-              { target: '_blank', href: this.props.url },
-              React.createElement('img', { className: 'podcast-icon', src: this.props.icon })
-            ),
+            React.createElement('img', { className: 'podcast-icon', src: this.props.icon }),
             React.createElement(
               'div',
               { className: 'podcast-info' },
