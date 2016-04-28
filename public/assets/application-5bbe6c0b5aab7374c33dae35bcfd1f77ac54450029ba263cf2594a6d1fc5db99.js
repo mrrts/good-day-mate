@@ -41269,7 +41269,7 @@ var Navbar = React.createClass({
             null,
             React.createElement(
               'i',
-              { onClick: this.toggleMusic, id: 'music-button', className: 'material-icons' },
+              { onClick: this.toggleMusic, className: 'material-icons music-button' },
               'volume_mute'
             )
           )
@@ -41283,11 +41283,11 @@ var Navbar = React.createClass({
     console.log("Music!");
     if (this.state.music) {
       document.getElementById("ambient-sounds").pause();
-      $("#music-button").text("volume_mute");
+      $(".music-button").text("volume_mute");
     } else {
       document.getElementById("ambient-sounds").play();
       document.getElementById("ambient-sounds").loop = true;
-      $("#music-button").text("volume_up");
+      $(".music-button").text("volume_up");
     }
 
     this.setState({

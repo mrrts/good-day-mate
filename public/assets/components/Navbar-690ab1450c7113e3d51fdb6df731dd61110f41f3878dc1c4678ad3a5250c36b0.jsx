@@ -34,7 +34,7 @@ var Navbar = React.createClass({
         <div>
           <li><a onClick={this.handleLogoutClick} ><i id='logout-icon' className="fa fa-sign-out" aria-hidden="true"></i></a></li>
           <li><a className='modal-trigger' href='#bottle-message-modal'><i className="material-icons">create</i></a></li>
-          <li  ><a><i onClick={this.toggleMusic} id='music-button' className="material-icons">volume_mute</i></a></li>
+          <li  ><a><i onClick={this.toggleMusic}  className="material-icons music-button">volume_mute</i></a></li>
         </div>
         )
     } else {
@@ -46,12 +46,12 @@ var Navbar = React.createClass({
     if (this.state.music)
     {
       document.getElementById("ambient-sounds").pause()
-      $("#music-button").text("volume_mute");
+      $(".music-button").text("volume_mute");
 
     } else {
       document.getElementById("ambient-sounds").play()
       document.getElementById("ambient-sounds").loop = true;
-      $("#music-button").text("volume_up");
+      $(".music-button").text("volume_up");
     }
 
     this.setState({
