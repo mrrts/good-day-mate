@@ -39555,7 +39555,9 @@ var BuildScreen = React.createClass({
         includable_type: $item.attr('data-includable-type'),
         includable_id: $item.attr('data-includable-id'),
         order: $item.attr('data-order'),
-        label: $item.attr('data-label')
+        label: $item.attr('data-label'),
+        custom: $item.attr('data-custom'),
+        data: $item.attr('data-data')
       });
     }
     var stuff = { stuff: finalSelectedCurrents };
@@ -39582,10 +39584,12 @@ var BuildScreen = React.createClass({
     var includableType = $clicked.attr('data-includable-type');
     var includableId = $clicked.attr('data-includable-id');
     var includableLabel = $clicked.attr('data-includable-label');
+    var custom = $clicked.attr('data-custom') ? true : false;
     var newCurrent = {
       includable_type: includableType,
       includable_id: includableId,
-      label: includableLabel
+      label: includableLabel,
+      custom: custom
     };
     this.setState({
       selectedCurrents: this.state.selectedCurrents.concat([newCurrent])
@@ -40303,7 +40307,7 @@ var CustomForm = React.createClass({
               )
             )
           ),
-          React.createElement('input', { type: 'hidden', name: 'icon', id: 'icon', value: 'done' }),
+          React.createElement('input', { type: 'hidden', name: 'data', id: 'data', value: 'done' }),
           React.createElement('input', { type: 'hidden', name: 'type', id: 'type', value: 'Placeholder' })
         );
         break;
@@ -40311,7 +40315,7 @@ var CustomForm = React.createClass({
         return React.createElement(
           'div',
           { className: 'input-field col s12' },
-          React.createElement('input', { type: 'number', name: 'duration', min: '1', id: 'duration' }),
+          React.createElement('input', { type: 'number', name: 'data', min: '1', id: 'data' }),
           React.createElement(
             'label',
             { htmlFor: 'duration' },
@@ -40324,7 +40328,7 @@ var CustomForm = React.createClass({
         return React.createElement(
           'div',
           { className: 'input-field col s12' },
-          React.createElement('input', { type: 'text', placeholder: 'e.g. Miles Ran', name: 'unit', min: '1', id: 'unit' }),
+          React.createElement('input', { type: 'text', placeholder: 'e.g. Miles Ran', name: 'data', min: '1', id: 'data' }),
           React.createElement(
             'label',
             { htmlFor: 'unit' },
@@ -40344,6 +40348,8 @@ var CustomForm = React.createClass({
   addCurrent: function (e) {
 
     var inputs = $(e.currentTarget).closest("form").find("input");
+    var data_value = $('#data').val();
+    console.log('data', data_value);
 
     var data = {};
     for (var i in inputs) {
@@ -40354,7 +40360,8 @@ var CustomForm = React.createClass({
     stuff = {
       type: data.type,
       label: data.label,
-      data: data
+      data: data_value,
+      custom: true
     };
     this.props.handleCustomCurrent(stuff);
 
@@ -41775,7 +41782,9 @@ var SelectedCurrents = React.createClass({
           "data-includable-type": current.includable_type,
           "data-includable-id": current.includable_id,
           "data-label": current.label,
-          "data-order": current.order || -1
+          "data-order": current.order || -1,
+          "data-custom": current.custom || false,
+          "data-data": current.data || "none"
         },
         React.createElement(
           "div",

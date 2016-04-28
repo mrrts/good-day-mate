@@ -23,7 +23,9 @@ var BuildScreen = React.createClass({
         includable_type: $item.attr('data-includable-type'),
         includable_id: $item.attr('data-includable-id'),
         order: $item.attr('data-order'),
-        label: $item.attr('data-label')
+        label: $item.attr('data-label'),
+        custom: $item.attr('data-custom'),
+        data: $item.attr('data-data')
       })
     }
     var stuff = {stuff: finalSelectedCurrents}
@@ -52,10 +54,12 @@ var BuildScreen = React.createClass({
     var includableType = $clicked.attr('data-includable-type');
     var includableId = $clicked.attr('data-includable-id');
     var includableLabel = $clicked.attr('data-includable-label');
+    var custom = $clicked.attr('data-custom') ? true : false;
     var newCurrent = {
       includable_type: includableType,
       includable_id: includableId,
-      label: includableLabel
+      label: includableLabel,
+      custom: custom
     }
     this.setState({
       selectedCurrents: this.state.selectedCurrents.concat([newCurrent])
