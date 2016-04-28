@@ -35,12 +35,12 @@ var LoginScreen = React.createClass({
             <form onSubmit={this.handleFormSubmit} className='col s12 flow-text' acceptCharset="UTF-8">
               <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value={this.state.authenticity_token} />
               <div className='input-field col s12'>
-                <input type="email" name="user[email]" id="user_email" />
-                <label htmlFor="user_email">Email</label>
+                <input type="email" name="user[email]" id="user_email" value="ryan@something.com" />
+                <label className="active" htmlFor="user_email">Email</label>
               </div>
               <div className='input-field col s12'>
-                <input type="password" name="user[password]" id="user_password" />
-                <label htmlFor="user_password">Password</label>
+                <input type="password" name="user[password]" id="user_password" value="password" />
+                <label className="active" htmlFor="user_password">Password</label>
               </div>
               <div id="login-button" className='container valign-wrapper'>
                 <div className="valign center-align">
